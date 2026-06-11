@@ -1,0 +1,148 @@
+
+=== RUN: make -C /home/validator/ethercat-env module.lifecycle ===
+make: Entering directory '/home/validator/ethercat-env'
+module.lifecycle: recorded strategy = DKMS (delegated decision D1)
+  module identity      : -m ethercat -v 1.6.9
+  source tree          : ethercat-src
+  dkms.conf            : ethercat-src/dkms.conf
+  /usr/src registration: /usr/src/ethercat-1.6.9
+  kernel-update behavior: modules auto-rebuild on a Debian 13 kernel update (AUTOINSTALL=yes)
+  developer path       : build.modules / install.modules retained (NOT the production lifecycle)
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env dkms.conf ===
+make: Entering directory '/home/validator/ethercat-env'
+dkms.conf: OK - wrote ethercat-src/dkms.conf (-m ethercat -v 1.6.9)
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env add.dkms ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[tools]: present  dkms         (/usr/sbin/dkms)
+doctor[tools]: present  depmod       (/usr/sbin/depmod)
+doctor[tools]: OK - all required tools present
+require-root: OK
+rm -rf "/usr/src/ethercat-1.6.9"
+cp -r "/home/validator/ethercat-env/ethercat-src" "/usr/src/ethercat-1.6.9"
+/usr/sbin/dkms add -m ethercat -v 1.6.9
+Creating symlink /var/lib/dkms/ethercat/1.6.9/source -> /usr/src/ethercat-1.6.9
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env install.dkms ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[kernel]: present  depmod       (/usr/sbin/depmod)
+doctor[kernel]: present  dkms         (/usr/sbin/dkms)
+doctor[kernel]: OK - all required tools present
+require-root: OK
+/usr/sbin/dkms install -m ethercat -v 1.6.9 --force
+Sign command: /lib/modules/6.12.90+deb13.1-cloud-amd64/build/scripts/sign-file
+Signing key: /var/lib/dkms/mok.key
+Public certificate (MOK): /var/lib/dkms/mok.pub
+Certificate or key are missing, generating self signed certificate for MOK...
+
+Building module(s).... done.
+Signing module /var/lib/dkms/ethercat/1.6.9/build/master/ec_master.ko
+Signing module /var/lib/dkms/ethercat/1.6.9/build/devices/ec_generic.ko
+Installing /lib/modules/6.12.90+deb13.1-cloud-amd64/updates/dkms/ec_master.ko.xz
+Installing /lib/modules/6.12.90+deb13.1-cloud-amd64/updates/dkms/ec_generic.ko.xz
+Running depmod... done.
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: dkms status ===
+ethercat/1.6.9, 6.12.90+deb13.1-cloud-amd64, x86_64: installed
+
+=== RUN: modinfo ec_master ===
+filename:       /lib/modules/6.12.90+deb13.1-cloud-amd64/updates/dkms/ec_master.ko.xz
+version:        1.6.9 1.6.9-4-g46cc20e6
+license:        GPL
+description:    EtherCAT master driver module
+author:         Florian Pose <fp@igh.de>
+srcversion:     534E462806187EA0ADBC5B0
+depends:        
+name:           ec_master
+retpoline:      Y
+vermagic:       6.12.90+deb13.1-cloud-amd64 SMP preempt mod_unload modversions 
+sig_id:         PKCS#7
+signer:         DKMS module signing key
+sig_key:        29:6C:52:A7:D5:D4:28:11:69:2A:35:A5:C0:1A:F7:F0:AB:7D:DC:6C
+sig_hashalgo:   sha256
+signature:      51:40:1C:61:FD:0F:60:22:67:66:59:97:92:E7:C0:ED:44:82:B0:02:
+		3E:E0:57:F0:E8:1D:21:5E:10:3E:8B:86:11:A8:E0:4E:ED:06:0C:48:
+		D7:95:1F:58:B5:41:F1:CA:0D:81:48:41:B3:3C:6F:0E:5D:71:78:AF:
+		EC:BF:09:A2:9D:21:6B:98:0F:98:81:C2:BF:AE:A5:08:13:48:63:88:
+		CE:79:58:FB:41:19:8B:63:FB:C2:28:DB:68:2D:14:8C:C5:0A:40:AB:
+		CF:AE:A1:58:D6:0B:83:7B:DC:34:27:CA:45:74:EF:17:A6:A3:53:E4:
+		CA:FE:44:89:E4:9D:03:78:6A:16:3E:BC:25:1B:73:BB:EC:EC:C6:0F:
+		B5:F5:48:A5:21:C0:E5:EB:85:37:59:F1:8B:7F:22:78:A0:32:D6:5D:
+		BA:EC:A5:76:FB:1B:DB:CD:87:E4:B9:6C:34:52:B9:DA:7A:F7:53:18:
+		B2:FC:E4:9E:0B:78:A4:F7:A9:C7:F3:DA:EC:AA:DB:89:E7:30:1C:67:
+		71:14:F5:6B:CF:FA:52:14:EC:E7:9A:6B:FA:83:0C:A8:94:BA:D3:05:
+		B4:64:8C:5E:C1:8F:59:BC:EC:20:A0:DF:EF:41:FD:2F:CB:A4:EF:0E:
+		15:3E:56:57:D8:21:39:8A:18:AC:70:B7:F0:39:7F:D2
+parm:           main_devices:MAC addresses of main devices (array of charp)
+parm:           backup_devices:MAC addresses of backup devices (array of charp)
+parm:           debug_level:Debug level (uint)
+parm:           run_on_cpu:Bind kthreads to a specific cpu (uint)
+
+=== RUN: sudo modprobe ec_master ===
+
+=== RUN: sudo modprobe ec_generic ===
+
+=== RUN: lsmod ===
+Module                  Size  Used by
+ec_generic             12288  0
+ec_master             450560  1 ec_generic
+isofs                  57344  0
+intel_rapl_msr         20480  0
+intel_rapl_common      53248  1 intel_rapl_msr
+iosf_mbi               24576  1 intel_rapl_common
+binfmt_misc            28672  1
+kvm_intel             417792  0
+kvm                  1376256  1 kvm_intel
+nls_ascii              12288  1
+nls_cp437              16384  1
+vfat                   24576  1
+fat                   102400  1 vfat
+irqbypass              12288  1 kvm
+crct10dif_pclmul       12288  1
+crc32_pclmul           12288  0
+ghash_clmulni_intel    16384  0
+sha512_ssse3           53248  0
+sha256_ssse3           32768  0
+sha1_ssse3             32768  0
+aesni_intel           122880  0
+gf128mul               16384  1 aesni_intel
+crypto_simd            16384  1 aesni_intel
+cryptd                 28672  2 crypto_simd,ghash_clmulni_intel
+rapl                   20480  0
+evdev                  28672  2
+button                 24576  0
+sg                     45056  0
+efi_pstore             12288  0
+configfs               69632  1
+nfnetlink              20480  2
+vsock_loopback         12288  0
+vmw_vsock_virtio_transport_common    61440  1 vsock_loopback
+vmw_vsock_vmci_transport    45056  0
+vsock                  61440  3 vmw_vsock_virtio_transport_common,vsock_loopback,vmw_vsock_vmci_transport
+vmw_vmci              110592  1 vmw_vsock_vmci_transport
+qemu_fw_cfg            20480  0
+ip_tables              28672  0
+x_tables               53248  1 ip_tables
+autofs4                57344  2
+sr_mod                 28672  0
+cdrom                  81920  2 isofs,sr_mod
+ahci                   49152  0
+libahci                61440  1 ahci
+libata                434176  2 libahci,ahci
+scsi_mod              319488  3 libata,sg,sr_mod
+virtio_net            118784  0
+net_failover           24576  1 virtio_net
+scsi_common            16384  4 scsi_mod,libata,sg,sr_mod
+virtio_blk             32768  2
+crc32c_intel           16384  2
+failover               12288  1 net_failover
+serio_raw              16384  0
+
+=== RUN: sudo rmmod ec_generic ec_master ===
+
+phase 4 complete

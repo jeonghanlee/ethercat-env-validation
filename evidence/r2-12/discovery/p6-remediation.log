@@ -1,0 +1,45 @@
++ sudo udevadm control --reload
++ sudo systemctl restart epics-ethercat
++ sleep 2
++ ls -l /dev/EtherCAT0
+crw-rw---- 1 root ethercat 244, 0 Jun 11 09:12 /dev/EtherCAT0
++ sudo usermod -aG ethercat validator
+uid=1000(validator) gid=1000(validator) groups=1000(validator),27(sudo)
+Failed to obtain number of masters: Failed to open master device /dev/EtherCAT0: Permission denied
+Failed to obtain number of masters: Failed to open master device /dev/EtherCAT0: Permission denied
+slaves-exit:1
+uid=1000(validator) gid=1000(validator) groups=1000(validator),27(sudo)
+Master0
+  Phase: Idle
+  Active: no
+  Slaves: 0
+  Ethernet devices:
+    Main: 52:54:00:12:ec:02 (attached)
+      Link: UP
+      Tx frames:   8026
+      Tx bytes:    481560
+      Rx frames:   0
+      Rx bytes:    0
+      Tx errors:   0
+      Tx frame rate [1/s]:    125    125     82
+      Tx rate [KByte/s]:      7.3    7.3    4.8
+      Rx frame rate [1/s]:      0      0      0
+      Rx rate [KByte/s]:      0.0    0.0    0.0
+    Common:
+      Tx frames:   8026
+      Tx bytes:    481560
+      Rx frames:   0
+      Rx bytes:    0
+      Lost frames: 8026
+      Tx frame rate [1/s]:    125    125     82
+      Tx rate [KByte/s]:      7.3    7.3    4.8
+      Rx frame rate [1/s]:      0      0      0
+      Rx rate [KByte/s]:      0.0    0.0    0.0
+      Loss rate [1/s]:        125    125     82
+      Frame loss [%]:       100.0  100.0  100.0
+  Distributed clocks:
+    Reference clock:   None
+    DC reference time: 0
+    Application time:  0
+                       2000-01-01 00:00:00.000000000
+slaves-exit:0

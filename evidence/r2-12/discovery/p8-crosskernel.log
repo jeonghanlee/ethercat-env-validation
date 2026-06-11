@@ -1,0 +1,11 @@
++ sudo /usr/sbin/dkms install ethercat/1.6.9 -k 6.12.90+deb13.1-cloud-amd64
++ tail -4
+Signing module /var/lib/dkms/ethercat/1.6.9/build/devices/ec_generic.ko
+Installing /lib/modules/6.12.90+deb13.1-cloud-amd64/updates/dkms/ec_master.ko.xz
+Installing /lib/modules/6.12.90+deb13.1-cloud-amd64/updates/dkms/ec_generic.ko.xz
+Running depmod... done.
++ sudo /usr/sbin/modinfo -F vermagic /lib/modules/6.12.90+deb13.1-cloud-amd64/updates/dkms/ec_master.ko.xz
+6.12.90+deb13.1-cloud-amd64 SMP preempt mod_unload modversions 
++ /usr/sbin/dkms status
+ethercat/1.6.9, 6.12.90+deb13.1-cloud-amd64, x86_64: installed
+ethercat/1.6.9, 6.12.90+deb13.1-rt-amd64, x86_64: installed

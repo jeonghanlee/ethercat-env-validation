@@ -1,0 +1,11 @@
+#cloud-config
+hostname: ethercat-vm
+users:
+  - name: validator
+    groups: sudo
+    shell: /bin/bash
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+    lock_passwd: true
+    ssh_authorized_keys:
+      - @SSH_PUBKEY@
+ssh_pwauth: false

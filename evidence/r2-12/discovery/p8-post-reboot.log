@@ -1,0 +1,105 @@
+
+=== RUN: uname -a ===
+Linux ethercat-vm 6.12.90+deb13.1-rt-amd64 #1 SMP PREEMPT_RT Debian 6.12.90-2 (2026-05-27) x86_64 GNU/Linux
+
+=== RUN: cat /proc/cmdline ===
+BOOT_IMAGE=/boot/vmlinuz-6.12.90+deb13.1-rt-amd64 root=PARTUUID=31150ca2-ca7c-4994-b137-6535ba397e36 ro console=tty0 console=ttyS0,115200 earlyprintk=ttyS0,115200 consoleblank=0 intel_pstate=disable
+
+=== RUN: make -C /home/validator/ethercat-env rt.status ===
+make: Entering directory '/home/validator/ethercat-env'
+rt.status: ===== Debian 13 RT host state (read-only) =====
+rt.kernel.select: RT flavor       = rt-amd64
+rt.kernel.select: running kernel   = 6.12.90+deb13.1-rt-amd64
+rt.kernel.select: installed RT     = /boot/vmlinuz-6.12.90+deb13.1-rt-amd64
+rt.kernel.select: NOTE - boot default is NOT changed here (D2); select at the boot menu, confirm post-reboot (M16)
+rt.grub.audit: /etc/default/grub present
+rt.grub.audit: GRUB_CMDLINE_LINUX_DEFAULT line: GRUB_CMDLINE_LINUX_DEFAULT=" intel_pstate=disable"
+rt.grub.audit: applied     intel_pstate=disable
+rt.grub.audit: backup present /etc/default/grub.ethercat-rt.bak
+rt.clock.status: expected  = tsc
+rt.clock.status: current   = kvm-clock
+rt.clock.status: available = kvm-clock tsc hpet acpi_pm 
+rt.clock.status: MISMATCH - current (kvm-clock) != expected (tsc)
+rt.limits.audit: group realtime present (members: )
+rt.limits.audit: policy present /etc/security/limits.d/99-realtime.conf
+rt.limits.audit:   # Installed by ethercat-env rt.limits.install (M11). Do not edit by hand.
+rt.limits.audit:   @realtime   -   rtprio   99
+rt.limits.audit:   @realtime   -   memlock  unlimited
+rt.limits.audit:   @realtime   -   nice     -20
+rt.service.audit: irqbalance.service   active=inactive enabled=masked
+rt.tuned.status: site profile = realtime
+rt.tuned.status: tuned-adm    = absent (tuned not installed; never auto-engaged)
+rt.status: NOTE - running-kernel and boot-persistence confirmation is an external gate (M16, D2)
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: systemctl is-enabled epics-ethercat ===
+enabled
+
+=== RECORD (failure tolerated): systemctl status --no-pager --full epics-ethercat ===
+● epics-ethercat.service - EtherCAT Master Kernel Modules (EPICS)
+     Loaded: loaded (/etc/systemd/system/epics-ethercat.service; enabled; preset: enabled)
+     Active: active (exited) since Thu 2026-06-11 09:24:20 UTC; 1s ago
+ Invocation: d7aac67601c649c9b205f37294c3059c
+       Docs: man:ethercat
+             man:ethercatctl
+    Process: 730 ExecStart=/opt/ethercat/sbin/ethercatctl start (code=exited, status=0/SUCCESS)
+   Main PID: 730 (code=exited, status=0/SUCCESS)
+   Mem peak: 4M
+        CPU: 47ms
+
+Warning: some journal files were not opened due to insufficient permissions.
+=== exit code: 0 ===
+
+=== RECORD (failure tolerated): /usr/bin/ethercat master ===
+Master0
+  Phase: Idle
+  Active: no
+  Slaves: 0
+  Ethernet devices:
+    Main: 52:54:00:12:ec:02 (attached)
+      Link: UP
+      Tx frames:   129
+      Tx bytes:    7740
+      Rx frames:   0
+      Rx bytes:    0
+      Tx errors:   0
+      Tx frame rate [1/s]:    109     11      2
+      Tx rate [KByte/s]:      6.4    0.6    0.1
+      Rx frame rate [1/s]:      0      0      0
+      Rx rate [KByte/s]:      0.0    0.0    0.0
+    Common:
+      Tx frames:   129
+      Tx bytes:    7740
+      Rx frames:   0
+      Rx bytes:    0
+      Lost frames: 129
+      Tx frame rate [1/s]:    109     11      2
+      Tx rate [KByte/s]:      6.4    0.6    0.1
+      Rx frame rate [1/s]:      0      0      0
+      Rx rate [KByte/s]:      0.0    0.0    0.0
+      Loss rate [1/s]:        109     11      2
+      Frame loss [%]:       100.0  100.0  100.0
+  Distributed clocks:
+    Reference clock:   None
+    DC reference time: 0
+    Application time:  0
+                       2000-01-01 00:00:00.000000000
+=== exit code: 0 ===
+
+=== RUN: dkms status ===
+ethercat/1.6.9, 6.12.90+deb13.1-rt-amd64, x86_64: installed
+
+=== RUN: make -C /home/validator/ethercat-env runtime.status ===
+make: Entering directory '/home/validator/ethercat-env'
+runtime.status: ===== EtherCAT runtime state (read-only) =====
+runtime.status: userspace tool : present (/usr/bin/ethercat)
+runtime.status: command link   : symlink -> /opt/ethercat/bin/ethercat
+runtime.status: loader fragment: present (/etc/ld.so.conf.d/ethercat.conf)
+runtime.status: service        : active=active enabled=enabled
+runtime.status: udev rule      : present (/etc/udev/rules.d/99-EtherCAT.rules)
+runtime.status: master module  : loaded (ec_master)
+runtime.status: master devices : enp0s3
+runtime.status: device modules : generic
+make: Leaving directory '/home/validator/ethercat-env'
+
+phase 8 complete

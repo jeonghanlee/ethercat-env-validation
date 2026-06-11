@@ -1,0 +1,458 @@
+
+=== RUN: make -C /home/validator/ethercat-env remove.dryrun ===
+make: Entering directory '/home/validator/ethercat-env'
+remove.dryrun: ===== removal sequence preview (nothing executed) =====
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"; missing=""; for name in systemctl udevadm ldconfig; do cmd="$(eval "echo \$DOCTOR_TOOL_$name")"; [ -n "$cmd" ] || cmd="$name"; if command -v "$cmd" >/dev/null 2>&1; then printf "doctor[%s]: present  %-12s (%s)\n" "systemd" "$name" "$(command -v "$cmd")"; else printf "doctor[%s]: MISSING  %-12s (%s)\n" "systemd" "$name" "$cmd" >&2; missing="$missing $name"; fi; done; if [ -n "$missing" ]; then if [ "" = "YES" ]; then printf "doctor[%s]: SKIP - missing required tools allowed for dry-run inspection:%s\n" "systemd" "$missing"; else printf "doctor[%s]: FAIL - missing required tools:%s\n" "systemd" "$missing" >&2; exit 1; fi; else printf "doctor[%s]: OK - all required tools present\n" "systemd"; fi;
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+if /usr/bin/sudo systemctl is-active --quiet epics-ethercat.service 2>/dev/null; then \
+	printf "sd_stop: stopping %s\n" "epics-ethercat.service"; \
+	/usr/bin/sudo systemctl stop epics-ethercat.service; \
+else \
+	printf "sd_stop: %s not active - nothing to stop\n" "epics-ethercat.service"; \
+fi
+printf "remove.stop: OK - service stop step complete\n"
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"; missing=""; for name in systemctl udevadm ldconfig; do cmd="$(eval "echo \$DOCTOR_TOOL_$name")"; [ -n "$cmd" ] || cmd="$name"; if command -v "$cmd" >/dev/null 2>&1; then printf "doctor[%s]: present  %-12s (%s)\n" "systemd" "$name" "$(command -v "$cmd")"; else printf "doctor[%s]: MISSING  %-12s (%s)\n" "systemd" "$name" "$cmd" >&2; missing="$missing $name"; fi; done; if [ -n "$missing" ]; then if [ "" = "YES" ]; then printf "doctor[%s]: SKIP - missing required tools allowed for dry-run inspection:%s\n" "systemd" "$missing"; else printf "doctor[%s]: FAIL - missing required tools:%s\n" "systemd" "$missing" >&2; exit 1; fi; else printf "doctor[%s]: OK - all required tools present\n" "systemd"; fi;
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+if /usr/bin/sudo systemctl is-enabled --quiet epics-ethercat.service 2>/dev/null; then \
+	printf "sd_disable: disabling %s\n" "epics-ethercat.service"; \
+	/usr/bin/sudo systemctl disable epics-ethercat.service; \
+else \
+	printf "sd_disable: %s not enabled - nothing to disable\n" "epics-ethercat.service"; \
+fi
+printf "remove.disable: OK - service disable step complete\n"
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"; missing=""; for name in systemctl udevadm ldconfig; do cmd="$(eval "echo \$DOCTOR_TOOL_$name")"; [ -n "$cmd" ] || cmd="$name"; if command -v "$cmd" >/dev/null 2>&1; then printf "doctor[%s]: present  %-12s (%s)\n" "systemd" "$name" "$(command -v "$cmd")"; else printf "doctor[%s]: MISSING  %-12s (%s)\n" "systemd" "$name" "$cmd" >&2; missing="$missing $name"; fi; done; if [ -n "$missing" ]; then if [ "" = "YES" ]; then printf "doctor[%s]: SKIP - missing required tools allowed for dry-run inspection:%s\n" "systemd" "$missing"; else printf "doctor[%s]: FAIL - missing required tools:%s\n" "systemd" "$missing" >&2; exit 1; fi; else printf "doctor[%s]: OK - all required tools present\n" "systemd"; fi;
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"; missing=""; for name in install chown rm ln groupadd groupdel getent mktemp; do cmd="$(eval "echo \$DOCTOR_TOOL_$name")"; [ -n "$cmd" ] || cmd="$name"; if command -v "$cmd" >/dev/null 2>&1; then printf "doctor[%s]: present  %-12s (%s)\n" "install" "$name" "$(command -v "$cmd")"; else printf "doctor[%s]: MISSING  %-12s (%s)\n" "install" "$name" "$cmd" >&2; missing="$missing $name"; fi; done; if [ -n "$missing" ]; then if [ "" = "YES" ]; then printf "doctor[%s]: SKIP - missing required tools allowed for dry-run inspection:%s\n" "install" "$missing"; else printf "doctor[%s]: FAIL - missing required tools:%s\n" "install" "$missing" >&2; exit 1; fi; else printf "doctor[%s]: OK - all required tools present\n" "install"; fi;
+doctor[install]: present  install      (/usr/bin/install)
+doctor[install]: present  chown        (/usr/bin/chown)
+doctor[install]: present  rm           (/usr/bin/rm)
+doctor[install]: present  ln           (/usr/bin/ln)
+doctor[install]: present  groupadd     (/usr/sbin/groupadd)
+doctor[install]: present  groupdel     (/usr/sbin/groupdel)
+doctor[install]: present  getent       (/usr/bin/getent)
+doctor[install]: present  mktemp       (/usr/bin/mktemp)
+doctor[install]: OK - all required tools present
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+p="/etc/systemd/system/epics-ethercat.service"; expected="/etc/systemd/system"; mode=""; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /etc/systemd/system/epics-ethercat.service
+/usr/bin/sudo rm -f "/etc/systemd/system/epics-ethercat.service"
+/usr/bin/sudo systemctl daemon-reload
+printf "sd_clean: OK - cleaned %s\n" "/etc/systemd/system/epics-ethercat.service"
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+p="/etc/udev/rules.d/99-EtherCAT.rules"; expected="/etc/udev/rules.d"; mode=""; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /etc/udev/rules.d/99-EtherCAT.rules
+/usr/bin/sudo rm -f "/etc/udev/rules.d/99-EtherCAT.rules"
+/usr/bin/sudo udevadm control --reload-rules
+printf "udev.remove: OK - removed %s\n" "/etc/udev/rules.d/99-EtherCAT.rules"
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+if /usr/bin/sudo systemctl is-active --quiet epics-ethercat.service 2>/dev/null; then \
+	printf "sd_stop: stopping %s\n" "epics-ethercat.service"; \
+	/usr/bin/sudo systemctl stop epics-ethercat.service; \
+else \
+	printf "sd_stop: %s not active - nothing to stop\n" "epics-ethercat.service"; \
+fi
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+if /usr/bin/sudo systemctl is-enabled --quiet epics-ethercat.service 2>/dev/null; then \
+	printf "sd_disable: disabling %s\n" "epics-ethercat.service"; \
+	/usr/bin/sudo systemctl disable epics-ethercat.service; \
+else \
+	printf "sd_disable: %s not enabled - nothing to disable\n" "epics-ethercat.service"; \
+fi
+p="/home/validator/ethercat-env/.versions"; expected="/home/validator/ethercat-env/.versions"; mode="exact"; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /home/validator/ethercat-env/.versions
+rm -rf /home/validator/ethercat-env/.versions
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+echo "Removing /opt/ethercat..."
+p="/opt/ethercat"; expected="/opt"; mode=""; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /opt/ethercat
+/usr/bin/sudo rm -rf /opt/ethercat/
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+p="/usr/bin/ethercat"; expected="/usr/bin/ethercat"; mode="exact"; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /usr/bin/ethercat
+/usr/bin/sudo rm -f "/usr/bin/ethercat"
+p="/etc/ld.so.conf.d/ethercat.conf"; expected="/etc/ld.so.conf.d"; mode=""; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /etc/ld.so.conf.d/ethercat.conf
+/usr/bin/sudo rm -f "/etc/ld.so.conf.d/ethercat.conf"
+/usr/bin/sudo ldconfig
+printf "remove.uninstall: OK - files, unit, udev rule, command path, loader entries removed\n"
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"; missing=""; for name in systemctl udevadm ldconfig; do cmd="$(eval "echo \$DOCTOR_TOOL_$name")"; [ -n "$cmd" ] || cmd="$name"; if command -v "$cmd" >/dev/null 2>&1; then printf "doctor[%s]: present  %-12s (%s)\n" "systemd" "$name" "$(command -v "$cmd")"; else printf "doctor[%s]: MISSING  %-12s (%s)\n" "systemd" "$name" "$cmd" >&2; missing="$missing $name"; fi; done; if [ -n "$missing" ]; then if [ "" = "YES" ]; then printf "doctor[%s]: SKIP - missing required tools allowed for dry-run inspection:%s\n" "systemd" "$missing"; else printf "doctor[%s]: FAIL - missing required tools:%s\n" "systemd" "$missing" >&2; exit 1; fi; else printf "doctor[%s]: OK - all required tools present\n" "systemd"; fi;
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"; missing=""; for name in install chown rm ln groupadd groupdel getent mktemp; do cmd="$(eval "echo \$DOCTOR_TOOL_$name")"; [ -n "$cmd" ] || cmd="$name"; if command -v "$cmd" >/dev/null 2>&1; then printf "doctor[%s]: present  %-12s (%s)\n" "install" "$name" "$(command -v "$cmd")"; else printf "doctor[%s]: MISSING  %-12s (%s)\n" "install" "$name" "$cmd" >&2; missing="$missing $name"; fi; done; if [ -n "$missing" ]; then if [ "" = "YES" ]; then printf "doctor[%s]: SKIP - missing required tools allowed for dry-run inspection:%s\n" "install" "$missing"; else printf "doctor[%s]: FAIL - missing required tools:%s\n" "install" "$missing" >&2; exit 1; fi; else printf "doctor[%s]: OK - all required tools present\n" "install"; fi;
+doctor[install]: present  install      (/usr/bin/install)
+doctor[install]: present  chown        (/usr/bin/chown)
+doctor[install]: present  rm           (/usr/bin/rm)
+doctor[install]: present  ln           (/usr/bin/ln)
+doctor[install]: present  groupadd     (/usr/sbin/groupadd)
+doctor[install]: present  groupdel     (/usr/sbin/groupdel)
+doctor[install]: present  getent       (/usr/bin/getent)
+doctor[install]: present  mktemp       (/usr/bin/mktemp)
+doctor[install]: OK - all required tools present
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+p="/etc/default/grub"; expected="/etc/default/grub"; mode="exact"; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /etc/default/grub
+p="/etc/default/grub.ethercat-rt.bak"; expected="/etc/default/grub.ethercat-rt.bak"; mode="exact"; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /etc/default/grub.ethercat-rt.bak
+p="/etc/security/limits.d/99-realtime.conf"; expected="/etc/security/limits.d"; mode=""; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /etc/security/limits.d/99-realtime.conf
+grub_rc=0; \
+if [ -f "/etc/default/grub.ethercat-rt.bak" ]; then \
+	update_cmd="${DOCTOR_TOOL_update_grub:-update-grub}"; \
+	if command -v "$update_cmd" >/dev/null 2>&1; then \
+		printf "remove.rt: restoring GRUB %s <- %s\n" "/etc/default/grub" "/etc/default/grub.ethercat-rt.bak"; \
+		/usr/bin/sudo cp -p "/etc/default/grub.ethercat-rt.bak" "/etc/default/grub" && \
+		/usr/bin/sudo rm -f "/etc/default/grub.ethercat-rt.bak" && \
+		/usr/bin/sudo "$update_cmd" || grub_rc=$?; \
+	else \
+		printf "remove.rt: GRUB rollback skipped - missing update-grub (%s)\n" "$update_cmd" >&2; \
+		grub_rc=1; \
+	fi; \
+else \
+	printf "remove.rt: GRUB backup absent, rollback skipped\n"; \
+fi; \
+if [ "$grub_rc" -ne 0 ]; then \
+	printf "remove.rt: GRUB rollback incomplete, continuing remaining cleanup\n" >&2; \
+fi; \
+/usr/bin/sudo rm -f "/etc/security/limits.d/99-realtime.conf"; \
+printf "remove.rt: removed limits.d policy %s\n" "/etc/security/limits.d/99-realtime.conf"; \
+allow="irqbalance.service"; \
+if [ -z "$allow" ]; then \
+	printf "remove.rt: service allowlist empty - nothing to undo\n"; \
+else \
+	for svc in $allow; do \
+		printf "remove.rt: unmasking allowlisted service %s\n" "$svc"; \
+		/usr/bin/sudo systemctl unmask "$svc"; \
+	done; \
+fi; \
+if [ "$grub_rc" -ne 0 ]; then exit "$grub_rc"; fi; \
+printf "remove.rt: OK - RT limits.d removed, service allowlist reverted, GRUB rollback handled separately\n"
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"; missing=""; for name in install chown rm ln groupadd groupdel getent mktemp; do cmd="$(eval "echo \$DOCTOR_TOOL_$name")"; [ -n "$cmd" ] || cmd="$name"; if command -v "$cmd" >/dev/null 2>&1; then printf "doctor[%s]: present  %-12s (%s)\n" "install" "$name" "$(command -v "$cmd")"; else printf "doctor[%s]: MISSING  %-12s (%s)\n" "install" "$name" "$cmd" >&2; missing="$missing $name"; fi; done; if [ -n "$missing" ]; then if [ "" = "YES" ]; then printf "doctor[%s]: SKIP - missing required tools allowed for dry-run inspection:%s\n" "install" "$missing"; else printf "doctor[%s]: FAIL - missing required tools:%s\n" "install" "$missing" >&2; exit 1; fi; else printf "doctor[%s]: OK - all required tools present\n" "install"; fi;
+doctor[install]: present  install      (/usr/bin/install)
+doctor[install]: present  chown        (/usr/bin/chown)
+doctor[install]: present  rm           (/usr/bin/rm)
+doctor[install]: present  ln           (/usr/bin/ln)
+doctor[install]: present  groupadd     (/usr/sbin/groupadd)
+doctor[install]: present  groupdel     (/usr/sbin/groupdel)
+doctor[install]: present  getent       (/usr/bin/getent)
+doctor[install]: present  mktemp       (/usr/bin/mktemp)
+doctor[install]: OK - all required tools present
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"; missing=""; for name in systemctl udevadm ldconfig; do cmd="$(eval "echo \$DOCTOR_TOOL_$name")"; [ -n "$cmd" ] || cmd="$name"; if command -v "$cmd" >/dev/null 2>&1; then printf "doctor[%s]: present  %-12s (%s)\n" "systemd" "$name" "$(command -v "$cmd")"; else printf "doctor[%s]: MISSING  %-12s (%s)\n" "systemd" "$name" "$cmd" >&2; missing="$missing $name"; fi; done; if [ -n "$missing" ]; then if [ "" = "YES" ]; then printf "doctor[%s]: SKIP - missing required tools allowed for dry-run inspection:%s\n" "systemd" "$missing"; else printf "doctor[%s]: FAIL - missing required tools:%s\n" "systemd" "$missing" >&2; exit 1; fi; else printf "doctor[%s]: OK - all required tools present\n" "systemd"; fi;
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+p="/etc/systemd/system/epics-ethercat.service"; expected="/etc/systemd/system"; mode=""; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /etc/systemd/system/epics-ethercat.service
+/usr/bin/sudo rm -f "/etc/systemd/system/epics-ethercat.service"
+/usr/bin/sudo systemctl daemon-reload
+printf "sd_clean: OK - cleaned %s\n" "/etc/systemd/system/epics-ethercat.service"
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+p="/etc/udev/rules.d/99-EtherCAT.rules"; expected="/etc/udev/rules.d"; mode=""; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /etc/udev/rules.d/99-EtherCAT.rules
+/usr/bin/sudo rm -f "/etc/udev/rules.d/99-EtherCAT.rules"
+/usr/bin/sudo udevadm control --reload-rules
+printf "udev.remove: OK - removed %s\n" "/etc/udev/rules.d/99-EtherCAT.rules"
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+if /usr/bin/sudo systemctl is-active --quiet epics-ethercat.service 2>/dev/null; then \
+	printf "sd_stop: stopping %s\n" "epics-ethercat.service"; \
+	/usr/bin/sudo systemctl stop epics-ethercat.service; \
+else \
+	printf "sd_stop: %s not active - nothing to stop\n" "epics-ethercat.service"; \
+fi
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+if /usr/bin/sudo systemctl is-enabled --quiet epics-ethercat.service 2>/dev/null; then \
+	printf "sd_disable: disabling %s\n" "epics-ethercat.service"; \
+	/usr/bin/sudo systemctl disable epics-ethercat.service; \
+else \
+	printf "sd_disable: %s not enabled - nothing to disable\n" "epics-ethercat.service"; \
+fi
+p="/home/validator/ethercat-env/.versions"; expected="/home/validator/ethercat-env/.versions"; mode="exact"; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /home/validator/ethercat-env/.versions
+rm -rf /home/validator/ethercat-env/.versions
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+echo "Removing /opt/ethercat..."
+p="/opt/ethercat"; expected="/opt"; mode=""; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /opt/ethercat
+/usr/bin/sudo rm -rf /opt/ethercat/
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+p="/usr/bin/ethercat"; expected="/usr/bin/ethercat"; mode="exact"; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /usr/bin/ethercat
+/usr/bin/sudo rm -f "/usr/bin/ethercat"
+p="/etc/ld.so.conf.d/ethercat.conf"; expected="/etc/ld.so.conf.d"; mode=""; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /etc/ld.so.conf.d/ethercat.conf
+/usr/bin/sudo rm -f "/etc/ld.so.conf.d/ethercat.conf"
+/usr/bin/sudo ldconfig
+printf "remove.uninstall: OK - files, unit, udev rule, command path, loader entries removed\n"
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+p="/etc/default/grub"; expected="/etc/default/grub"; mode="exact"; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /etc/default/grub
+p="/etc/default/grub.ethercat-rt.bak"; expected="/etc/default/grub.ethercat-rt.bak"; mode="exact"; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /etc/default/grub.ethercat-rt.bak
+p="/etc/security/limits.d/99-realtime.conf"; expected="/etc/security/limits.d"; mode=""; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /etc/security/limits.d/99-realtime.conf
+grub_rc=0; \
+if [ -f "/etc/default/grub.ethercat-rt.bak" ]; then \
+	update_cmd="${DOCTOR_TOOL_update_grub:-update-grub}"; \
+	if command -v "$update_cmd" >/dev/null 2>&1; then \
+		printf "remove.rt: restoring GRUB %s <- %s\n" "/etc/default/grub" "/etc/default/grub.ethercat-rt.bak"; \
+		/usr/bin/sudo cp -p "/etc/default/grub.ethercat-rt.bak" "/etc/default/grub" && \
+		/usr/bin/sudo rm -f "/etc/default/grub.ethercat-rt.bak" && \
+		/usr/bin/sudo "$update_cmd" || grub_rc=$?; \
+	else \
+		printf "remove.rt: GRUB rollback skipped - missing update-grub (%s)\n" "$update_cmd" >&2; \
+		grub_rc=1; \
+	fi; \
+else \
+	printf "remove.rt: GRUB backup absent, rollback skipped\n"; \
+fi; \
+if [ "$grub_rc" -ne 0 ]; then \
+	printf "remove.rt: GRUB rollback incomplete, continuing remaining cleanup\n" >&2; \
+fi; \
+/usr/bin/sudo rm -f "/etc/security/limits.d/99-realtime.conf"; \
+printf "remove.rt: removed limits.d policy %s\n" "/etc/security/limits.d/99-realtime.conf"; \
+allow="irqbalance.service"; \
+if [ -z "$allow" ]; then \
+	printf "remove.rt: service allowlist empty - nothing to undo\n"; \
+else \
+	for svc in $allow; do \
+		printf "remove.rt: unmasking allowlisted service %s\n" "$svc"; \
+		/usr/bin/sudo systemctl unmask "$svc"; \
+	done; \
+fi; \
+if [ "$grub_rc" -ne 0 ]; then exit "$grub_rc"; fi; \
+printf "remove.rt: OK - RT limits.d removed, service allowlist reverted, GRUB rollback handled separately\n"
+if [ "$(id -u)" -ne 0 ] && [ -z "/usr/bin/sudo" ]; then printf "require-root: FAIL - root privilege required and no SUDO configured (fail-closed)\n" >&2; exit 1; fi; printf "require-root: OK\n"
+if getent group "realtime" >/dev/null 2>&1; then \
+	printf "remove.purge: deleting realtime group %s\n" "realtime"; \
+	/usr/bin/sudo groupdel "realtime"; \
+else \
+	printf "remove.purge: realtime group %s already absent\n" "realtime"; \
+fi
+if getent group "ethercat" >/dev/null 2>&1; then \
+	printf "remove.purge: deleting device access group %s\n" "ethercat"; \
+	/usr/bin/sudo groupdel "ethercat"; \
+else \
+	printf "remove.purge: device access group %s already absent\n" "ethercat"; \
+fi
+p="/etc/default/grub.ethercat-rt.bak"; expected="/etc/default/grub.ethercat-rt.bak"; mode="exact"; if [ -z "$p" ]; then printf "guard-path: FAIL - path is empty (fail-closed)\n" >&2; exit 1; fi; if [ -z "$expected" ]; then printf "guard-path: FAIL - expected prefix is empty for %s (fail-closed)\n" "$p" >&2; exit 1; fi; case "$p" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root: %s (fail-closed)\n" "$p" >&2; exit 1;; esac; case "$p" in /*) : ;; *) printf "guard-path: FAIL - path is not absolute: %s\n" "$p" >&2; exit 1;; esac; case "$expected" in / | // | ///) printf "guard-path: FAIL - refuses filesystem root as expected prefix: %s\n" "$expected" >&2; exit 1;; /*) : ;; *) printf "guard-path: FAIL - expected prefix is not absolute: %s\n" "$expected" >&2; exit 1;; esac; case "$mode" in exact) if [ "$p" != "$expected" ]; then printf "guard-path: FAIL - path %s does not match expected file %s\n" "$p" "$expected" >&2; exit 1; fi; ;; ""|prefix) case "$p" in "$expected"|"$expected"/*) : ;; *) printf "guard-path: FAIL - path %s is outside expected prefix %s\n" "$p" "$expected" >&2; exit 1;; esac; ;; *) printf "guard-path: FAIL - invalid mode: %s\n" "$mode" >&2; exit 1;; esac; printf "guard-path: OK - %s\n" "$p"
+guard-path: OK - /etc/default/grub.ethercat-rt.bak
+/usr/bin/sudo rm -f "/etc/default/grub.ethercat-rt.bak"
+printf "remove.purge: OK - config and state purged\n"
+remove.dryrun: OK - preview complete; run remove.audit to inspect residue
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env remove.stop ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+require-root: OK
+sd_stop: stopping epics-ethercat.service
+remove.stop: OK - service stop step complete
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env remove.disable ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+require-root: OK
+sd_disable: disabling epics-ethercat.service
+Removed '/etc/systemd/system/multi-user.target.wants/epics-ethercat.service'.
+remove.disable: OK - service disable step complete
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env remove.uninstall ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+doctor[install]: present  install      (/usr/bin/install)
+doctor[install]: present  chown        (/usr/bin/chown)
+doctor[install]: present  rm           (/usr/bin/rm)
+doctor[install]: present  ln           (/usr/bin/ln)
+doctor[install]: present  groupadd     (/usr/sbin/groupadd)
+doctor[install]: present  groupdel     (/usr/sbin/groupdel)
+doctor[install]: present  getent       (/usr/bin/getent)
+doctor[install]: present  mktemp       (/usr/bin/mktemp)
+doctor[install]: OK - all required tools present
+require-root: OK
+guard-path: OK - /etc/systemd/system/epics-ethercat.service
+rm -f "/etc/systemd/system/epics-ethercat.service"
+systemctl daemon-reload
+sd_clean: OK - cleaned /etc/systemd/system/epics-ethercat.service
+require-root: OK
+guard-path: OK - /etc/udev/rules.d/99-EtherCAT.rules
+rm -f "/etc/udev/rules.d/99-EtherCAT.rules"
+udevadm control --reload-rules
+udev.remove: OK - removed /etc/udev/rules.d/99-EtherCAT.rules
+require-root: OK
+sd_stop: epics-ethercat.service not active - nothing to stop
+require-root: OK
+sd_disable: epics-ethercat.service not enabled - nothing to disable
+guard-path: OK - /home/validator/ethercat-env/.versions
+rm -rf /home/validator/ethercat-env/.versions
+require-root: OK
+Removing /opt/ethercat...
+guard-path: OK - /opt/ethercat
+require-root: OK
+guard-path: OK - /usr/bin/ethercat
+rm -f "/usr/bin/ethercat"
+guard-path: OK - /etc/ld.so.conf.d/ethercat.conf
+rm -f "/etc/ld.so.conf.d/ethercat.conf"
+ldconfig
+remove.uninstall: OK - files, unit, udev rule, command path, loader entries removed
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env remove.rt ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+doctor[install]: present  install      (/usr/bin/install)
+doctor[install]: present  chown        (/usr/bin/chown)
+doctor[install]: present  rm           (/usr/bin/rm)
+doctor[install]: present  ln           (/usr/bin/ln)
+doctor[install]: present  groupadd     (/usr/sbin/groupadd)
+doctor[install]: present  groupdel     (/usr/sbin/groupdel)
+doctor[install]: present  getent       (/usr/bin/getent)
+doctor[install]: present  mktemp       (/usr/bin/mktemp)
+doctor[install]: OK - all required tools present
+require-root: OK
+guard-path: OK - /etc/default/grub
+guard-path: OK - /etc/default/grub.ethercat-rt.bak
+guard-path: OK - /etc/security/limits.d/99-realtime.conf
+remove.rt: restoring GRUB /etc/default/grub <- /etc/default/grub.ethercat-rt.bak
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.12.90+deb13.1-rt-amd64
+Found initrd image: /boot/initrd.img-6.12.90+deb13.1-rt-amd64
+Found linux image: /boot/vmlinuz-6.12.90+deb13.1-cloud-amd64
+Found initrd image: /boot/initrd.img-6.12.90+deb13.1-cloud-amd64
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+remove.rt: removed limits.d policy /etc/security/limits.d/99-realtime.conf
+remove.rt: unmasking allowlisted service irqbalance.service
+Removed '/etc/systemd/system/irqbalance.service'.
+remove.rt: OK - RT limits.d removed, service allowlist reverted, GRUB rollback handled separately
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env remove.purge ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[install]: present  install      (/usr/bin/install)
+doctor[install]: present  chown        (/usr/bin/chown)
+doctor[install]: present  rm           (/usr/bin/rm)
+doctor[install]: present  ln           (/usr/bin/ln)
+doctor[install]: present  groupadd     (/usr/sbin/groupadd)
+doctor[install]: present  groupdel     (/usr/sbin/groupdel)
+doctor[install]: present  getent       (/usr/bin/getent)
+doctor[install]: present  mktemp       (/usr/bin/mktemp)
+doctor[install]: OK - all required tools present
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+require-root: OK
+guard-path: OK - /etc/systemd/system/epics-ethercat.service
+/usr/bin/sudo rm -f "/etc/systemd/system/epics-ethercat.service"
+/usr/bin/sudo systemctl daemon-reload
+sd_clean: OK - cleaned /etc/systemd/system/epics-ethercat.service
+require-root: OK
+guard-path: OK - /etc/udev/rules.d/99-EtherCAT.rules
+/usr/bin/sudo rm -f "/etc/udev/rules.d/99-EtherCAT.rules"
+/usr/bin/sudo udevadm control --reload-rules
+udev.remove: OK - removed /etc/udev/rules.d/99-EtherCAT.rules
+require-root: OK
+sd_stop: epics-ethercat.service not active - nothing to stop
+require-root: OK
+sd_disable: epics-ethercat.service not enabled - nothing to disable
+guard-path: OK - /home/validator/ethercat-env/.versions
+rm -rf /home/validator/ethercat-env/.versions
+require-root: OK
+Removing /opt/ethercat...
+guard-path: OK - /opt/ethercat
+require-root: OK
+guard-path: OK - /usr/bin/ethercat
+/usr/bin/sudo rm -f "/usr/bin/ethercat"
+guard-path: OK - /etc/ld.so.conf.d/ethercat.conf
+/usr/bin/sudo rm -f "/etc/ld.so.conf.d/ethercat.conf"
+/usr/bin/sudo ldconfig
+remove.uninstall: OK - files, unit, udev rule, command path, loader entries removed
+require-root: OK
+guard-path: OK - /etc/default/grub
+guard-path: OK - /etc/default/grub.ethercat-rt.bak
+guard-path: OK - /etc/security/limits.d/99-realtime.conf
+remove.rt: GRUB backup absent, rollback skipped
+remove.rt: removed limits.d policy /etc/security/limits.d/99-realtime.conf
+remove.rt: unmasking allowlisted service irqbalance.service
+Unit irqbalance.service does not exist, proceeding anyway.
+remove.rt: OK - RT limits.d removed, service allowlist reverted, GRUB rollback handled separately
+require-root: OK
+remove.purge: deleting realtime group realtime
+remove.purge: deleting device access group ethercat
+guard-path: OK - /etc/default/grub.ethercat-rt.bak
+/usr/bin/sudo rm -f "/etc/default/grub.ethercat-rt.bak"
+remove.purge: OK - config and state purged
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env remove.audit ===
+make: Entering directory '/home/validator/ethercat-env'
+remove.audit: ===== EtherCAT + RT residue report (read-only) =====
+remove.audit: clean   - prefix tree absent
+remove.audit: clean   - systemd unit absent
+remove.audit: clean   - udev rule absent
+remove.audit: clean   - command path absent
+remove.audit: clean   - loader fragment absent
+remove.audit: clean   - RT limits.d absent
+remove.audit: clean   - realtime group absent
+remove.audit: clean   - device access group absent
+remove.audit: clean   - RT GRUB backup absent
+remove.audit: clean   - RT GRUB params absent
+remove.audit: residue - RT kernel package linux-image-rt-amd64 still installed (removal is an operator step)
+remove.audit: clean   - service irqbalance.service not masked
+remove.audit: residue present (see above)
+remove.audit: VERDICT=residue
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env verify.residue ===
+make: Entering directory '/home/validator/ethercat-env'
+verify.residue: FAIL - remove.audit reports residue
+make: Leaving directory '/home/validator/ethercat-env'
+make: *** [/home/validator/ethercat-env/configure/RULES_VERIFY:152: verify.residue] Error 1
+make: Entering directory '/home/validator/ethercat-env'
+remove.audit: ===== EtherCAT + RT residue report (read-only) =====
+remove.audit: clean   - prefix tree absent
+remove.audit: clean   - systemd unit absent
+remove.audit: clean   - udev rule absent
+remove.audit: clean   - command path absent
+remove.audit: clean   - loader fragment absent
+remove.audit: clean   - RT limits.d absent
+remove.audit: clean   - realtime group absent
+remove.audit: clean   - device access group absent
+remove.audit: clean   - RT GRUB backup absent
+remove.audit: clean   - RT GRUB params absent
+remove.audit: note    - RT kernel package linux-image-rt-amd64 still installed (operator-managed package state, not counted as residue)
+remove.audit: clean   - service irqbalance.service not masked
+remove.audit: OK - no residue
+remove.audit: VERDICT=clean
+make: Leaving directory '/home/validator/ethercat-env'
+make: Entering directory '/home/validator/ethercat-env'
+verify.residue: OK - remove.audit reports no residue
+make: Leaving directory '/home/validator/ethercat-env'

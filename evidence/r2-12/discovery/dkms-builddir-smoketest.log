@@ -1,0 +1,17 @@
++ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/sbin:/sbin
++ PATH=/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/sbin:/sbin
++ tar -xzf /tmp/ethercat-env.tar.gz -C /home/validator
++ cd ethercat-env
++ make dkms.conf
+dkms.conf: OK - wrote ethercat-src/dkms.conf (-m ethercat -v 1.6.9)
++ sudo dkms remove ethercat/1.6.9 --all
++ sudo make add.dkms
++ sudo make install.dkms
++ sudo dkms install ethercat/1.6.9 -k 6.12.90+deb13.1-cloud-amd64
++ sudo modinfo -F vermagic /lib/modules/6.12.90+deb13.1-rt-amd64/updates/dkms/ec_master.ko.xz
+6.12.90+deb13.1-rt-amd64 SMP preempt mod_unload modversions 
++ sudo modinfo -F vermagic /lib/modules/6.12.90+deb13.1-cloud-amd64/updates/dkms/ec_master.ko.xz
+6.12.90+deb13.1-cloud-amd64 SMP preempt mod_unload modversions 
++ dkms status
+ethercat/1.6.9, 6.12.90+deb13.1-cloud-amd64, x86_64: installed
+ethercat/1.6.9, 6.12.90+deb13.1-rt-amd64, x86_64: installed

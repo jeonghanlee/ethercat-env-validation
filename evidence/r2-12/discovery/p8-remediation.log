@@ -1,0 +1,63 @@
++ tar -xzf /tmp/ethercat-env.tar.gz -C /home/validator
++ cd ethercat-env
++ make dkms.conf
+dkms.conf: OK - wrote ethercat-src/dkms.conf (-m ethercat -v 1.6.9)
++ sudo /usr/sbin/dkms remove ethercat/1.6.9 --all
+Module ethercat/1.6.9 for kernel 6.12.90+deb13.1-cloud-amd64 (x86_64):
+Before uninstall, this module version was ACTIVE on this kernel.
+Deleting /lib/modules/6.12.90+deb13.1-cloud-amd64/updates/dkms/ec_master.ko.xz
+Deleting /lib/modules/6.12.90+deb13.1-cloud-amd64/updates/dkms/ec_generic.ko.xz
+Running depmod... done.
+
+Module ethercat/1.6.9 for kernel 6.12.90+deb13.1-rt-amd64 (x86_64):
+Before uninstall, this module version was ACTIVE on this kernel.
+Deleting /lib/modules/6.12.90+deb13.1-rt-amd64/updates/dkms/ec_master.ko.xz
+Deleting /lib/modules/6.12.90+deb13.1-rt-amd64/updates/dkms/ec_generic.ko.xz
+Running depmod.... done.
+
+Deleting module ethercat/1.6.9 completely from the DKMS tree.
++ sudo make add.dkms
+doctor[tools]: present  dkms         (/usr/sbin/dkms)
+doctor[tools]: present  depmod       (/usr/sbin/depmod)
+doctor[tools]: OK - all required tools present
+require-root: OK
+rm -rf "/usr/src/ethercat-1.6.9"
+cp -r "/home/validator/ethercat-env/ethercat-src" "/usr/src/ethercat-1.6.9"
+/usr/sbin/dkms add -m ethercat -v 1.6.9
+Creating symlink /var/lib/dkms/ethercat/1.6.9/source -> /usr/src/ethercat-1.6.9
++ sudo make install.dkms
+doctor[kernel]: present  depmod       (/usr/sbin/depmod)
+doctor[kernel]: present  dkms         (/usr/sbin/dkms)
+doctor[kernel]: OK - all required tools present
+require-root: OK
+/usr/sbin/dkms install -m ethercat -v 1.6.9 --force
+Sign command: /lib/modules/6.12.90+deb13.1-rt-amd64/build/scripts/sign-file
+Signing key: /var/lib/dkms/mok.key
+Public certificate (MOK): /var/lib/dkms/mok.pub
+
+Building module(s)...... done.
+Signing module /var/lib/dkms/ethercat/1.6.9/build/master/ec_master.ko
+Signing module /var/lib/dkms/ethercat/1.6.9/build/devices/ec_generic.ko
+Installing /lib/modules/6.12.90+deb13.1-rt-amd64/updates/dkms/ec_master.ko.xz
+Installing /lib/modules/6.12.90+deb13.1-rt-amd64/updates/dkms/ec_generic.ko.xz
+Running depmod... done.
++ sudo /usr/sbin/modinfo -F vermagic ec_master
+6.12.90+deb13.1-rt-amd64 SMP preempt mod_unload modversions 
++ sudo systemctl restart epics-ethercat
++ systemctl status --no-pager epics-ethercat
++ head -6
+● epics-ethercat.service - EtherCAT Master Kernel Modules (EPICS)
+     Loaded: loaded (/etc/systemd/system/epics-ethercat.service; enabled; preset: enabled)
+     Active: active (exited) since Thu 2026-06-11 09:23:58 UTC; 7ms ago
+ Invocation: cbd41b1e91fd4e43b190d709752cd548
+       Docs: man:ethercat
+             man:ethercatctl
++ sg ethercat -c '/usr/bin/ethercat master | head -8'
+Master0
+  Phase: Idle
+  Active: no
+  Slaves: 0
+  Ethernet devices:
+    Main: 52:54:00:12:ec:02 (attached)
+      Link: UP
+      Tx frames:   2
