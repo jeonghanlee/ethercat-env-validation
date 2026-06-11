@@ -1,9 +1,10 @@
 # ethercat-env VM Validation
 
-R2-12 real-execution validation environment for the `ethercat-env`
-repository. A disposable Debian 13 VM executes the root-affecting target
-graph (install, kernel module, systemd, udev, GRUB, service policy,
-removal) for real, and every phase records evidence under `evidence/`.
+R2-12 real-execution validation environment for the
+[ethercat-env](https://github.com/jeonghanlee/ethercat-env) repository.
+A disposable Debian 13 VM executes the root-affecting target graph
+(install, kernel module, systemd, udev, GRUB, service policy, removal)
+for real, and every phase records evidence under `evidence/`.
 
 ## Architecture
 
@@ -67,3 +68,12 @@ Phase output is captured by the caller, for example:
 ```bash
 scripts/vm.bash run phases/p2-build.bash 2>&1 | tee evidence/r2-12/acceptance/p2-build.log
 ```
+
+## Related Repositories
+
+| Repository | Role |
+| :--- | :--- |
+| [ethercat-env](https://github.com/jeonghanlee/ethercat-env) | Repository under test: Debian 13 EtherCAT master and RT host environment |
+
+Milestone status and the R2-12 findings absorbed from this validation run
+live in `docs/milestone.md` of the `ethercat-env` repository.
