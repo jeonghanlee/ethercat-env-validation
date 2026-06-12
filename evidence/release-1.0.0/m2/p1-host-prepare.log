@@ -1,0 +1,76 @@
+
+=== RUN: cat /etc/os-release ===
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+VERSION="13 (trixie)"
+VERSION_CODENAME=trixie
+DEBIAN_VERSION_FULL=13.5
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+=== RUN: uname -a ===
+Linux ethercat-vm 6.12.90+deb13.1-cloud-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.90-2 (2026-05-27) x86_64 GNU/Linux
+
+=== RUN: sudo -E apt-get update ===
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:2 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]
+Hit:3 https://deb.debian.org/debian trixie InRelease
+Hit:4 https://deb.debian.org/debian trixie-updates InRelease
+Hit:5 https://deb.debian.org/debian trixie-backports InRelease
+Hit:6 https://deb.debian.org/debian-security trixie-security InRelease
+Reading package lists...
+
+=== RUN: sudo -E apt-get install -y git build-essential autoconf automake libtool pkg-config dkms linux-headers-6.12.90+deb13.1-cloud-amd64 ===
+Reading package lists...
+Building dependency tree...
+Reading state information...
+git is already the newest version (1:2.47.3-0+deb13u1).
+build-essential is already the newest version (12.12).
+autoconf is already the newest version (2.72-3.1).
+automake is already the newest version (1:1.17-4).
+libtool is already the newest version (2.5.4-4).
+pkg-config is already the newest version (1.8.1-4).
+dkms is already the newest version (3.2.2-1~deb13u1).
+linux-headers-6.12.90+deb13.1-cloud-amd64 is already the newest version (6.12.90-2).
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+
+=== RUN: ls /home/validator/ethercat-env ===
+LICENSE
+Makefile
+README.md
+configure
+debian
+docs
+examples
+patch
+templates
+
+=== RUN: make -C /home/validator/ethercat-env host.debian13 ===
+make: Entering directory '/home/validator/ethercat-env'
+>> Expected OS : debian 13
+>> Detected OS : debian 13
+host.debian13: match
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env doctor ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[all]: present  autoreconf   (/usr/bin/autoreconf)
+doctor[all]: present  depmod       (/usr/sbin/depmod)
+doctor[all]: present  dkms         (/usr/sbin/dkms)
+doctor[all]: present  systemctl    (/usr/bin/systemctl)
+doctor[all]: present  udevadm      (/usr/bin/udevadm)
+doctor[all]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[all]: present  git          (/usr/bin/git)
+doctor[all]: present  make         (/usr/bin/make)
+doctor[all]: present  ip           (/usr/bin/ip)
+doctor[all]: present  update_grub  (/usr/sbin/update-grub)
+doctor[all]: present  pkg_manager  (/usr/bin/apt-get)
+doctor[all]: present  dpkg         (/usr/bin/dpkg)
+doctor[all]: present  chrt         (/usr/bin/chrt)
+doctor[all]: OK - all required tools present
+make: Leaving directory '/home/validator/ethercat-env'
+
+phase 1 complete
