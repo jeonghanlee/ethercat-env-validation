@@ -16,7 +16,7 @@ function run {
 }
 
 export DEBIAN_FRONTEND=noninteractive
-run sudo -E apt-get install -y debhelper pkgconf autoconf automake libtool
+run sudo -E apt-get install -y debhelper dh-dkms pkgconf autoconf automake libtool
 
 run make -C "${REPO}" init
 run make -C "${REPO}" pkg.orig
