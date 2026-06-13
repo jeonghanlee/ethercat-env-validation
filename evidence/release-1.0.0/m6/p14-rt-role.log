@@ -1,0 +1,498 @@
+
+=== RUN: sudo -E apt-get install -y ansible ansible-lint ===
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  ansible-core black ieee-data python3-ansible-compat python3-anyio
+  python3-argcomplete python3-bracex python3-click python3-decorator
+  python3-dnspython python3-filelock python3-gssapi python3-h11 python3-h2
+  python3-hpack python3-httpcore python3-httplib2 python3-httpx
+  python3-hyperframe python3-jmespath python3-kerberos python3-legacycrypt
+  python3-libcloud python3-linkify-it python3-markdown-it python3-mdurl
+  python3-mypy-extensions python3-netaddr python3-packaging python3-passlib
+  python3-pathspec python3-platformdirs python3-pygments python3-pyparsing
+  python3-pyspnego python3-requests-ntlm python3-resolvelib python3-rich
+  python3-ruamel.yaml python3-ruamel.yaml.clib python3-selinux python3-sniffio
+  python3-subprocess-tee python3-uc-micro python3-wcmatch python3-winrm
+  python3-xmltodict yamllint
+Suggested packages:
+  cowsay sshpass python-black-doc python3-trio python3-aioquic ipython3
+  python-netaddr-docs python-pygments-doc ttf-bitstream-vera
+  python-pyparsing-doc
+The following NEW packages will be installed:
+  ansible ansible-core ansible-lint black ieee-data python3-ansible-compat
+  python3-anyio python3-argcomplete python3-bracex python3-click
+  python3-decorator python3-dnspython python3-filelock python3-gssapi
+  python3-h11 python3-h2 python3-hpack python3-httpcore python3-httplib2
+  python3-httpx python3-hyperframe python3-jmespath python3-kerberos
+  python3-legacycrypt python3-libcloud python3-linkify-it python3-markdown-it
+  python3-mdurl python3-mypy-extensions python3-netaddr python3-packaging
+  python3-passlib python3-pathspec python3-platformdirs python3-pygments
+  python3-pyparsing python3-pyspnego python3-requests-ntlm python3-resolvelib
+  python3-rich python3-ruamel.yaml python3-ruamel.yaml.clib python3-selinux
+  python3-sniffio python3-subprocess-tee python3-uc-micro python3-wcmatch
+  python3-winrm python3-xmltodict yamllint
+0 upgraded, 50 newly installed, 0 to remove and 3 not upgraded.
+Need to get 28.8 MB of archives.
+After this operation, 272 MB of additional disk space will be used.
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:2 https://deb.debian.org/debian trixie/main amd64 python3-packaging all 25.0-1 [56.6 kB]
+Get:3 https://deb.debian.org/debian trixie/main amd64 python3-resolvelib all 1.1.0-1 [28.9 kB]
+Get:4 https://deb.debian.org/debian trixie/main amd64 python3-dnspython all 2.7.0-1 [164 kB]
+Get:5 https://deb.debian.org/debian trixie/main amd64 python3-pyparsing all 3.1.2-1 [146 kB]
+Get:6 https://deb.debian.org/debian trixie/main amd64 python3-httplib2 all 0.22.0-1 [36.1 kB]
+Get:7 https://deb.debian.org/debian trixie/main amd64 ieee-data all 20240722 [2221 kB]
+Get:8 https://deb.debian.org/debian trixie/main amd64 python3-netaddr all 1.3.0-1 [356 kB]
+Get:9 https://deb.debian.org/debian trixie/main amd64 ansible-core all 2.19.4-0+deb13u1 [1370 kB]
+Get:10 https://deb.debian.org/debian trixie/main amd64 ansible all 12.0.0+dfsg-0+deb13u1 [18.6 MB]
+Get:11 https://deb.debian.org/debian trixie/main amd64 python3-click all 8.2.0+0.really.8.1.8-1 [95.4 kB]
+Get:12 https://deb.debian.org/debian trixie/main amd64 python3-mypy-extensions all 1.0.0-1 [6064 B]
+Get:13 https://deb.debian.org/debian trixie/main amd64 python3-pathspec all 0.12.1-1 [28.1 kB]
+Get:14 https://deb.debian.org/debian trixie/main amd64 python3-platformdirs all 4.3.7-1 [16.6 kB]
+Get:15 https://deb.debian.org/debian trixie/main amd64 black amd64 25.1.0-3+deb13u1 [1357 kB]
+Get:16 https://deb.debian.org/debian trixie/main amd64 python3-subprocess-tee all 0.4.2-1 [6272 B]
+Get:17 https://deb.debian.org/debian trixie/main amd64 python3-ansible-compat all 25.1.5-1 [23.3 kB]
+Get:18 https://deb.debian.org/debian trixie/main amd64 python3-filelock all 3.18.0-1+deb13u1 [13.4 kB]
+Get:19 https://deb.debian.org/debian trixie/main amd64 python3-ruamel.yaml.clib amd64 0.2.12+ds-1+b1 [135 kB]
+Get:20 https://deb.debian.org/debian trixie/main amd64 python3-ruamel.yaml all 0.18.10+ds-1 [147 kB]
+Get:21 https://deb.debian.org/debian trixie/main amd64 python3-bracex all 2.4-1 [10.5 kB]
+Get:22 https://deb.debian.org/debian trixie/main amd64 python3-wcmatch all 10.0-1 [32.1 kB]
+Get:23 https://deb.debian.org/debian trixie/main amd64 yamllint all 1.37.1-1 [49.5 kB]
+Get:24 https://deb.debian.org/debian trixie/main amd64 ansible-lint all 25.6.1+really25.2.1-1 [178 kB]
+Get:25 https://deb.debian.org/debian trixie/main amd64 python3-sniffio all 1.3.1-1 [7120 B]
+Get:26 https://deb.debian.org/debian trixie/main amd64 python3-anyio all 4.8.0-3 [63.6 kB]
+Get:27 https://deb.debian.org/debian trixie/main amd64 python3-argcomplete all 3.6.2-1 [40.9 kB]
+Get:28 https://deb.debian.org/debian trixie/main amd64 python3-decorator all 5.2.1-2 [33.0 kB]
+Get:29 https://deb.debian.org/debian trixie/main amd64 python3-gssapi amd64 1.9.0-1+b2 [502 kB]
+Get:30 https://deb.debian.org/debian trixie/main amd64 python3-h11 all 0.14.0-1.1 [50.6 kB]
+Get:31 https://deb.debian.org/debian trixie/main amd64 python3-hpack all 4.0.0-3 [24.6 kB]
+Get:32 https://deb.debian.org/debian trixie/main amd64 python3-hyperframe all 6.0.0-1 [14.5 kB]
+Get:33 https://deb.debian.org/debian trixie/main amd64 python3-h2 all 4.2.0-1 [82.8 kB]
+Get:34 https://deb.debian.org/debian trixie/main amd64 python3-httpcore all 1.0.7-1 [44.7 kB]
+Get:35 https://deb.debian.org/debian trixie/main amd64 python3-pygments all 2.18.0+dfsg-2 [836 kB]
+Get:36 https://deb.debian.org/debian trixie/main amd64 python3-mdurl all 0.1.2-1 [9444 B]
+Get:37 https://deb.debian.org/debian trixie/main amd64 python3-uc-micro all 1.0.3-1 [5744 B]
+Get:38 https://deb.debian.org/debian trixie/main amd64 python3-linkify-it all 2.0.3-1 [18.7 kB]
+Get:39 https://deb.debian.org/debian trixie/main amd64 python3-markdown-it all 3.0.0-3 [59.5 kB]
+Get:40 https://deb.debian.org/debian trixie/main amd64 python3-rich all 13.9.4-1 [203 kB]
+Get:41 https://deb.debian.org/debian trixie/main amd64 python3-httpx all 0.28.1-1 [76.2 kB]
+Get:42 https://deb.debian.org/debian trixie/main amd64 python3-jmespath all 1.0.1-1 [21.1 kB]
+Get:43 https://deb.debian.org/debian trixie/main amd64 python3-kerberos amd64 1.1.14-3.1+b11 [20.4 kB]
+Get:44 https://deb.debian.org/debian trixie/main amd64 python3-legacycrypt all 0.3-2 [8096 B]
+Get:45 https://deb.debian.org/debian trixie/main amd64 python3-libcloud all 3.8.0+repack-4 [893 kB]
+Get:46 https://deb.debian.org/debian trixie/main amd64 python3-passlib all 1.7.4-6 [368 kB]
+Get:47 https://deb.debian.org/debian trixie/main amd64 python3-pyspnego all 0.10.2-2+deb13u1 [98.8 kB]
+Get:48 https://deb.debian.org/debian trixie/main amd64 python3-requests-ntlm all 1.3.0-1 [7536 B]
+Get:49 https://deb.debian.org/debian trixie/main amd64 python3-selinux amd64 3.8.1-1 [161 kB]
+Get:50 https://deb.debian.org/debian trixie/main amd64 python3-xmltodict all 0.13.0-1 [16.7 kB]
+Get:51 https://deb.debian.org/debian trixie/main amd64 python3-winrm all 0.5.0-2 [38.9 kB]
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+Fetched 28.8 MB in 31s (929 kB/s)
+Selecting previously unselected package python3-packaging.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 46265 files and directories currently installed.)
+Preparing to unpack .../00-python3-packaging_25.0-1_all.deb ...
+Unpacking python3-packaging (25.0-1) ...
+Selecting previously unselected package python3-resolvelib.
+Preparing to unpack .../01-python3-resolvelib_1.1.0-1_all.deb ...
+Unpacking python3-resolvelib (1.1.0-1) ...
+Selecting previously unselected package python3-dnspython.
+Preparing to unpack .../02-python3-dnspython_2.7.0-1_all.deb ...
+Unpacking python3-dnspython (2.7.0-1) ...
+Selecting previously unselected package python3-pyparsing.
+Preparing to unpack .../03-python3-pyparsing_3.1.2-1_all.deb ...
+Unpacking python3-pyparsing (3.1.2-1) ...
+Selecting previously unselected package python3-httplib2.
+Preparing to unpack .../04-python3-httplib2_0.22.0-1_all.deb ...
+Unpacking python3-httplib2 (0.22.0-1) ...
+Selecting previously unselected package ieee-data.
+Preparing to unpack .../05-ieee-data_20240722_all.deb ...
+Unpacking ieee-data (20240722) ...
+Selecting previously unselected package python3-netaddr.
+Preparing to unpack .../06-python3-netaddr_1.3.0-1_all.deb ...
+Unpacking python3-netaddr (1.3.0-1) ...
+Selecting previously unselected package ansible-core.
+Preparing to unpack .../07-ansible-core_2.19.4-0+deb13u1_all.deb ...
+Unpacking ansible-core (2.19.4-0+deb13u1) ...
+Selecting previously unselected package ansible.
+Preparing to unpack .../08-ansible_12.0.0+dfsg-0+deb13u1_all.deb ...
+Unpacking ansible (12.0.0+dfsg-0+deb13u1) ...
+Selecting previously unselected package python3-click.
+Preparing to unpack .../09-python3-click_8.2.0+0.really.8.1.8-1_all.deb ...
+Unpacking python3-click (8.2.0+0.really.8.1.8-1) ...
+Selecting previously unselected package python3-mypy-extensions.
+Preparing to unpack .../10-python3-mypy-extensions_1.0.0-1_all.deb ...
+Unpacking python3-mypy-extensions (1.0.0-1) ...
+Selecting previously unselected package python3-pathspec.
+Preparing to unpack .../11-python3-pathspec_0.12.1-1_all.deb ...
+Unpacking python3-pathspec (0.12.1-1) ...
+Selecting previously unselected package python3-platformdirs.
+Preparing to unpack .../12-python3-platformdirs_4.3.7-1_all.deb ...
+Unpacking python3-platformdirs (4.3.7-1) ...
+Selecting previously unselected package black.
+Preparing to unpack .../13-black_25.1.0-3+deb13u1_amd64.deb ...
+Unpacking black (25.1.0-3+deb13u1) ...
+Selecting previously unselected package python3-subprocess-tee.
+Preparing to unpack .../14-python3-subprocess-tee_0.4.2-1_all.deb ...
+Unpacking python3-subprocess-tee (0.4.2-1) ...
+Selecting previously unselected package python3-ansible-compat.
+Preparing to unpack .../15-python3-ansible-compat_25.1.5-1_all.deb ...
+Unpacking python3-ansible-compat (25.1.5-1) ...
+Selecting previously unselected package python3-filelock.
+Preparing to unpack .../16-python3-filelock_3.18.0-1+deb13u1_all.deb ...
+Unpacking python3-filelock (3.18.0-1+deb13u1) ...
+Selecting previously unselected package python3-ruamel.yaml.clib.
+Preparing to unpack .../17-python3-ruamel.yaml.clib_0.2.12+ds-1+b1_amd64.deb ...
+Unpacking python3-ruamel.yaml.clib (0.2.12+ds-1+b1) ...
+Selecting previously unselected package python3-ruamel.yaml.
+Preparing to unpack .../18-python3-ruamel.yaml_0.18.10+ds-1_all.deb ...
+Unpacking python3-ruamel.yaml (0.18.10+ds-1) ...
+Selecting previously unselected package python3-bracex.
+Preparing to unpack .../19-python3-bracex_2.4-1_all.deb ...
+Unpacking python3-bracex (2.4-1) ...
+Selecting previously unselected package python3-wcmatch.
+Preparing to unpack .../20-python3-wcmatch_10.0-1_all.deb ...
+Unpacking python3-wcmatch (10.0-1) ...
+Selecting previously unselected package yamllint.
+Preparing to unpack .../21-yamllint_1.37.1-1_all.deb ...
+Unpacking yamllint (1.37.1-1) ...
+Selecting previously unselected package ansible-lint.
+Preparing to unpack .../22-ansible-lint_25.6.1+really25.2.1-1_all.deb ...
+Unpacking ansible-lint (25.6.1+really25.2.1-1) ...
+Selecting previously unselected package python3-sniffio.
+Preparing to unpack .../23-python3-sniffio_1.3.1-1_all.deb ...
+Unpacking python3-sniffio (1.3.1-1) ...
+Selecting previously unselected package python3-anyio.
+Preparing to unpack .../24-python3-anyio_4.8.0-3_all.deb ...
+Unpacking python3-anyio (4.8.0-3) ...
+Selecting previously unselected package python3-argcomplete.
+Preparing to unpack .../25-python3-argcomplete_3.6.2-1_all.deb ...
+Unpacking python3-argcomplete (3.6.2-1) ...
+Selecting previously unselected package python3-decorator.
+Preparing to unpack .../26-python3-decorator_5.2.1-2_all.deb ...
+Unpacking python3-decorator (5.2.1-2) ...
+Selecting previously unselected package python3-gssapi.
+Preparing to unpack .../27-python3-gssapi_1.9.0-1+b2_amd64.deb ...
+Unpacking python3-gssapi (1.9.0-1+b2) ...
+Selecting previously unselected package python3-h11.
+Preparing to unpack .../28-python3-h11_0.14.0-1.1_all.deb ...
+Unpacking python3-h11 (0.14.0-1.1) ...
+Selecting previously unselected package python3-hpack.
+Preparing to unpack .../29-python3-hpack_4.0.0-3_all.deb ...
+Unpacking python3-hpack (4.0.0-3) ...
+Selecting previously unselected package python3-hyperframe.
+Preparing to unpack .../30-python3-hyperframe_6.0.0-1_all.deb ...
+Unpacking python3-hyperframe (6.0.0-1) ...
+Selecting previously unselected package python3-h2.
+Preparing to unpack .../31-python3-h2_4.2.0-1_all.deb ...
+Unpacking python3-h2 (4.2.0-1) ...
+Selecting previously unselected package python3-httpcore.
+Preparing to unpack .../32-python3-httpcore_1.0.7-1_all.deb ...
+Unpacking python3-httpcore (1.0.7-1) ...
+Selecting previously unselected package python3-pygments.
+Preparing to unpack .../33-python3-pygments_2.18.0+dfsg-2_all.deb ...
+Unpacking python3-pygments (2.18.0+dfsg-2) ...
+Selecting previously unselected package python3-mdurl.
+Preparing to unpack .../34-python3-mdurl_0.1.2-1_all.deb ...
+Unpacking python3-mdurl (0.1.2-1) ...
+Selecting previously unselected package python3-uc-micro.
+Preparing to unpack .../35-python3-uc-micro_1.0.3-1_all.deb ...
+Unpacking python3-uc-micro (1.0.3-1) ...
+Selecting previously unselected package python3-linkify-it.
+Preparing to unpack .../36-python3-linkify-it_2.0.3-1_all.deb ...
+Unpacking python3-linkify-it (2.0.3-1) ...
+Selecting previously unselected package python3-markdown-it.
+Preparing to unpack .../37-python3-markdown-it_3.0.0-3_all.deb ...
+Unpacking python3-markdown-it (3.0.0-3) ...
+Selecting previously unselected package python3-rich.
+Preparing to unpack .../38-python3-rich_13.9.4-1_all.deb ...
+Unpacking python3-rich (13.9.4-1) ...
+Selecting previously unselected package python3-httpx.
+Preparing to unpack .../39-python3-httpx_0.28.1-1_all.deb ...
+Unpacking python3-httpx (0.28.1-1) ...
+Selecting previously unselected package python3-jmespath.
+Preparing to unpack .../40-python3-jmespath_1.0.1-1_all.deb ...
+Unpacking python3-jmespath (1.0.1-1) ...
+Selecting previously unselected package python3-kerberos.
+Preparing to unpack .../41-python3-kerberos_1.1.14-3.1+b11_amd64.deb ...
+Unpacking python3-kerberos (1.1.14-3.1+b11) ...
+Selecting previously unselected package python3-legacycrypt.
+Preparing to unpack .../42-python3-legacycrypt_0.3-2_all.deb ...
+Unpacking python3-legacycrypt (0.3-2) ...
+Selecting previously unselected package python3-libcloud.
+Preparing to unpack .../43-python3-libcloud_3.8.0+repack-4_all.deb ...
+Unpacking python3-libcloud (3.8.0+repack-4) ...
+Selecting previously unselected package python3-passlib.
+Preparing to unpack .../44-python3-passlib_1.7.4-6_all.deb ...
+Unpacking python3-passlib (1.7.4-6) ...
+Selecting previously unselected package python3-pyspnego.
+Preparing to unpack .../45-python3-pyspnego_0.10.2-2+deb13u1_all.deb ...
+Unpacking python3-pyspnego (0.10.2-2+deb13u1) ...
+Selecting previously unselected package python3-requests-ntlm.
+Preparing to unpack .../46-python3-requests-ntlm_1.3.0-1_all.deb ...
+Unpacking python3-requests-ntlm (1.3.0-1) ...
+Selecting previously unselected package python3-selinux.
+Preparing to unpack .../47-python3-selinux_3.8.1-1_amd64.deb ...
+Unpacking python3-selinux (3.8.1-1) ...
+Selecting previously unselected package python3-xmltodict.
+Preparing to unpack .../48-python3-xmltodict_0.13.0-1_all.deb ...
+Unpacking python3-xmltodict (0.13.0-1) ...
+Selecting previously unselected package python3-winrm.
+Preparing to unpack .../49-python3-winrm_0.5.0-2_all.deb ...
+Unpacking python3-winrm (0.5.0-2) ...
+Setting up python3-sniffio (1.3.1-1) ...
+Setting up python3-filelock (3.18.0-1+deb13u1) ...
+Setting up python3-subprocess-tee (0.4.2-1) ...
+Setting up python3-anyio (4.8.0-3) ...
+Setting up python3-hyperframe (6.0.0-1) ...
+Setting up python3-hpack (4.0.0-3) ...
+Setting up python3-mypy-extensions (1.0.0-1) ...
+Setting up python3-ruamel.yaml.clib (0.2.12+ds-1+b1) ...
+Setting up python3-resolvelib (1.1.0-1) ...
+Setting up python3-kerberos (1.1.14-3.1+b11) ...
+Setting up python3-libcloud (3.8.0+repack-4) ...
+Setting up python3-click (8.2.0+0.really.8.1.8-1) ...
+Setting up python3-uc-micro (1.0.3-1) ...
+Setting up python3-platformdirs (4.3.7-1) ...
+Setting up python3-decorator (5.2.1-2) ...
+Setting up python3-xmltodict (0.13.0-1) ...
+Setting up python3-pygments (2.18.0+dfsg-2) ...
+Setting up python3-packaging (25.0-1) ...
+Setting up python3-gssapi (1.9.0-1+b2) ...
+Setting up python3-pyparsing (3.1.2-1) ...
+Setting up python3-jmespath (1.0.1-1) ...
+Setting up python3-mdurl (0.1.2-1) ...
+Setting up python3-h11 (0.14.0-1.1) ...
+Setting up python3-pyspnego (0.10.2-2+deb13u1) ...
+Setting up python3-legacycrypt (0.3-2) ...
+Setting up python3-ruamel.yaml (0.18.10+ds-1) ...
+Setting up ieee-data (20240722) ...
+Setting up python3-dnspython (2.7.0-1) ...
+Setting up python3-bracex (2.4-1) ...
+Setting up python3-selinux (3.8.1-1) ...
+Setting up python3-httplib2 (0.22.0-1) ...
+Setting up python3-linkify-it (2.0.3-1) ...
+Setting up python3-h2 (4.2.0-1) ...
+Setting up python3-argcomplete (3.6.2-1) ...
+Setting up python3-pathspec (0.12.1-1) ...
+Setting up python3-httpcore (1.0.7-1) ...
+Setting up python3-requests-ntlm (1.3.0-1) ...
+Setting up python3-passlib (1.7.4-6) ...
+Setting up black (25.1.0-3+deb13u1) ...
+Setting up yamllint (1.37.1-1) ...
+Setting up python3-markdown-it (3.0.0-3) ...
+Setting up python3-netaddr (1.3.0-1) ...
+Setting up python3-wcmatch (10.0-1) ...
+Setting up python3-winrm (0.5.0-2) ...
+Setting up python3-rich (13.9.4-1) ...
+Setting up ansible-core (2.19.4-0+deb13u1) ...
+Setting up python3-httpx (0.28.1-1) ...
+Setting up python3-ansible-compat (25.1.5-1) ...
+Setting up ansible (12.0.0+dfsg-0+deb13u1) ...
+Setting up ansible-lint (25.6.1+really25.2.1-1) ...
+Processing triggers for man-db (2.13.1-1) ...
+
+=== RUN: ansible-lint playbooks/rt_host.yml ===
+
+Passed: 0 failure(s), 0 warning(s) on 11 files. Profile 'basic' was required, but 'production' profile passed.
+GRUB_DEFAULT before: GRUB_DEFAULT=0
+
+=== RUN: ansible-playbook playbooks/rt_host.yml --check --diff ===
+
+PLAY [Configure the real-time host] ********************************************
+
+TASK [Gathering Facts] *********************************************************
+[WARNING]: Host 'localhost' is using the discovered Python interpreter at '/usr/bin/python3.13', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.19/reference_appendices/interpreter_discovery.html for more information.
+ok: [localhost]
+
+TASK [rt_host : Install the RT kernel and headers] *****************************
+The following additional packages will be installed:
+  linux-headers-6.12.90+deb13.1-common-rt
+  linux-headers-6.12.90+deb13.1-rt-amd64 linux-image-6.12.90+deb13.1-rt-amd64
+Suggested packages:
+  firmware-linux-free linux-doc-6.12 debian-kernel-handbook grub-pc
+  | grub-efi-amd64 | extlinux
+The following NEW packages will be installed:
+  linux-headers-6.12.90+deb13.1-common-rt
+  linux-headers-6.12.90+deb13.1-rt-amd64 linux-headers-rt-amd64
+  linux-image-6.12.90+deb13.1-rt-amd64 linux-image-rt-amd64
+0 upgraded, 5 newly installed, 0 to remove and 3 not upgraded.
+changed: [localhost]
+
+TASK [rt_host : Ensure the realtime group exists] ******************************
+changed: [localhost]
+
+TASK [rt_host : Install the realtime limits policy] ****************************
+--- before
++++ after: /home/validator/.ansible/tmp/ansible-local-3097yrz3jaqp/tmpo1582mw7/99-realtime.conf.j2
+@@ -0,0 +1,7 @@
++#
++# Ansible managed
++#
++# Realtime limits for the realtime group (rt_host role, cycle M6).
++@realtime   -   rtprio   99
++@realtime   -   memlock   unlimited
++@realtime   -   nice   -20
+
+changed: [localhost]
+
+TASK [rt_host : Back up the GRUB defaults once] ********************************
+changed: [localhost]
+
+TASK [rt_host : Append RT GRUB parameters when absent] *************************
+--- before: /etc/default/grub
++++ after: /etc/default/grub
+@@ -6,7 +6,7 @@
+ GRUB_DEFAULT=0
+ GRUB_TIMEOUT=5
+ GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+-GRUB_CMDLINE_LINUX_DEFAULT=""
++GRUB_CMDLINE_LINUX_DEFAULT=" intel_pstate=disable"
+ GRUB_CMDLINE_LINUX="console=tty0 console=ttyS0,115200 earlyprintk=ttyS0,115200 consoleblank=0"
+ GRUB_TERMINAL_OUTPUT="gfxterm serial"
+ GRUB_SERIAL_COMMAND="serial --speed=115200"
+
+changed: [localhost] => (item=intel_pstate=disable)
+
+TASK [rt_host : Read the current clock source] *********************************
+ok: [localhost]
+
+TASK [rt_host : Report the clock source against the expected value] ************
+ok: [localhost] => {
+    "msg": "clocksource current=kvm-clock expected=tsc (differs - review on target hardware)"
+}
+
+TASK [rt_host : Mask the allowlisted RT services] ******************************
+changed: [localhost] => (item=irqbalance.service)
+
+TASK [rt_host : Query the tuned active profile] ********************************
+ok: [localhost]
+
+TASK [rt_host : Report the tuned state against the expected profile] ***********
+ok: [localhost] => {
+    "msg": "tuned:  (expected profile realtime, apply=False)"
+}
+
+TASK [rt_host : Apply the tuned realtime profile (opt-in)] *********************
+skipping: [localhost]
+
+RUNNING HANDLER [rt_host : Update grub] ****************************************
+skipping: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=11   changed=6    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+
+OK: check-mode ran (prediction)
+
+=== RUN: ansible-playbook playbooks/rt_host.yml ===
+
+PLAY [Configure the real-time host] ********************************************
+
+TASK [Gathering Facts] *********************************************************
+[WARNING]: Host 'localhost' is using the discovered Python interpreter at '/usr/bin/python3.13', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.19/reference_appendices/interpreter_discovery.html for more information.
+ok: [localhost]
+
+TASK [rt_host : Install the RT kernel and headers] *****************************
+changed: [localhost]
+
+TASK [rt_host : Ensure the realtime group exists] ******************************
+changed: [localhost]
+
+TASK [rt_host : Install the realtime limits policy] ****************************
+changed: [localhost]
+
+TASK [rt_host : Back up the GRUB defaults once] ********************************
+changed: [localhost]
+
+TASK [rt_host : Append RT GRUB parameters when absent] *************************
+changed: [localhost] => (item=intel_pstate=disable)
+
+TASK [rt_host : Read the current clock source] *********************************
+ok: [localhost]
+
+TASK [rt_host : Report the clock source against the expected value] ************
+ok: [localhost] => {
+    "msg": "clocksource current=kvm-clock expected=tsc (differs - review on target hardware)"
+}
+
+TASK [rt_host : Mask the allowlisted RT services] ******************************
+changed: [localhost] => (item=irqbalance.service)
+
+TASK [rt_host : Query the tuned active profile] ********************************
+ok: [localhost]
+
+TASK [rt_host : Report the tuned state against the expected profile] ***********
+ok: [localhost] => {
+    "msg": "tuned:  (expected profile realtime, apply=False)"
+}
+
+TASK [rt_host : Apply the tuned realtime profile (opt-in)] *********************
+skipping: [localhost]
+
+RUNNING HANDLER [rt_host : Update grub] ****************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=12   changed=7    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=11   changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+OK: idempotent second apply (changed=0)
+GRUB_DEFAULT after: GRUB_DEFAULT=0
+OK: GRUB_DEFAULT unchanged (D2)
+OK: realtime group present
+OK: realtime limits installed
+OK: GRUB RT parameter applied
+OK: GRUB backup present
+OK: irqbalance.service masked
+
+=== RUN: make -C /home/validator/ethercat-env rt.status ===
+make: Entering directory '/home/validator/ethercat-env'
+rt.status: ===== Debian 13 RT host state (read-only) =====
+rt.kernel.select: RT flavor       = rt-amd64
+rt.kernel.select: running kernel   = 6.12.90+deb13.1-cloud-amd64
+rt.kernel.select: installed RT     = /boot/vmlinuz-6.12.90+deb13.1-rt-amd64
+rt.kernel.select: NOTE - boot default is NOT changed here (D2); select at the boot menu, confirm post-reboot (M16)
+rt.grub.audit: /etc/default/grub present
+rt.grub.audit: GRUB_CMDLINE_LINUX_DEFAULT line: GRUB_CMDLINE_LINUX_DEFAULT=" intel_pstate=disable"
+rt.grub.audit: applied     intel_pstate=disable
+rt.grub.audit: backup present /etc/default/grub.ethercat-rt.bak
+rt.clock.status: expected  = tsc
+rt.clock.status: current   = kvm-clock
+rt.clock.status: available = kvm-clock tsc hpet acpi_pm 
+rt.clock.status: MISMATCH - current (kvm-clock) != expected (tsc)
+rt.limits.audit: group realtime present (members: )
+rt.limits.audit: policy present /etc/security/limits.d/99-realtime.conf
+rt.limits.audit:   #
+rt.limits.audit:   # Ansible managed
+rt.limits.audit:   #
+rt.limits.audit:   # Realtime limits for the realtime group (rt_host role, cycle M6).
+rt.limits.audit:   @realtime   -   rtprio   99
+rt.limits.audit:   @realtime   -   memlock   unlimited
+rt.limits.audit:   @realtime   -   nice   -20
+rt.service.audit: irqbalance.service   active=inactive enabled=masked
+rt.tuned.status: site profile = realtime
+rt.tuned.status: tuned-adm    = absent (tuned not installed; never auto-engaged)
+rt.status: NOTE - running-kernel and boot-persistence confirmation is an external gate (M16, D2)
+make: Leaving directory '/home/validator/ethercat-env'
+
+phase 14 complete
