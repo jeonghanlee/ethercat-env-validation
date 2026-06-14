@@ -1,0 +1,392 @@
+
+=== RUN: sudo make -C /home/validator/ethercat-env install ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[install]: present  install      (/usr/bin/install)
+doctor[install]: present  chown        (/usr/bin/chown)
+doctor[install]: present  rm           (/usr/bin/rm)
+doctor[install]: present  ln           (/usr/bin/ln)
+doctor[install]: present  groupadd     (/usr/sbin/groupadd)
+doctor[install]: present  groupdel     (/usr/sbin/groupdel)
+doctor[install]: present  getent       (/usr/bin/getent)
+doctor[install]: present  mktemp       (/usr/bin/mktemp)
+doctor[install]: OK - all required tools present
+guard-path: OK - /home/validator/ethercat-env/.versions
+require-root: OK
+guard-path: OK - /opt/ethercat
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env build.install ===
+make: Entering directory '/home/validator/ethercat-env'
+make -C ethercat-src
+make[1]: Entering directory '/home/validator/ethercat-env/ethercat-src'
+make  all-recursive
+make[2]: Entering directory '/home/validator/ethercat-env/ethercat-src'
+Making all in include
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/include'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/include'
+Making all in script
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/script'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/script'
+Making all in devices
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices'
+Making all in ccat
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/ccat'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/ccat'
+Making all in e1000
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/e1000'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/e1000'
+Making all in e1000e
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/e1000e'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/e1000e'
+Making all in genet
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/genet'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/genet'
+Making all in igb
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/igb'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/igb'
+Making all in igc
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/igc'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/igc'
+Making all in r8169
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/r8169'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/r8169'
+Making all in stmmac
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/stmmac'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/stmmac'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices'
+Making all in master
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/master'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/master'
+Making all in tool
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/tool'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/tool'
+Making all in lib
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/lib'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/lib'
+Making all in examples
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples'
+Making all in dc_user
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples/dc_user'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples/dc_user'
+Making all in user
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples/user'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples/user'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples'
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src'
+make[2]: Leaving directory '/home/validator/ethercat-env/ethercat-src'
+make[1]: Leaving directory '/home/validator/ethercat-env/ethercat-src'
+make -C ethercat-src install
+make[1]: Entering directory '/home/validator/ethercat-env/ethercat-src'
+Making install in include
+make[2]: Entering directory '/home/validator/ethercat-env/ethercat-src/include'
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/include'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/opt/ethercat/include'
+ /usr/bin/install -c -m 644 ecrt.h ectty.h '/opt/ethercat/include'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/include'
+make[2]: Leaving directory '/home/validator/ethercat-env/ethercat-src/include'
+Making install in script
+make[2]: Entering directory '/home/validator/ethercat-env/ethercat-src/script'
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/script'
+ /usr/bin/mkdir -p '/opt/ethercat/etc'
+ /usr/bin/install -c -m 644 ethercat.conf '/opt/ethercat/etc'
+ /usr/bin/mkdir -p '/opt/ethercat/sbin'
+ /usr/bin/install -c ethercatctl '/opt/ethercat/sbin'
+ /usr/bin/mkdir -p '/opt/ethercat/share/bash-completion/completions'
+ /usr/bin/install -c -m 644 ethercat.bash_completion '/opt/ethercat/share/bash-completion/completions'
+ /usr/bin/mkdir -p '/opt/ethercat/etc/init.d'
+ /usr/bin/install -c init.d/ethercat '/opt/ethercat/etc/init.d'
+ /usr/bin/mkdir -p '/opt/ethercat/etc/sysconfig'
+ /usr/bin/install -c -m 644 ethercat '/opt/ethercat/etc/sysconfig'
+make  install-data-hook
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/script'
+cd /opt/ethercat/share/bash-completion/completions; \
+    mv ethercat.bash_completion ethercat
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/script'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/script'
+make[2]: Leaving directory '/home/validator/ethercat-env/ethercat-src/script'
+Making install in devices
+make[2]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices'
+Making install in ccat
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/ccat'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/ccat'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/ccat'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/ccat'
+Making install in e1000
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/e1000'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/e1000'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/e1000'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/e1000'
+Making install in e1000e
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/e1000e'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/e1000e'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/e1000e'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/e1000e'
+Making install in genet
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/genet'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/genet'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/genet'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/genet'
+Making install in igb
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/igb'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/igb'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/igb'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/igb'
+Making install in igc
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/igc'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/igc'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/igc'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/igc'
+Making install in r8169
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/r8169'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/r8169'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/r8169'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/r8169'
+Making install in stmmac
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/stmmac'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/stmmac'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/stmmac'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/stmmac'
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices'
+make[2]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices'
+Making install in master
+make[2]: Entering directory '/home/validator/ethercat-env/ethercat-src/master'
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/master'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/master'
+make[2]: Leaving directory '/home/validator/ethercat-env/ethercat-src/master'
+Making install in tool
+make[2]: Entering directory '/home/validator/ethercat-env/ethercat-src/tool'
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/tool'
+ /usr/bin/mkdir -p '/opt/ethercat/bin'
+  /bin/bash ../libtool   --mode=install /usr/bin/install -c ethercat '/opt/ethercat/bin'
+libtool: install: /usr/bin/install -c ethercat /opt/ethercat/bin/ethercat
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/tool'
+make[2]: Leaving directory '/home/validator/ethercat-env/ethercat-src/tool'
+Making install in lib
+make[2]: Entering directory '/home/validator/ethercat-env/ethercat-src/lib'
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/lib'
+ /usr/bin/mkdir -p '/opt/ethercat/lib'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   libethercat.la '/opt/ethercat/lib'
+libtool: install: /usr/bin/install -c .libs/libethercat.so.1.2.0 /opt/ethercat/lib/libethercat.so.1.2.0
+libtool: install: (cd /opt/ethercat/lib && { ln -s -f libethercat.so.1.2.0 libethercat.so.1 || { rm -f libethercat.so.1 && ln -s libethercat.so.1.2.0 libethercat.so.1; }; })
+libtool: install: (cd /opt/ethercat/lib && { ln -s -f libethercat.so.1.2.0 libethercat.so || { rm -f libethercat.so && ln -s libethercat.so.1.2.0 libethercat.so; }; })
+libtool: install: /usr/bin/install -c .libs/libethercat.lai /opt/ethercat/lib/libethercat.la
+libtool: install: /usr/bin/install -c .libs/libethercat.a /opt/ethercat/lib/libethercat.a
+libtool: install: chmod 644 /opt/ethercat/lib/libethercat.a
+libtool: install: ranlib /opt/ethercat/lib/libethercat.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /opt/ethercat/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /opt/ethercat/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/opt/ethercat/lib/cmake/ethercat'
+ /usr/bin/install -c -m 644 ethercat-config.cmake '/opt/ethercat/lib/cmake/ethercat'
+ /usr/bin/mkdir -p '/opt/ethercat/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libethercat.pc '/opt/ethercat/lib/pkgconfig'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/lib'
+make[2]: Leaving directory '/home/validator/ethercat-env/ethercat-src/lib'
+Making install in examples
+make[2]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples'
+Making install in dc_user
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples/dc_user'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples/dc_user'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples/dc_user'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples/dc_user'
+Making install in user
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples/user'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples/user'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples/user'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples/user'
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples'
+make[2]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples'
+make[2]: Entering directory '/home/validator/ethercat-env/ethercat-src'
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src'
+make[2]: Leaving directory '/home/validator/ethercat-env/ethercat-src'
+make[1]: Leaving directory '/home/validator/ethercat-env/ethercat-src'
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RECORD (failure tolerated): ls -la /opt/ethercat ===
+total 36
+drwxr-xr-x 8 root root 4096 Jun 14 06:39 .
+drwxr-xr-x 3 root root 4096 Jun 14 06:39 ..
+-rw-r--r-- 1 root root  192 Jun 14 06:39 .versions
+drwxr-xr-x 2 root root 4096 Jun 14 06:39 bin
+drwxr-xr-x 4 root root 4096 Jun 14 06:39 etc
+drwxr-xr-x 2 root root 4096 Jun 14 06:39 include
+drwxr-xr-x 4 root root 4096 Jun 14 06:39 lib
+drwxr-xr-x 2 root root 4096 Jun 14 06:39 sbin
+drwxr-xr-x 3 root root 4096 Jun 14 06:39 share
+=== exit code: 0 ===
+
+=== RECORD (failure tolerated): ls -la /opt/ethercat/bin /opt/ethercat/sbin ===
+/opt/ethercat/bin:
+total 6464
+drwxr-xr-x 2 root root    4096 Jun 14 06:39 .
+drwxr-xr-x 8 root root    4096 Jun 14 06:39 ..
+-rwxr-xr-x 1 root root 6608936 Jun 14 06:39 ethercat
+
+/opt/ethercat/sbin:
+total 16
+drwxr-xr-x 2 root root 4096 Jun 14 06:39 .
+drwxr-xr-x 8 root root 4096 Jun 14 06:39 ..
+-rwxr-xr-x 1 root root 6907 Jun 14 06:39 ethercatctl
+=== exit code: 0 ===
+
+=== RECORD (failure tolerated): ls -la /opt/ethercat/etc ===
+total 20
+drwxr-xr-x 4 root root 4096 Jun 14 06:39 .
+drwxr-xr-x 8 root root 4096 Jun 14 06:39 ..
+-rw-r--r-- 1 root root 3203 Jun 14 06:39 ethercat.conf
+drwxr-xr-x 2 root root 4096 Jun 14 06:39 init.d
+drwxr-xr-x 2 root root 4096 Jun 14 06:39 sysconfig
+=== exit code: 0 ===
+
+=== RUN: make -C /home/validator/ethercat-env command.audit ===
+make: Entering directory '/home/validator/ethercat-env'
+command.audit: link   = /usr/bin/ethercat
+command.audit: target = /opt/ethercat/bin/ethercat
+command.audit: absent
+command.audit: not on PATH
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env command.install ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+doctor[install]: present  install      (/usr/bin/install)
+doctor[install]: present  chown        (/usr/bin/chown)
+doctor[install]: present  rm           (/usr/bin/rm)
+doctor[install]: present  ln           (/usr/bin/ln)
+doctor[install]: present  groupadd     (/usr/sbin/groupadd)
+doctor[install]: present  groupdel     (/usr/sbin/groupdel)
+doctor[install]: present  getent       (/usr/bin/getent)
+doctor[install]: present  mktemp       (/usr/bin/mktemp)
+doctor[install]: OK - all required tools present
+require-root: OK
+guard-path: OK - /usr/bin/ethercat
+ln -sf "/opt/ethercat/bin/ethercat" "/usr/bin/ethercat"
+command.install: OK - /usr/bin/ethercat -> /opt/ethercat/bin/ethercat
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env command.audit ===
+make: Entering directory '/home/validator/ethercat-env'
+command.audit: link   = /usr/bin/ethercat
+command.audit: target = /opt/ethercat/bin/ethercat
+command.audit: present (-> /opt/ethercat/bin/ethercat)
+command.audit: on PATH at /usr/bin/ethercat
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env loader.render ===
+make: Entering directory '/home/validator/ethercat-env'
+loader.render: OK - staged /home/validator/ethercat-env/build/systemd/ethercat.conf (/opt/ethercat/lib)
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env loader.install ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+doctor[install]: present  install      (/usr/bin/install)
+doctor[install]: present  chown        (/usr/bin/chown)
+doctor[install]: present  rm           (/usr/bin/rm)
+doctor[install]: present  ln           (/usr/bin/ln)
+doctor[install]: present  groupadd     (/usr/sbin/groupadd)
+doctor[install]: present  groupdel     (/usr/sbin/groupdel)
+doctor[install]: present  getent       (/usr/bin/getent)
+doctor[install]: present  mktemp       (/usr/bin/mktemp)
+doctor[install]: OK - all required tools present
+loader.render: OK - staged /home/validator/ethercat-env/build/systemd/ethercat.conf (/opt/ethercat/lib)
+require-root: OK
+guard-path: OK - /etc/ld.so.conf.d/ethercat.conf
+install -m 0644 "/home/validator/ethercat-env/build/systemd/ethercat.conf" "/etc/ld.so.conf.d/ethercat.conf"
+ldconfig
+loader.install: OK - installed /etc/ld.so.conf.d/ethercat.conf and ran ldconfig
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env loader.audit ===
+make: Entering directory '/home/validator/ethercat-env'
+loader.audit: fragment = /etc/ld.so.conf.d/ethercat.conf
+loader.audit: libdir   = /opt/ethercat/lib
+loader.audit: fragment present
+loader.audit: libethercat resolved by the runtime linker
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: /usr/bin/ethercat version ===
+IgH EtherCAT master 1.6.9 1.6.9-4-g46cc20e6
+
+phase 3 complete

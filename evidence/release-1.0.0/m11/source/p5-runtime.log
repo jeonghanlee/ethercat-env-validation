@@ -1,0 +1,78 @@
+selected EtherCAT interface: enp0s3
+
+=== RUN: cat /home/validator/ethercat-env/ethercatmaster.local ===
+ETHERCAT_MASTER0="enp0s3"
+
+=== RUN: make -C /home/validator/ethercat-env runtime.generate ===
+make: Entering directory '/home/validator/ethercat-env'
+runtime.generate: OK - wrote /home/validator/ethercat-env/build/ethercat.conf
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env runtime.lint ===
+make: Entering directory '/home/validator/ethercat-env'
+runtime.generate: OK - wrote /home/validator/ethercat-env/build/ethercat.conf
+runtime.lint: OK - required keys present, master device=enp0s3
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env runtime.config.show ===
+make: Entering directory '/home/validator/ethercat-env'
+# /home/validator/ethercat-env/build/ethercat.conf
+#------------------------------------------------------------------------------
+#
+#  EtherCAT master configuration file for use with ethercatctl.
+#
+#  GENERATED FILE - do not edit by hand.
+#  Rendered by `make runtime.generate` from templates/ethercat.conf.in.
+#  Site inputs: configure/ethercatmaster.conf and the selected device profile.
+#
+#------------------------------------------------------------------------------
+
+#
+# Main Ethernet device for master 0.
+#
+# A MAC address (hex with colons) or a network interface name (resolved to a
+# MAC by the init script via the 'ip' command). The broadcast address
+# "ff:ff:ff:ff:ff:ff" accepts the first device offered by any Ethernet driver.
+#
+# A non-empty MASTER0_DEVICE creates one master.
+#
+MASTER0_DEVICE="enp0s3"
+
+#
+# Backup Ethernet device for master 0 (redundancy). Empty disables redundancy.
+#
+MASTER0_BACKUP=""
+
+#
+# Ethernet driver modules used for EtherCAT operation.
+#
+# Space-separated list. Except for the generic driver, the init script unloads
+# the stock Ethernet driver and replaces it with the EtherCAT-capable one.
+# Possible values: 8139too, e100, e1000, e1000e, r8169, generic, igb,
+# igc, genet, dwmac-intel, stmmac-pci.
+#
+DEVICE_MODULES="generic"
+
+#
+# Interfaces brought up on `ethercatctl start` and down on `ethercatctl stop`.
+#
+# Space-separated interface names (such as eth0 or enp3s0). With the generic
+# driver the device must be up before the master starts, or all frames time out.
+#
+UPDOWN_INTERFACES="enp0s3"
+
+#
+# Flags for loading kernel modules. Usually left empty.
+#
+#MODPROBE_FLAGS="-b"
+
+#------------------------------------------------------------------------------
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env iface.status ===
+make: Entering directory '/home/validator/ethercat-env'
+iface.status: master interface = enp0s3
+iface.status: link state = DOWN
+make: Leaving directory '/home/validator/ethercat-env'
+
+phase 5 complete

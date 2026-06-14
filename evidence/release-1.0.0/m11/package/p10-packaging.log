@@ -1,0 +1,2468 @@
+
+=== RUN: sudo -E apt-get install -y debhelper dh-dkms pkgconf autoconf automake libtool ===
+Reading package lists...
+Building dependency tree...
+Reading state information...
+pkgconf is already the newest version (1.8.1-4).
+pkgconf set to manually installed.
+autoconf is already the newest version (2.72-3.1).
+automake is already the newest version (1:1.17-4).
+libtool is already the newest version (2.5.4-4).
+The following additional packages will be installed:
+  autopoint dh-autoreconf dh-strip-nondeterminism dwz gettext intltool-debian
+  libarchive-cpio-perl libarchive-zip-perl libdebhelper-perl
+  libfile-stripnondeterminism-perl libmail-sendmail-perl
+  libsys-hostname-long-perl po-debconf
+Suggested packages:
+  dh-make gettext-doc libasprintf-dev libgettextpo-dev gnulib-l10n
+  libmail-box-perl
+The following NEW packages will be installed:
+  autopoint debhelper dh-autoreconf dh-dkms dh-strip-nondeterminism dwz
+  gettext intltool-debian libarchive-cpio-perl libarchive-zip-perl
+  libdebhelper-perl libfile-stripnondeterminism-perl libmail-sendmail-perl
+  libsys-hostname-long-perl po-debconf
+0 upgraded, 15 newly installed, 0 to remove and 3 not upgraded.
+Need to get 4053 kB of archives.
+After this operation, 11.4 MB of additional disk space will be used.
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:2 https://deb.debian.org/debian trixie/main amd64 autopoint all 0.23.1-2 [770 kB]
+Get:3 https://deb.debian.org/debian trixie/main amd64 libdebhelper-perl all 13.24.2 [90.9 kB]
+Get:4 https://deb.debian.org/debian trixie/main amd64 dh-autoreconf all 20 [17.1 kB]
+Get:5 https://deb.debian.org/debian trixie/main amd64 libarchive-zip-perl all 1.68-1 [104 kB]
+Get:6 https://deb.debian.org/debian trixie/main amd64 libfile-stripnondeterminism-perl all 1.14.1-2 [19.7 kB]
+Get:7 https://deb.debian.org/debian trixie/main amd64 dh-strip-nondeterminism all 1.14.1-2 [8620 B]
+Get:8 https://deb.debian.org/debian trixie/main amd64 dwz amd64 0.15-1+b1 [110 kB]
+Get:9 https://deb.debian.org/debian trixie/main amd64 gettext amd64 0.23.1-2 [1680 kB]
+Get:10 https://deb.debian.org/debian trixie/main amd64 intltool-debian all 0.35.0+20060710.6 [22.9 kB]
+Get:11 https://deb.debian.org/debian trixie/main amd64 po-debconf all 1.0.21+nmu1 [248 kB]
+Get:12 https://deb.debian.org/debian trixie/main amd64 debhelper all 13.24.2 [919 kB]
+Get:13 https://deb.debian.org/debian trixie/main amd64 dh-dkms all 3.2.2-1~deb13u1 [15.1 kB]
+Get:14 https://deb.debian.org/debian trixie/main amd64 libarchive-cpio-perl all 0.10-3 [10.8 kB]
+Get:15 https://deb.debian.org/debian trixie/main amd64 libsys-hostname-long-perl all 1.5-3 [11.6 kB]
+Get:16 https://deb.debian.org/debian trixie/main amd64 libmail-sendmail-perl all 0.80-3 [24.3 kB]
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+Fetched 4053 kB in 31s (132 kB/s)
+Selecting previously unselected package autopoint.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 46265 files and directories currently installed.)
+Preparing to unpack .../00-autopoint_0.23.1-2_all.deb ...
+Unpacking autopoint (0.23.1-2) ...
+Selecting previously unselected package libdebhelper-perl.
+Preparing to unpack .../01-libdebhelper-perl_13.24.2_all.deb ...
+Unpacking libdebhelper-perl (13.24.2) ...
+Selecting previously unselected package dh-autoreconf.
+Preparing to unpack .../02-dh-autoreconf_20_all.deb ...
+Unpacking dh-autoreconf (20) ...
+Selecting previously unselected package libarchive-zip-perl.
+Preparing to unpack .../03-libarchive-zip-perl_1.68-1_all.deb ...
+Unpacking libarchive-zip-perl (1.68-1) ...
+Selecting previously unselected package libfile-stripnondeterminism-perl.
+Preparing to unpack .../04-libfile-stripnondeterminism-perl_1.14.1-2_all.deb ...
+Unpacking libfile-stripnondeterminism-perl (1.14.1-2) ...
+Selecting previously unselected package dh-strip-nondeterminism.
+Preparing to unpack .../05-dh-strip-nondeterminism_1.14.1-2_all.deb ...
+Unpacking dh-strip-nondeterminism (1.14.1-2) ...
+Selecting previously unselected package dwz.
+Preparing to unpack .../06-dwz_0.15-1+b1_amd64.deb ...
+Unpacking dwz (0.15-1+b1) ...
+Selecting previously unselected package gettext.
+Preparing to unpack .../07-gettext_0.23.1-2_amd64.deb ...
+Unpacking gettext (0.23.1-2) ...
+Selecting previously unselected package intltool-debian.
+Preparing to unpack .../08-intltool-debian_0.35.0+20060710.6_all.deb ...
+Unpacking intltool-debian (0.35.0+20060710.6) ...
+Selecting previously unselected package po-debconf.
+Preparing to unpack .../09-po-debconf_1.0.21+nmu1_all.deb ...
+Unpacking po-debconf (1.0.21+nmu1) ...
+Selecting previously unselected package debhelper.
+Preparing to unpack .../10-debhelper_13.24.2_all.deb ...
+Unpacking debhelper (13.24.2) ...
+Selecting previously unselected package dh-dkms.
+Preparing to unpack .../11-dh-dkms_3.2.2-1~deb13u1_all.deb ...
+Unpacking dh-dkms (3.2.2-1~deb13u1) ...
+Selecting previously unselected package libarchive-cpio-perl.
+Preparing to unpack .../12-libarchive-cpio-perl_0.10-3_all.deb ...
+Unpacking libarchive-cpio-perl (0.10-3) ...
+Selecting previously unselected package libsys-hostname-long-perl.
+Preparing to unpack .../13-libsys-hostname-long-perl_1.5-3_all.deb ...
+Unpacking libsys-hostname-long-perl (1.5-3) ...
+Selecting previously unselected package libmail-sendmail-perl.
+Preparing to unpack .../14-libmail-sendmail-perl_0.80-3_all.deb ...
+Unpacking libmail-sendmail-perl (0.80-3) ...
+Setting up gettext (0.23.1-2) ...
+Setting up dh-dkms (3.2.2-1~deb13u1) ...
+Setting up libarchive-zip-perl (1.68-1) ...
+Setting up libdebhelper-perl (13.24.2) ...
+Setting up intltool-debian (0.35.0+20060710.6) ...
+Setting up autopoint (0.23.1-2) ...
+Setting up dwz (0.15-1+b1) ...
+Setting up libarchive-cpio-perl (0.10-3) ...
+Setting up libsys-hostname-long-perl (1.5-3) ...
+Setting up libfile-stripnondeterminism-perl (1.14.1-2) ...
+Setting up po-debconf (1.0.21+nmu1) ...
+Setting up dh-autoreconf (20) ...
+Setting up libmail-sendmail-perl (0.80-3) ...
+Setting up dh-strip-nondeterminism (1.14.1-2) ...
+Setting up debhelper (13.24.2) ...
+Processing triggers for libc-bin (2.41-12+deb13u3) ...
+Processing triggers for man-db (2.13.1-1) ...
+
+=== RUN: make -C /home/validator/ethercat-env init ===
+make: Entering directory '/home/validator/ethercat-env'
+git -c url.https://gitlab.com/etherlab.org/.insteadOf=https://gitlab.com/etherlab.org/ clone  https://gitlab.com/etherlab.org/ethercat ethercat-src; git -C ethercat-src checkout stable-1.6
+Cloning into 'ethercat-src'...
+warning: redirecting to https://gitlab.com/etherlab.org/ethercat.git/
+Your branch is up to date with 'origin/stable-1.6'.
+Already on 'stable-1.6'
+Submodule 'doxygen-layout' (https://gitlab.com/etherlab.org/doxygen-layout.git) registered for path 'doxygen-layout'
+Cloning into '/home/validator/ethercat-env/ethercat-src/doxygen-layout'...
+Submodule path 'doxygen-layout': checked out '0f7d719f775b5db43ae4a775bda0a052a6ba2b65'
+src.verify: OK - revision 1.6.9-4-g46cc20e6 matches SRC_HASH
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env pkg.orig ===
+make: Entering directory '/home/validator/ethercat-env'
+src.verify: OK - revision 1.6.9-4-g46cc20e6 matches SRC_HASH
+guard-path: OK - /home/validator/ethercat-env/packaging/ethercat_1.6.9+4+g46cc20e6.orig.tar.gz
+pkg.orig: OK - /home/validator/ethercat-env/packaging/ethercat_1.6.9+4+g46cc20e6.orig.tar.gz
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env pkg.orig.verify ===
+make: Entering directory '/home/validator/ethercat-env'
+pkg.orig.verify: OK - orig content matches ORIG_SHA256
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env pkg.series ===
+make: Entering directory '/home/validator/ethercat-env'
+guard-path: OK - /home/validator/ethercat-env/debian/patches/series
+pkg.series: OK - 0 entries from active classes (archive excluded)
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env pkg.verify ===
+make: Entering directory '/home/validator/ethercat-env'
+pkg.orig.verify: OK - orig content matches ORIG_SHA256
+pkg.verify: OK - series matches the active class registry
+pkg.verify: NOTE - packaging toolchain present; build verification runs in the VM phase
+pkg.verify: OK - F4 overrides agree between template and package conf
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: rm -rf /home/validator/pkgbuild ===
+
+=== RUN: mkdir -p /home/validator/pkgbuild ===
+
+=== RUN: cp /home/validator/ethercat-env/packaging/ethercat_1.6.9+4+g46cc20e6.orig.tar.gz /home/validator/pkgbuild/ ===
+
+=== RUN: tar -xzf /home/validator/ethercat-env/packaging/ethercat_1.6.9+4+g46cc20e6.orig.tar.gz -C /home/validator/pkgbuild ===
+
+=== RUN: cp -a /home/validator/ethercat-env/debian /home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/ ===
+
+=== RUN: dpkg-buildpackage -S -us -uc ===
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dpkg-buildpackage: info: source package ethercat
+dpkg-buildpackage: info: source version 1.6.9+4+g46cc20e6-1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Jeong Han Lee <jeonghan.lee@gmail.com>
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+ dpkg-source --before-build .
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+ debian/rules clean
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dh clean --with installsysusers
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_clean
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+ dpkg-source -b .
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building ethercat using existing ./ethercat_1.6.9+4+g46cc20e6.orig.tar.gz
+dpkg-source: info: building ethercat in ethercat_1.6.9+4+g46cc20e6-1.debian.tar.xz
+dpkg-source: info: building ethercat in ethercat_1.6.9+4+g46cc20e6-1.dsc
+ dpkg-genbuildinfo --build=source -O../ethercat_1.6.9+4+g46cc20e6-1_source.buildinfo
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+ dpkg-genchanges --build=source -O../ethercat_1.6.9+4+g46cc20e6-1_source.changes
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dpkg-buildpackage: info: source-only upload (original source is included)
+
+=== RUN: dpkg-buildpackage -b -us -uc ===
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dpkg-buildpackage: info: source package ethercat
+dpkg-buildpackage: info: source version 1.6.9+4+g46cc20e6-1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Jeong Han Lee <jeonghan.lee@gmail.com>
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dpkg-buildpackage: info: host architecture amd64
+ dpkg-source --before-build .
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+ debian/rules clean
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dh clean --with installsysusers
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_clean
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+ debian/rules binary
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dh binary --with installsysusers
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_update_autotools_config
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_autoreconf
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+aclocal: warning: couldn't open directory 'm4': No such file or directory
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'autoconf'.
+libtoolize: copying file 'autoconf/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+configure.ac:49: installing 'autoconf/ar-lib'
+configure.ac:48: installing 'autoconf/compile'
+configure.ac:52: installing 'autoconf/config.guess'
+configure.ac:52: installing 'autoconf/config.sub'
+configure.ac:33: installing 'autoconf/install-sh'
+configure.ac:33: installing 'autoconf/missing'
+examples/dc_user/Makefile.am: installing 'autoconf/depcomp'
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dh_auto_configure -- --disable-kernel --without-systemdsystemunitdir
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+	./configure --build=x86_64-linux-gnu --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-option-checking --disable-silent-rules --libdir=\${prefix}/lib/x86_64-linux-gnu --runstatedir=/run --disable-maintainer-mode --disable-dependency-tracking --disable-kernel --without-systemdsystemunitdir
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether sleep supports fractional seconds... yes
+checking filesystem timestamp resolution... 0.01
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking xargs -n works... yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.27... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... none
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking for g++... g++
+checking whether the compiler supports GNU C++... yes
+checking whether g++ accepts -g... yes
+checking for g++ option to enable C++11 features... none needed
+checking dependency style of g++... none
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ranlib... ranlib
+checking for archiver @FILE support... @
+checking for strip... strip
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether to build kernel modules... no
+checking for Linux modules installation directory... ethercat
+checking whether to verify native driver resources... no
+checking whether to build the CCAT driver... no
+checking for RTAI path... not specified.
+checking for Xenomai path... not specified.
+checking whether to build RTDM interface... no
+checking whether to build the debug interface... no
+checking whether to build the debug ring... no
+checking whether to build with EoE support... yes
+checking whether to use the CPU timestamp counter... no
+checking whether to use high-resolution timers for scheduling... no
+checking whether to read alias addresses from registers... no
+checking whether to build the command-line tool... yes
+checking whether to build the userspace library... yes
+checking whether to build the fake userspace library... no
+checking whether to build the tty driver... no
+checking whether to allow identification wildcards... no
+checking for number of Ethernet devices... 1 (Redundancy disabled)
+checking whether to assign the SII to PDI... yes
+checking whether to syslog in realtime context... yes
+checking for path to kernel modules... /sbin
+checking for ip command... /sbin/ip
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Doxyfile
+config.status: creating Kbuild
+config.status: creating Makefile
+config.status: creating devices/Kbuild
+config.status: creating devices/Makefile
+config.status: creating devices/ccat/Kbuild
+config.status: creating devices/ccat/Makefile
+config.status: creating devices/e1000/Kbuild
+config.status: creating devices/e1000/Makefile
+config.status: creating devices/e1000e/Kbuild
+config.status: creating devices/e1000e/Makefile
+config.status: creating devices/genet/Kbuild
+config.status: creating devices/genet/Makefile
+config.status: creating devices/igb/Kbuild
+config.status: creating devices/igb/Makefile
+config.status: creating devices/igc/Kbuild
+config.status: creating devices/igc/Makefile
+config.status: creating devices/r8169/Kbuild
+config.status: creating devices/r8169/Makefile
+config.status: creating devices/stmmac/Kbuild
+config.status: creating devices/stmmac/Makefile
+config.status: creating ethercat.spec
+config.status: creating examples/Kbuild
+config.status: creating examples/Makefile
+config.status: creating examples/dc_rtai/Kbuild
+config.status: creating examples/dc_rtai/Makefile
+config.status: creating examples/dc_user/Makefile
+config.status: creating examples/mini/Kbuild
+config.status: creating examples/mini/Makefile
+config.status: creating examples/rtai/Kbuild
+config.status: creating examples/rtai/Makefile
+config.status: creating examples/rtai_rtdm/Makefile
+config.status: creating examples/rtai_rtdm_dc/Makefile
+config.status: creating examples/tty/Kbuild
+config.status: creating examples/tty/Makefile
+config.status: creating examples/user/Makefile
+config.status: creating examples/xenomai/Makefile
+config.status: creating examples/xenomai_posix/Makefile
+config.status: creating fake_lib/Makefile
+config.status: creating include/Makefile
+config.status: creating lib/Makefile
+config.status: creating lib/libethercat.pc
+config.status: creating master/Kbuild
+config.status: creating master/Makefile
+config.status: creating script/Makefile
+config.status: creating tool/Makefile
+config.status: creating tty/Kbuild
+config.status: creating tty/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make[1]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+   dh_auto_build
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+	make -j4
+make[1]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+make  all-recursive
+make[2]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+Making all in include
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/include'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/include'
+Making all in script
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/script'
+/usr/bin/mkdir -p init.d && \
+/usr/bin/sed -e 's,[@]VERSION[@],1.6.9,g' -e 's,[@]ipcmd[@],/sbin/ip,g' -e 's,[@]kmoddir[@],/sbin,g' -e 's,[@]bindir[@],/usr/bin,g' -e 's,[@]sbindir[@],/usr/sbin,g' -e 's,[@]sysconfdir[@],/etc,g' < init.d/ethercat.in > init.d/ethercat
+/usr/bin/sed -e 's,[@]VERSION[@],1.6.9,g' -e 's,[@]ipcmd[@],/sbin/ip,g' -e 's,[@]kmoddir[@],/sbin,g' -e 's,[@]bindir[@],/usr/bin,g' -e 's,[@]sbindir[@],/usr/sbin,g' -e 's,[@]sysconfdir[@],/etc,g' < ethercatctl.in > ethercatctl
+/usr/bin/sed -e 's,for use with ethercatctl,for use with init.d,g' < ethercat.conf > ethercat
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/script'
+Making all in tool
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/tool'
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-Command.o `test -f 'Command.cpp' || echo './'`Command.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandAlias.o `test -f 'CommandAlias.cpp' || echo './'`CommandAlias.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandCrc.o `test -f 'CommandCrc.cpp' || echo './'`CommandCrc.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandCStruct.o `test -f 'CommandCStruct.cpp' || echo './'`CommandCStruct.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandConfig.o `test -f 'CommandConfig.cpp' || echo './'`CommandConfig.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandData.o `test -f 'CommandData.cpp' || echo './'`CommandData.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandDebug.o `test -f 'CommandDebug.cpp' || echo './'`CommandDebug.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandDomains.o `test -f 'CommandDomains.cpp' || echo './'`CommandDomains.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandDownload.o `test -f 'CommandDownload.cpp' || echo './'`CommandDownload.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandFoeRead.o `test -f 'CommandFoeRead.cpp' || echo './'`CommandFoeRead.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandFoeWrite.o `test -f 'CommandFoeWrite.cpp' || echo './'`CommandFoeWrite.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandGraph.o `test -f 'CommandGraph.cpp' || echo './'`CommandGraph.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandMaster.o `test -f 'CommandMaster.cpp' || echo './'`CommandMaster.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandPdos.o `test -f 'CommandPdos.cpp' || echo './'`CommandPdos.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandRegRead.o `test -f 'CommandRegRead.cpp' || echo './'`CommandRegRead.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandRegWrite.o `test -f 'CommandRegWrite.cpp' || echo './'`CommandRegWrite.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandRescan.o `test -f 'CommandRescan.cpp' || echo './'`CommandRescan.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandSdos.o `test -f 'CommandSdos.cpp' || echo './'`CommandSdos.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandSiiRead.o `test -f 'CommandSiiRead.cpp' || echo './'`CommandSiiRead.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandSiiWrite.o `test -f 'CommandSiiWrite.cpp' || echo './'`CommandSiiWrite.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandSlaves.o `test -f 'CommandSlaves.cpp' || echo './'`CommandSlaves.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandSoeRead.o `test -f 'CommandSoeRead.cpp' || echo './'`CommandSoeRead.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandSoeWrite.o `test -f 'CommandSoeWrite.cpp' || echo './'`CommandSoeWrite.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandStates.o `test -f 'CommandStates.cpp' || echo './'`CommandStates.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandUpload.o `test -f 'CommandUpload.cpp' || echo './'`CommandUpload.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandVersion.o `test -f 'CommandVersion.cpp' || echo './'`CommandVersion.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandXml.o `test -f 'CommandXml.cpp' || echo './'`CommandXml.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-DataTypeHandler.o `test -f 'DataTypeHandler.cpp' || echo './'`DataTypeHandler.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-FoeCommand.o `test -f 'FoeCommand.cpp' || echo './'`FoeCommand.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-MasterDevice.o `test -f 'MasterDevice.cpp' || echo './'`MasterDevice.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-NumberListParser.o `test -f 'NumberListParser.cpp' || echo './'`NumberListParser.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-SdoCommand.o `test -f 'SdoCommand.cpp' || echo './'`SdoCommand.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-SoeCommand.o `test -f 'SoeCommand.cpp' || echo './'`SoeCommand.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-main.o `test -f 'main.cpp' || echo './'`main.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-sii_crc.o `test -f 'sii_crc.cpp' || echo './'`sii_crc.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandEoe.o `test -f 'CommandEoe.cpp' || echo './'`CommandEoe.cpp
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ethercat-CommandIp.o `test -f 'CommandIp.cpp' || echo './'`CommandIp.cpp
+/bin/bash ../libtool  --tag=CXX   --mode=link g++ -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else git -C .. describe 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -o ethercat ethercat-Command.o ethercat-CommandAlias.o ethercat-CommandCrc.o ethercat-CommandCStruct.o ethercat-CommandConfig.o ethercat-CommandData.o ethercat-CommandDebug.o ethercat-CommandDomains.o ethercat-CommandDownload.o ethercat-CommandFoeRead.o ethercat-CommandFoeWrite.o ethercat-CommandGraph.o ethercat-CommandMaster.o ethercat-CommandPdos.o ethercat-CommandRegRead.o ethercat-CommandRegWrite.o ethercat-CommandRescan.o ethercat-CommandSdos.o ethercat-CommandSiiRead.o ethercat-CommandSiiWrite.o ethercat-CommandSlaves.o ethercat-CommandSoeRead.o ethercat-CommandSoeWrite.o ethercat-CommandStates.o ethercat-CommandUpload.o ethercat-CommandVersion.o ethercat-CommandXml.o ethercat-DataTypeHandler.o ethercat-FoeCommand.o ethercat-MasterDevice.o ethercat-NumberListParser.o ethercat-SdoCommand.o ethercat-SoeCommand.o ethercat-main.o ethercat-sii_crc.o ethercat-CommandEoe.o ethercat-CommandIp.o  
+libtool: link: g++ -I../include -I../master -Wall -DREV=unknown -fno-strict-aliasing -g -O2 -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wl,-z -Wl,relro -o ethercat ethercat-Command.o ethercat-CommandAlias.o ethercat-CommandCrc.o ethercat-CommandCStruct.o ethercat-CommandConfig.o ethercat-CommandData.o ethercat-CommandDebug.o ethercat-CommandDomains.o ethercat-CommandDownload.o ethercat-CommandFoeRead.o ethercat-CommandFoeWrite.o ethercat-CommandGraph.o ethercat-CommandMaster.o ethercat-CommandPdos.o ethercat-CommandRegRead.o ethercat-CommandRegWrite.o ethercat-CommandRescan.o ethercat-CommandSdos.o ethercat-CommandSiiRead.o ethercat-CommandSiiWrite.o ethercat-CommandSlaves.o ethercat-CommandSoeRead.o ethercat-CommandSoeWrite.o ethercat-CommandStates.o ethercat-CommandUpload.o ethercat-CommandVersion.o ethercat-CommandXml.o ethercat-DataTypeHandler.o ethercat-FoeCommand.o ethercat-MasterDevice.o ethercat-NumberListParser.o ethercat-SdoCommand.o ethercat-SoeCommand.o ethercat-main.o ethercat-sii_crc.o ethercat-CommandEoe.o ethercat-CommandIp.o 
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/tool'
+Making all in lib
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/lib'
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o libethercat_la-common.lo `test -f 'common.c' || echo './'`common.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o libethercat_la-domain.lo `test -f 'domain.c' || echo './'`domain.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o libethercat_la-master.lo `test -f 'master.c' || echo './'`master.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o libethercat_la-reg_request.lo `test -f 'reg_request.c' || echo './'`reg_request.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c reg_request.c  -fPIC -DPIC -o .libs/libethercat_la-reg_request.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c domain.c  -fPIC -DPIC -o .libs/libethercat_la-domain.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c common.c  -fPIC -DPIC -o .libs/libethercat_la-common.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c master.c  -fPIC -DPIC -o .libs/libethercat_la-master.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c reg_request.c -o libethercat_la-reg_request.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c domain.c -o libethercat_la-domain.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c common.c -o libethercat_la-common.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o libethercat_la-sdo_request.lo `test -f 'sdo_request.c' || echo './'`sdo_request.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o libethercat_la-slave_config.lo `test -f 'slave_config.c' || echo './'`slave_config.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c slave_config.c  -fPIC -DPIC -o .libs/libethercat_la-slave_config.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c sdo_request.c  -fPIC -DPIC -o .libs/libethercat_la-sdo_request.o
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o libethercat_la-soe_request.lo `test -f 'soe_request.c' || echo './'`soe_request.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c master.c -o libethercat_la-master.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c soe_request.c  -fPIC -DPIC -o .libs/libethercat_la-soe_request.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c sdo_request.c -o libethercat_la-sdo_request.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c soe_request.c -o libethercat_la-soe_request.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o libethercat_la-voe_handler.lo `test -f 'voe_handler.c' || echo './'`voe_handler.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c voe_handler.c  -fPIC -DPIC -o .libs/libethercat_la-voe_handler.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c slave_config.c -o libethercat_la-slave_config.o >/dev/null 2>&1
+/usr/bin/sed -e 's,%libdir%,/usr/lib/x86_64-linux-gnu,' -e 's,%includedir%,/usr/include,' ethercat-config.cmake.in > ethercat-config.cmake
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c voe_handler.c -o libethercat_la-voe_handler.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -fno-strict-aliasing -Wall -Wmissing-prototypes -I.. -Dethercat_EXPORTS -fvisibility=hidden -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -version-info 3:0:2 -Wl,--version-script=./libethercat.map -fvisibility=hidden -Wl,-z,relro -o libethercat.la -rpath /usr/lib/x86_64-linux-gnu libethercat_la-common.lo libethercat_la-domain.lo libethercat_la-master.lo libethercat_la-reg_request.lo libethercat_la-sdo_request.lo libethercat_la-slave_config.lo libethercat_la-soe_request.lo libethercat_la-voe_handler.lo  
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/libethercat_la-common.o .libs/libethercat_la-domain.o .libs/libethercat_la-master.o .libs/libethercat_la-reg_request.o .libs/libethercat_la-sdo_request.o .libs/libethercat_la-slave_config.o .libs/libethercat_la-soe_request.o .libs/libethercat_la-voe_handler.o    -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -Werror=format-security -Wl,--version-script=./libethercat.map -Wl,-z -Wl,relro   -Wl,-soname -Wl,libethercat.so.1 -o .libs/libethercat.so.1.2.0
+libtool: link: (cd ".libs" && rm -f "libethercat.so.1" && ln -s "libethercat.so.1.2.0" "libethercat.so.1")
+libtool: link: (cd ".libs" && rm -f "libethercat.so" && ln -s "libethercat.so.1.2.0" "libethercat.so")
+libtool: link: ar cr .libs/libethercat.a  libethercat_la-common.o libethercat_la-domain.o libethercat_la-master.o libethercat_la-reg_request.o libethercat_la-sdo_request.o libethercat_la-slave_config.o libethercat_la-soe_request.o libethercat_la-voe_handler.o
+libtool: link: ranlib .libs/libethercat.a
+libtool: link: ( cd ".libs" && rm -f "libethercat.la" && ln -s "../libethercat.la" "libethercat.la" )
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/lib'
+Making all in examples
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples'
+Making all in dc_user
+make[4]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/dc_user'
+gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../../include -Wall -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ec_dc_user_example-main.o `test -f 'main.c' || echo './'`main.c
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc -I../../include -Wall -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -L../../lib/.libs -lethercat -lrt -Wl,-z,relro -o ec_dc_user_example ec_dc_user_example-main.o  
+libtool: link: gcc -I../../include -Wall -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wl,-z -Wl,relro -o .libs/ec_dc_user_example ec_dc_user_example-main.o  -L../../lib/.libs /home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/lib/.libs/libethercat.so -lrt
+make[4]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/dc_user'
+Making all in user
+make[4]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/user'
+gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -I../../include -Wall -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o ec_user_example-main.o `test -f 'main.c' || echo './'`main.c
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc -I../../include -Wall -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -L../../lib/.libs -lethercat -lrt -Wl,-z,relro -o ec_user_example ec_user_example-main.o  
+libtool: link: gcc -I../../include -Wall -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wl,-z -Wl,relro -o .libs/ec_user_example ec_user_example-main.o  -L../../lib/.libs /home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/lib/.libs/libethercat.so -lrt
+make[4]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/user'
+make[4]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples'
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples'
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+make[2]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+make[1]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+   dh_auto_test
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+	make -j4 check "TESTSUITEFLAGS=-j4 --verbose" VERBOSE=1
+make[1]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+Making check in include
+make[2]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/include'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/include'
+Making check in script
+make[2]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/script'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/script'
+Making check in tool
+make[2]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/tool'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/tool'
+Making check in lib
+make[2]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/lib'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/lib'
+Making check in examples
+make[2]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples'
+Making check in dc_user
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/dc_user'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/dc_user'
+Making check in user
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/user'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/user'
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples'
+make[2]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples'
+make[2]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+make[2]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+make[1]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+   create-stamp debian/debhelper-build-stamp
+   dh_prep
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_auto_install
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+	make -j1 install DESTDIR=/home/validator/pkgbuild/ethercat-1.6.9\+4\+g46cc20e6/debian/tmp AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+Making install in include
+make[2]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/include'
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/include'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/include'
+ /usr/bin/install -c -m 644 ecrt.h ectty.h '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/include'
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/include'
+make[2]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/include'
+Making install in script
+make[2]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/script'
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/script'
+ /usr/bin/mkdir -p '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/etc'
+ /usr/bin/install -c -m 644 ethercat.conf '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/etc'
+ /usr/bin/mkdir -p '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/sbin'
+ /usr/bin/install -c ethercatctl '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/sbin'
+ /usr/bin/mkdir -p '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/share/bash-completion/completions'
+ /usr/bin/install -c -m 644 ethercat.bash_completion '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/share/bash-completion/completions'
+ /usr/bin/mkdir -p '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/etc/init.d'
+ /usr/bin/install -c init.d/ethercat '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/etc/init.d'
+ /usr/bin/mkdir -p '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/etc/sysconfig'
+ /usr/bin/install -c -m 644 ethercat '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/etc/sysconfig'
+make  install-data-hook
+make[4]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/script'
+cd /home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/share/bash-completion/completions; \
+    mv ethercat.bash_completion ethercat
+make[4]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/script'
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/script'
+make[2]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/script'
+Making install in tool
+make[2]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/tool'
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/tool'
+ /usr/bin/mkdir -p '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/bin'
+  /bin/bash ../libtool   --mode=install /usr/bin/install -c ethercat '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/bin'
+libtool: install: /usr/bin/install -c ethercat /home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/bin/ethercat
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/tool'
+make[2]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/tool'
+Making install in lib
+make[2]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/lib'
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/lib'
+ /usr/bin/mkdir -p '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/lib/x86_64-linux-gnu'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   libethercat.la '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/libethercat.so.1.2.0 /home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/lib/x86_64-linux-gnu/libethercat.so.1.2.0
+libtool: install: (cd /home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/lib/x86_64-linux-gnu && { ln -s -f libethercat.so.1.2.0 libethercat.so.1 || { rm -f libethercat.so.1 && ln -s libethercat.so.1.2.0 libethercat.so.1; }; })
+libtool: install: (cd /home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/lib/x86_64-linux-gnu && { ln -s -f libethercat.so.1.2.0 libethercat.so || { rm -f libethercat.so && ln -s libethercat.so.1.2.0 libethercat.so; }; })
+libtool: install: /usr/bin/install -c .libs/libethercat.lai /home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/lib/x86_64-linux-gnu/libethercat.la
+libtool: install: /usr/bin/install -c .libs/libethercat.a /home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/lib/x86_64-linux-gnu/libethercat.a
+libtool: install: chmod 644 /home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/lib/x86_64-linux-gnu/libethercat.a
+libtool: install: ranlib /home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/lib/x86_64-linux-gnu/libethercat.a
+libtool: warning: remember to run 'libtool --finish /usr/lib/x86_64-linux-gnu'
+ /usr/bin/mkdir -p '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/lib/x86_64-linux-gnu/cmake/ethercat'
+ /usr/bin/install -c -m 644 ethercat-config.cmake '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/lib/x86_64-linux-gnu/cmake/ethercat'
+ /usr/bin/mkdir -p '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig'
+ /usr/bin/install -c -m 644 libethercat.pc '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig'
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/lib'
+make[2]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/lib'
+Making install in examples
+make[2]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples'
+Making install in dc_user
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/dc_user'
+make[4]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/dc_user'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/dc_user'
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/dc_user'
+Making install in user
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/user'
+make[4]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/user'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/user'
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples/user'
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples'
+make[4]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples'
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples'
+make[2]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6/examples'
+make[2]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+make[3]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+make[2]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+make[1]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+   debian/rules execute_after_dh_auto_install
+make[1]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+rm -f debian/tmp/usr/lib/*/libethercat.la
+mkdir -p debian/tmp/usr/share/doc/ethercat-host/examples
+mv debian/tmp/etc/ethercat.conf debian/tmp/usr/share/doc/ethercat-host/examples/ethercat.conf
+make[1]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+   dh_install
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   debian/rules execute_after_dh_install
+make[1]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+test ! -s debian/patches/series || { echo "ERROR: active patches present; pristine-orig DKMS extraction must apply them first" >&2; exit 1; }
+mkdir -p debian/ethercat-dkms/usr/src
+tar -xzf ../ethercat_1.6.9+4+g46cc20e6.orig.tar.gz -C debian/ethercat-dkms/usr/src
+install -m 0755 debian/debian-prebuild.sh debian/ethercat-dkms/usr/src/ethercat-1.6.9+4+g46cc20e6/debian-prebuild.sh
+make[1]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+   dh_installsysusers
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_installdocs
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_installchangelogs
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_dkms
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   debian/rules override_dh_installsystemd
+make[1]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dh_installsystemd --no-start --name=ethercat
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+make[1]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+   debian/rules override_dh_installudev
+make[1]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dh_installudev --priority=99 --name=ethercat
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+make[1]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+   dh_perl
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_link
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_strip_nondeterminism
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_compress
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_fixperms
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   debian/rules override_dh_missing
+make[1]: Entering directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dh_missing --fail-missing
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+make[1]: Leaving directory '/home/validator/pkgbuild/ethercat-1.6.9+4+g46cc20e6'
+   dh_dwz -a
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_strip -a
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_makeshlibs -a
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_shlibdeps -a
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_installdeb
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_gencontrol
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_md5sums
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+   dh_builddeb
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dpkg-deb: building package 'ethercat-host' in '../ethercat-host_1.6.9+4+g46cc20e6-1_all.deb'.
+dpkg-deb: building package 'libethercat-dev' in '../libethercat-dev_1.6.9+4+g46cc20e6-1_amd64.deb'.
+dpkg-deb: building package 'ethercat-tools-dbgsym' in '../ethercat-tools-dbgsym_1.6.9+4+g46cc20e6-1_amd64.deb'.
+dpkg-deb: building package 'libethercat1' in '../libethercat1_1.6.9+4+g46cc20e6-1_amd64.deb'.
+dpkg-deb: building package 'libethercat1-dbgsym' in '../libethercat1-dbgsym_1.6.9+4+g46cc20e6-1_amd64.deb'.
+dpkg-deb: building package 'ethercat-tools' in '../ethercat-tools_1.6.9+4+g46cc20e6-1_amd64.deb'.
+dpkg-deb: building package 'ethercat-dkms' in '../ethercat-dkms_1.6.9+4+g46cc20e6-1_all.deb'.
+ dpkg-genbuildinfo --build=binary -O../ethercat_1.6.9+4+g46cc20e6-1_amd64.buildinfo
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+ dpkg-genchanges --build=binary -O../ethercat_1.6.9+4+g46cc20e6-1_amd64.changes
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+dpkg-buildpackage: info: binary-only upload (no source included)
+
+=== RUN: ls -l /home/validator/pkgbuild ===
+total 20068
+drwxrwxr-x 17 validator validator     4096 Jun 14 06:42 ethercat-1.6.9+4+g46cc20e6
+-rw-r--r--  1 validator validator  1410664 Jun 14 06:43 ethercat-dkms_1.6.9+4+g46cc20e6-1_all.deb
+-rw-r--r--  1 validator validator     6804 Jun 14 06:43 ethercat-host_1.6.9+4+g46cc20e6-1_all.deb
+-rw-r--r--  1 validator validator  1749424 Jun 14 06:43 ethercat-tools-dbgsym_1.6.9+4+g46cc20e6-1_amd64.deb
+-rw-r--r--  1 validator validator   155348 Jun 14 06:43 ethercat-tools_1.6.9+4+g46cc20e6-1_amd64.deb
+-rw-rw-r--  1 validator validator     5460 Jun 14 06:42 ethercat_1.6.9+4+g46cc20e6-1.debian.tar.xz
+-rw-rw-r--  1 validator validator     1240 Jun 14 06:42 ethercat_1.6.9+4+g46cc20e6-1.dsc
+-rw-rw-r--  1 validator validator     6634 Jun 14 06:43 ethercat_1.6.9+4+g46cc20e6-1_amd64.buildinfo
+-rw-rw-r--  1 validator validator     3541 Jun 14 06:43 ethercat_1.6.9+4+g46cc20e6-1_amd64.changes
+-rw-rw-r--  1 validator validator     4673 Jun 14 06:42 ethercat_1.6.9+4+g46cc20e6-1_source.buildinfo
+-rw-rw-r--  1 validator validator     1793 Jun 14 06:42 ethercat_1.6.9+4+g46cc20e6-1_source.changes
+-rw-rw-r--  1 validator validator 17081514 Jun 14 06:42 ethercat_1.6.9+4+g46cc20e6.orig.tar.gz
+-rw-r--r--  1 validator validator    31616 Jun 14 06:43 libethercat-dev_1.6.9+4+g46cc20e6-1_amd64.deb
+-rw-r--r--  1 validator validator    42196 Jun 14 06:43 libethercat1-dbgsym_1.6.9+4+g46cc20e6-1_amd64.deb
+-rw-r--r--  1 validator validator    14324 Jun 14 06:43 libethercat1_1.6.9+4+g46cc20e6-1_amd64.deb
+
+=== RUN: dpkg -I /home/validator/pkgbuild/ethercat-tools_1.6.9+4+g46cc20e6-1_amd64.deb ===
+ new Debian package, version 2.0.
+ size 155348 bytes: control archive=836 bytes.
+     701 bytes,    16 lines      control
+     288 bytes,     4 lines      md5sums
+ Package: ethercat-tools
+ Source: ethercat
+ Version: 1.6.9+4+g46cc20e6-1
+ Architecture: amd64
+ Maintainer: Jeong Han Lee <jeonghan.lee@gmail.com>
+ Installed-Size: 551
+ Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libstdc++6 (>= 13.1)
+ Section: admin
+ Priority: optional
+ Homepage: https://gitlab.com/etherlab.org/ethercat
+ Description: EtherCAT master command-line tool
+  The ethercat command-line tool of the IgH EtherCAT master for the
+  Debian 13 EtherCAT environment, with its bash completion. The tool is
+  self-contained; the realtime application library is delivered
+  separately by libethercat1, kernel modules by ethercat-dkms, and host
+  integration (systemd, udev, configuration policy) by ethercat-host.
+
+=== RUN: dpkg -c /home/validator/pkgbuild/ethercat-tools_1.6.9+4+g46cc20e6-1_amd64.deb ===
+drwxr-xr-x root/root         0 2026-06-12 09:39 ./
+drwxr-xr-x root/root         0 2026-06-12 09:39 ./usr/
+drwxr-xr-x root/root         0 2026-06-12 09:39 ./usr/bin/
+-rwxr-xr-x root/root    548464 2026-06-12 09:39 ./usr/bin/ethercat
+drwxr-xr-x root/root         0 2026-06-12 09:39 ./usr/share/
+drwxr-xr-x root/root         0 2026-06-12 09:39 ./usr/share/bash-completion/
+drwxr-xr-x root/root         0 2026-06-12 09:39 ./usr/share/bash-completion/completions/
+-rw-r--r-- root/root      3333 2026-06-12 09:39 ./usr/share/bash-completion/completions/ethercat
+drwxr-xr-x root/root         0 2026-06-12 09:39 ./usr/share/doc/
+drwxr-xr-x root/root         0 2026-06-12 09:39 ./usr/share/doc/ethercat-tools/
+-rw-r--r-- root/root       283 2026-06-12 09:39 ./usr/share/doc/ethercat-tools/changelog.Debian.gz
+-rw-r--r-- root/root      1002 2026-06-12 09:39 ./usr/share/doc/ethercat-tools/copyright
+
+phase 10 complete

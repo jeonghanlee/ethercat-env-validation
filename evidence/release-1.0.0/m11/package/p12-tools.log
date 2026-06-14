@@ -1,0 +1,102 @@
+
+=== RUN: sudo -E apt-get install -y pkgconf ===
+Reading package lists...
+Building dependency tree...
+Reading state information...
+pkgconf is already the newest version (1.8.1-4).
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+packages:
+  /home/validator/pkgbuild/libethercat1_1.6.9+4+g46cc20e6-1_amd64.deb
+  /home/validator/pkgbuild/libethercat-dev_1.6.9+4+g46cc20e6-1_amd64.deb
+  /home/validator/pkgbuild/ethercat-tools_1.6.9+4+g46cc20e6-1_amd64.deb
+
+=== RUN: sudo -E apt-get install -y /home/validator/pkgbuild/libethercat1_1.6.9+4+g46cc20e6-1_amd64.deb /home/validator/pkgbuild/libethercat-dev_1.6.9+4+g46cc20e6-1_amd64.deb /home/validator/pkgbuild/ethercat-tools_1.6.9+4+g46cc20e6-1_amd64.deb ===
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  ethercat-tools libethercat-dev libethercat1
+0 upgraded, 3 newly installed, 0 to remove and 3 not upgraded.
+Need to get 0 B/201 kB of archives.
+After this operation, 828 kB of additional disk space will be used.
+Get:1 /home/validator/pkgbuild/ethercat-tools_1.6.9+4+g46cc20e6-1_amd64.deb ethercat-tools amd64 1.6.9+4+g46cc20e6-1 [155 kB]
+Get:2 /home/validator/pkgbuild/libethercat1_1.6.9+4+g46cc20e6-1_amd64.deb libethercat1 amd64 1.6.9+4+g46cc20e6-1 [14.3 kB]
+Get:3 /home/validator/pkgbuild/libethercat-dev_1.6.9+4+g46cc20e6-1_amd64.deb libethercat-dev amd64 1.6.9+4+g46cc20e6-1 [31.6 kB]
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+Selecting previously unselected package ethercat-tools.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 69241 files and directories currently installed.)
+Preparing to unpack .../ethercat-tools_1.6.9+4+g46cc20e6-1_amd64.deb ...
+Unpacking ethercat-tools (1.6.9+4+g46cc20e6-1) ...
+Selecting previously unselected package libethercat1:amd64.
+Preparing to unpack .../libethercat1_1.6.9+4+g46cc20e6-1_amd64.deb ...
+Unpacking libethercat1:amd64 (1.6.9+4+g46cc20e6-1) ...
+Selecting previously unselected package libethercat-dev:amd64.
+Preparing to unpack .../libethercat-dev_1.6.9+4+g46cc20e6-1_amd64.deb ...
+Unpacking libethercat-dev:amd64 (1.6.9+4+g46cc20e6-1) ...
+Setting up libethercat1:amd64 (1.6.9+4+g46cc20e6-1) ...
+Setting up ethercat-tools (1.6.9+4+g46cc20e6-1) ...
+Setting up libethercat-dev:amd64 (1.6.9+4+g46cc20e6-1) ...
+Processing triggers for libc-bin (2.41-12+deb13u3) ...
+
+=== RUN: command -v ethercat ===
+/usr/bin/ethercat
+ethercat version -> rc=0 out=IgH EtherCAT master 1.6.9 unknown
+OK: ethercat version exit 0, no master access
+OK: ldconfig resolves libethercat.so.1
+
+=== RUN: pkg-config --modversion libethercat ===
+1.6.9
+
+=== RUN: sudo -E apt-get purge -y libethercat-dev ethercat-tools libethercat1 ===
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be REMOVED:
+  ethercat-tools* libethercat-dev* libethercat1*
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+0 upgraded, 0 newly installed, 3 to remove and 3 not upgraded.
+After this operation, 828 kB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 69263 files and directories currently installed.)
+Removing ethercat-tools (1.6.9+4+g46cc20e6-1) ...
+Removing libethercat-dev:amd64 (1.6.9+4+g46cc20e6-1) ...
+Removing libethercat1:amd64 (1.6.9+4+g46cc20e6-1) ...
+Processing triggers for libc-bin (2.41-12+deb13u3) ...
+OK: no residue after purge
+
+phase 12 complete

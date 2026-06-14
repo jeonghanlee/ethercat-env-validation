@@ -1,0 +1,166 @@
+
+=== RUN: sudo -E apt-get install -y linux-headers-6.12.90+deb13.1-cloud-amd64 dkms ===
+Reading package lists...
+Building dependency tree...
+Reading state information...
+linux-headers-6.12.90+deb13.1-cloud-amd64 is already the newest version (6.12.90-2).
+dkms is already the newest version (3.2.2-1~deb13u1).
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+package: /home/validator/pkgbuild/ethercat-dkms_1.6.9+4+g46cc20e6-1_all.deb  module version: 1.6.9+4+g46cc20e6
+
+=== RUN: sudo -E apt-get install -y /home/validator/pkgbuild/ethercat-dkms_1.6.9+4+g46cc20e6-1_all.deb ===
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  ethercat-dkms
+0 upgraded, 1 newly installed, 0 to remove and 3 not upgraded.
+Need to get 0 B/1411 kB of archives.
+After this operation, 85.0 MB of additional disk space will be used.
+Get:1 /home/validator/pkgbuild/ethercat-dkms_1.6.9+4+g46cc20e6-1_all.deb ethercat-dkms all 1.6.9+4+g46cc20e6-1 [1411 kB]
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+Selecting previously unselected package ethercat-dkms.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 47143 files and directories currently installed.)
+Preparing to unpack .../ethercat-dkms_1.6.9+4+g46cc20e6-1_all.deb ...
+Unpacking ethercat-dkms (1.6.9+4+g46cc20e6-1) ...
+Setting up ethercat-dkms (1.6.9+4+g46cc20e6-1) ...
+Loading new ethercat/1.6.9+4+g46cc20e6 DKMS files...
+Building for 6.12.90+deb13.1-cloud-amd64
+
+Building initial module ethercat/1.6.9+4+g46cc20e6 for 6.12.90+deb13.1-cloud-amd64
+Sign command: /lib/modules/6.12.90+deb13.1-cloud-amd64/build/scripts/sign-file
+Signing key: /var/lib/dkms/mok.key
+Public certificate (MOK): /var/lib/dkms/mok.pub
+Certificate or key are missing, generating self signed certificate for MOK...
+
+Running the pre_build script..... done.
+Building module(s).... done.
+Signing module /var/lib/dkms/ethercat/1.6.9+4+g46cc20e6/build/master/ec_master.ko
+Signing module /var/lib/dkms/ethercat/1.6.9+4+g46cc20e6/build/devices/ec_generic.ko
+Installing /lib/modules/6.12.90+deb13.1-cloud-amd64/updates/dkms/ec_master.ko.xz
+Installing /lib/modules/6.12.90+deb13.1-cloud-amd64/updates/dkms/ec_generic.ko.xz
+Running depmod... done.
+
+=== RUN: dkms status ethercat ===
+ethercat/1.6.9+4+g46cc20e6, 6.12.90+deb13.1-cloud-amd64, x86_64: installed
+OK: ec_master vermagic matches 6.12.90+deb13.1-cloud-amd64
+OK: ec_generic vermagic matches 6.12.90+deb13.1-cloud-amd64
+OK: exactly the generic module set on 6.12.90+deb13.1-cloud-amd64
+
+=== RUN: sudo -E apt-get install -y linux-image-rt-amd64 linux-headers-rt-amd64 ===
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  linux-headers-6.12.90+deb13.1-common-rt
+  linux-headers-6.12.90+deb13.1-rt-amd64 linux-image-6.12.90+deb13.1-rt-amd64
+Suggested packages:
+  firmware-linux-free linux-doc-6.12 debian-kernel-handbook grub-pc
+  | grub-efi-amd64 | extlinux
+The following NEW packages will be installed:
+  linux-headers-6.12.90+deb13.1-common-rt
+  linux-headers-6.12.90+deb13.1-rt-amd64 linux-headers-rt-amd64
+  linux-image-6.12.90+deb13.1-rt-amd64 linux-image-rt-amd64
+0 upgraded, 5 newly installed, 0 to remove and 3 not upgraded.
+Need to get 120 MB of archives.
+After this operation, 172 MB of additional disk space will be used.
+Get:1 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]
+Get:2 https://deb.debian.org/debian-security trixie-security/main amd64 linux-image-6.12.90+deb13.1-rt-amd64 amd64 6.12.90-2 [108 MB]
+Get:3 https://deb.debian.org/debian-security trixie-security/main amd64 linux-headers-6.12.90+deb13.1-common-rt all 6.12.90-2 [9458 kB]
+Get:4 https://deb.debian.org/debian-security trixie-security/main amd64 linux-headers-6.12.90+deb13.1-rt-amd64 amd64 6.12.90-2 [3013 kB]
+Get:5 https://deb.debian.org/debian-security trixie-security/main amd64 linux-headers-rt-amd64 amd64 6.12.90-2 [1416 B]
+Get:6 https://deb.debian.org/debian-security trixie-security/main amd64 linux-image-rt-amd64 amd64 6.12.90-2 [1488 B]
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+Fetched 120 MB in 2s (70.8 MB/s)
+Selecting previously unselected package linux-image-6.12.90+deb13.1-rt-amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 49525 files and directories currently installed.)
+Preparing to unpack .../linux-image-6.12.90+deb13.1-rt-amd64_6.12.90-2_amd64.deb ...
+Unpacking linux-image-6.12.90+deb13.1-rt-amd64 (6.12.90-2) ...
+Selecting previously unselected package linux-headers-6.12.90+deb13.1-common-rt.
+Preparing to unpack .../linux-headers-6.12.90+deb13.1-common-rt_6.12.90-2_all.deb ...
+Unpacking linux-headers-6.12.90+deb13.1-common-rt (6.12.90-2) ...
+Selecting previously unselected package linux-headers-6.12.90+deb13.1-rt-amd64.
+Preparing to unpack .../linux-headers-6.12.90+deb13.1-rt-amd64_6.12.90-2_amd64.deb ...
+Unpacking linux-headers-6.12.90+deb13.1-rt-amd64 (6.12.90-2) ...
+Selecting previously unselected package linux-headers-rt-amd64.
+Preparing to unpack .../linux-headers-rt-amd64_6.12.90-2_amd64.deb ...
+Unpacking linux-headers-rt-amd64 (6.12.90-2) ...
+Selecting previously unselected package linux-image-rt-amd64.
+Preparing to unpack .../linux-image-rt-amd64_6.12.90-2_amd64.deb ...
+Unpacking linux-image-rt-amd64 (6.12.90-2) ...
+Setting up linux-image-6.12.90+deb13.1-rt-amd64 (6.12.90-2) ...
+/etc/kernel/postinst.d/dkms:
+Sign command: /lib/modules/6.12.90+deb13.1-rt-amd64/build/scripts/sign-file
+Signing key: /var/lib/dkms/mok.key
+Public certificate (MOK): /var/lib/dkms/mok.pub
+
+Autoinstall of module ethercat/1.6.9+4+g46cc20e6 for kernel 6.12.90+deb13.1-rt-amd64 (x86_64)
+Running the pre_build script..... done.
+Building module(s).... done.
+Signing module /var/lib/dkms/ethercat/1.6.9+4+g46cc20e6/build/master/ec_master.ko
+Signing module /var/lib/dkms/ethercat/1.6.9+4+g46cc20e6/build/devices/ec_generic.ko
+Installing /lib/modules/6.12.90+deb13.1-rt-amd64/updates/dkms/ec_master.ko.xz
+Installing /lib/modules/6.12.90+deb13.1-rt-amd64/updates/dkms/ec_generic.ko.xz
+Running depmod... done.
+
+Autoinstall on 6.12.90+deb13.1-rt-amd64 succeeded for module(s) ethercat.
+/etc/kernel/postinst.d/initramfs-tools:
+update-initramfs: Generating /boot/initrd.img-6.12.90+deb13.1-rt-amd64
+/etc/kernel/postinst.d/zz-update-grub:
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.12.90+deb13.1-rt-amd64
+Found initrd image: /boot/initrd.img-6.12.90+deb13.1-rt-amd64
+Found linux image: /boot/vmlinuz-6.12.90+deb13.1-cloud-amd64
+Found initrd image: /boot/initrd.img-6.12.90+deb13.1-cloud-amd64
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Setting up linux-image-rt-amd64 (6.12.90-2) ...
+Setting up linux-headers-6.12.90+deb13.1-common-rt (6.12.90-2) ...
+Setting up linux-headers-6.12.90+deb13.1-rt-amd64 (6.12.90-2) ...
+Setting up linux-headers-rt-amd64 (6.12.90-2) ...
+target kernel: 6.12.90+deb13.1-rt-amd64 (running: 6.12.90+deb13.1-cloud-amd64)
+
+=== RUN: dkms status ethercat ===
+ethercat/1.6.9+4+g46cc20e6, 6.12.90+deb13.1-cloud-amd64, x86_64: installed
+ethercat/1.6.9+4+g46cc20e6, 6.12.90+deb13.1-rt-amd64, x86_64: installed
+OK: ec_master vermagic matches 6.12.90+deb13.1-rt-amd64
+OK: ec_generic vermagic matches 6.12.90+deb13.1-rt-amd64
+OK: exactly the generic module set on 6.12.90+deb13.1-rt-amd64
+
+phase 11 complete

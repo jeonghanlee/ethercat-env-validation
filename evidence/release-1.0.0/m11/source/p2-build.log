@@ -1,0 +1,1066 @@
+
+=== RUN: make -C /home/validator/ethercat-env init ===
+make: Entering directory '/home/validator/ethercat-env'
+git -c url.https://gitlab.com/etherlab.org/.insteadOf=https://gitlab.com/etherlab.org/ clone  https://gitlab.com/etherlab.org/ethercat ethercat-src; git -C ethercat-src checkout stable-1.6
+Cloning into 'ethercat-src'...
+warning: redirecting to https://gitlab.com/etherlab.org/ethercat.git/
+Your branch is up to date with 'origin/stable-1.6'.
+Already on 'stable-1.6'
+Submodule 'doxygen-layout' (https://gitlab.com/etherlab.org/doxygen-layout.git) registered for path 'doxygen-layout'
+Cloning into '/home/validator/ethercat-env/ethercat-src/doxygen-layout'...
+Submodule path 'doxygen-layout': checked out '0f7d719f775b5db43ae4a775bda0a052a6ba2b65'
+src.verify: OK - revision 1.6.9-4-g46cc20e6 matches SRC_HASH
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env src.revision ===
+make: Entering directory '/home/validator/ethercat-env'
+>> Expected SRC_HASH : 1.6.9-4-g46cc20e6
+>> Observed revision : 1.6.9-4-g46cc20e6
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env src.verify ===
+make: Entering directory '/home/validator/ethercat-env'
+src.verify: OK - revision 1.6.9-4-g46cc20e6 matches SRC_HASH
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env patch.status ===
+make: Entering directory '/home/validator/ethercat-env'
+Patch status (source: ethercat-src)
+-----------------------------------------------
+  site          pristine (no patches declared)
+  compatibility pristine (no patches declared)
+  hardware      pristine (no patches declared)
+  archive       pristine (no patches declared)
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env build.baseline ===
+make: Entering directory '/home/validator/ethercat-env'
+src.verify: OK - revision 1.6.9-4-g46cc20e6 matches SRC_HASH
+profile.check: OK - every enabled profile has kernel + source evidence
+cd ethercat-src && autoreconf --force --install -v && ./configure --enable-generic --disable-8139too --disable-e100 --disable-e1000 --disable-e1000e --disable-igb --disable-r8169 --enable-static=yes --enable-shared=yes --enable-eoe=no --enable-cycles=yes --enable-hrtimer=no --enable-regalias=no --enable-tool=yes --enable-userlib=yes --enable-sii-assign=yes --enable-rt-syslog=yes --prefix=/opt/ethercat
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+autoreconf: export WARNINGS=
+autoreconf: Entering directory '.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+aclocal: warning: couldn't open directory 'm4': No such file or directory
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+autoreconf: configure.ac: tracing
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+autoreconf: configure.ac: creating directory autoconf
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'autoconf'.
+libtoolize: copying file 'autoconf/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+autoreconf: configure.ac: not using Intltool
+autoreconf: configure.ac: not using Gtkdoc
+autoreconf: running: aclocal --force -I m4
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+autoreconf: running: /usr/bin/autoconf --force
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+autoreconf: running: /usr/bin/autoheader --force
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+autoreconf: running: automake --add-missing --copy --force-missing
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+configure.ac:49: installing 'autoconf/ar-lib'
+configure.ac:48: installing 'autoconf/compile'
+configure.ac:52: installing 'autoconf/config.guess'
+configure.ac:52: installing 'autoconf/config.sub'
+configure.ac:33: installing 'autoconf/install-sh'
+configure.ac:33: installing 'autoconf/missing'
+examples/dc_user/Makefile.am: installing 'autoconf/depcomp'
+autoreconf: Leaving directory '.'
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether sleep supports fractional seconds... yes
+checking filesystem timestamp resolution... 0.01
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking xargs -n works... yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.27... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking for g++... g++
+checking whether the compiler supports GNU C++... yes
+checking whether g++ accepts -g... yes
+checking for g++ option to enable C++11 features... none needed
+checking dependency style of g++... gcc3
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ranlib... ranlib
+checking for archiver @FILE support... @
+checking for strip... strip
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether to build kernel modules... yes
+checking for Linux kernel sources... /usr/src/linux-headers-6.12.90+deb13.1-cloud-amd64 (Kernel 6.12)
+checking for Linux modules installation directory... ethercat
+checking whether to verify native driver resources... no
+checking whether to build the CCAT driver... no
+checking for RTAI path... not specified.
+checking for Xenomai path... not specified.
+checking whether to build RTDM interface... no
+checking whether to build the debug interface... no
+checking whether to build the debug ring... no
+checking whether to build with EoE support... no
+checking whether to use the CPU timestamp counter... yes
+checking whether to use high-resolution timers for scheduling... no
+checking whether to read alias addresses from registers... no
+checking whether to build the command-line tool... yes
+checking whether to build the userspace library... yes
+checking whether to build the fake userspace library... no
+checking whether to build the tty driver... no
+checking whether to allow identification wildcards... no
+checking for number of Ethernet devices... 1 (Redundancy disabled)
+checking whether to assign the SII to PDI... yes
+checking whether to syslog in realtime context... yes
+checking for path to kernel modules... /sbin
+checking for ip command... /sbin/ip
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Doxyfile
+config.status: creating Kbuild
+config.status: creating Makefile
+config.status: creating devices/Kbuild
+config.status: creating devices/Makefile
+config.status: creating devices/ccat/Kbuild
+config.status: creating devices/ccat/Makefile
+config.status: creating devices/e1000/Kbuild
+config.status: creating devices/e1000/Makefile
+config.status: creating devices/e1000e/Kbuild
+config.status: creating devices/e1000e/Makefile
+config.status: creating devices/genet/Kbuild
+config.status: creating devices/genet/Makefile
+config.status: creating devices/igb/Kbuild
+config.status: creating devices/igb/Makefile
+config.status: creating devices/igc/Kbuild
+config.status: creating devices/igc/Makefile
+config.status: creating devices/r8169/Kbuild
+config.status: creating devices/r8169/Makefile
+config.status: creating devices/stmmac/Kbuild
+config.status: creating devices/stmmac/Makefile
+config.status: creating ethercat.spec
+config.status: creating examples/Kbuild
+config.status: creating examples/Makefile
+config.status: creating examples/dc_rtai/Kbuild
+config.status: creating examples/dc_rtai/Makefile
+config.status: creating examples/dc_user/Makefile
+config.status: creating examples/mini/Kbuild
+config.status: creating examples/mini/Makefile
+config.status: creating examples/rtai/Kbuild
+config.status: creating examples/rtai/Makefile
+config.status: creating examples/rtai_rtdm/Makefile
+config.status: creating examples/rtai_rtdm_dc/Makefile
+config.status: creating examples/tty/Kbuild
+config.status: creating examples/tty/Makefile
+config.status: creating examples/user/Makefile
+config.status: creating examples/xenomai/Makefile
+config.status: creating examples/xenomai_posix/Makefile
+config.status: creating fake_lib/Makefile
+config.status: creating include/Makefile
+config.status: creating lib/Makefile
+config.status: creating lib/libethercat.pc
+config.status: creating master/Kbuild
+config.status: creating master/Makefile
+config.status: creating script/Makefile
+config.status: creating tool/Makefile
+config.status: creating tty/Kbuild
+config.status: creating tty/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+cd ethercat-src && ./configure --enable-generic --disable-8139too --disable-e100 --disable-e1000 --disable-e1000e --disable-igb --disable-r8169 --enable-static=yes --enable-shared=yes --enable-eoe=no --enable-cycles=yes --enable-hrtimer=no --enable-regalias=no --enable-tool=yes --enable-userlib=yes --enable-sii-assign=yes --enable-rt-syslog=yes --prefix=/opt/ethercat
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether sleep supports fractional seconds... yes
+checking filesystem timestamp resolution... 0.01
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking xargs -n works... yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.27... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking for g++... g++
+checking whether the compiler supports GNU C++... yes
+checking whether g++ accepts -g... yes
+checking for g++ option to enable C++11 features... none needed
+checking dependency style of g++... gcc3
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ranlib... ranlib
+checking for archiver @FILE support... @
+checking for strip... strip
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether to build kernel modules... yes
+checking for Linux kernel sources... /usr/src/linux-headers-6.12.90+deb13.1-cloud-amd64 (Kernel 6.12)
+checking for Linux modules installation directory... ethercat
+checking whether to verify native driver resources... no
+checking whether to build the CCAT driver... no
+checking for RTAI path... not specified.
+checking for Xenomai path... not specified.
+checking whether to build RTDM interface... no
+checking whether to build the debug interface... no
+checking whether to build the debug ring... no
+checking whether to build with EoE support... no
+checking whether to use the CPU timestamp counter... yes
+checking whether to use high-resolution timers for scheduling... no
+checking whether to read alias addresses from registers... no
+checking whether to build the command-line tool... yes
+checking whether to build the userspace library... yes
+checking whether to build the fake userspace library... no
+checking whether to build the tty driver... no
+checking whether to allow identification wildcards... no
+checking for number of Ethernet devices... 1 (Redundancy disabled)
+checking whether to assign the SII to PDI... yes
+checking whether to syslog in realtime context... yes
+checking for path to kernel modules... /sbin
+checking for ip command... /sbin/ip
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Doxyfile
+config.status: creating Kbuild
+config.status: creating Makefile
+config.status: creating devices/Kbuild
+config.status: creating devices/Makefile
+config.status: creating devices/ccat/Kbuild
+config.status: creating devices/ccat/Makefile
+config.status: creating devices/e1000/Kbuild
+config.status: creating devices/e1000/Makefile
+config.status: creating devices/e1000e/Kbuild
+config.status: creating devices/e1000e/Makefile
+config.status: creating devices/genet/Kbuild
+config.status: creating devices/genet/Makefile
+config.status: creating devices/igb/Kbuild
+config.status: creating devices/igb/Makefile
+config.status: creating devices/igc/Kbuild
+config.status: creating devices/igc/Makefile
+config.status: creating devices/r8169/Kbuild
+config.status: creating devices/r8169/Makefile
+config.status: creating devices/stmmac/Kbuild
+config.status: creating devices/stmmac/Makefile
+config.status: creating ethercat.spec
+config.status: creating examples/Kbuild
+config.status: creating examples/Makefile
+config.status: creating examples/dc_rtai/Kbuild
+config.status: creating examples/dc_rtai/Makefile
+config.status: creating examples/dc_user/Makefile
+config.status: creating examples/mini/Kbuild
+config.status: creating examples/mini/Makefile
+config.status: creating examples/rtai/Kbuild
+config.status: creating examples/rtai/Makefile
+config.status: creating examples/rtai_rtdm/Makefile
+config.status: creating examples/rtai_rtdm_dc/Makefile
+config.status: creating examples/tty/Kbuild
+config.status: creating examples/tty/Makefile
+config.status: creating examples/user/Makefile
+config.status: creating examples/xenomai/Makefile
+config.status: creating examples/xenomai_posix/Makefile
+config.status: creating fake_lib/Makefile
+config.status: creating include/Makefile
+config.status: creating lib/Makefile
+config.status: creating lib/libethercat.pc
+config.status: creating master/Kbuild
+config.status: creating master/Makefile
+config.status: creating script/Makefile
+config.status: creating tool/Makefile
+config.status: creating tty/Kbuild
+config.status: creating tty/Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make -C ethercat-src
+make[1]: Entering directory '/home/validator/ethercat-env/ethercat-src'
+make  all-recursive
+make[2]: Entering directory '/home/validator/ethercat-env/ethercat-src'
+Making all in include
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/include'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/include'
+Making all in script
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/script'
+/usr/bin/mkdir -p init.d && \
+/usr/bin/sed -e 's,[@]VERSION[@],1.6.9,g' -e 's,[@]ipcmd[@],/sbin/ip,g' -e 's,[@]kmoddir[@],/sbin,g' -e 's,[@]bindir[@],/opt/ethercat/bin,g' -e 's,[@]sbindir[@],/opt/ethercat/sbin,g' -e 's,[@]sysconfdir[@],/opt/ethercat/etc,g' < init.d/ethercat.in > init.d/ethercat
+/usr/bin/sed -e 's,[@]VERSION[@],1.6.9,g' -e 's,[@]ipcmd[@],/sbin/ip,g' -e 's,[@]kmoddir[@],/sbin,g' -e 's,[@]bindir[@],/opt/ethercat/bin,g' -e 's,[@]sbindir[@],/opt/ethercat/sbin,g' -e 's,[@]sysconfdir[@],/opt/ethercat/etc,g' < ethercatctl.in > ethercatctl
+/usr/bin/sed -e 's,for use with ethercatctl,for use with init.d,g' < ethercat.conf > ethercat
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/script'
+Making all in devices
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices'
+Making all in ccat
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/ccat'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/ccat'
+Making all in e1000
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/e1000'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/e1000'
+Making all in e1000e
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/e1000e'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/e1000e'
+Making all in genet
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/genet'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/genet'
+Making all in igb
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/igb'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/igb'
+Making all in igc
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/igc'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/igc'
+Making all in r8169
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/r8169'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/r8169'
+Making all in stmmac
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices/stmmac'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices/stmmac'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/devices'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/devices'
+Making all in master
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/master'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/master'
+Making all in tool
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/tool'
+  CXX      ethercat-Command.o
+  CXX      ethercat-CommandAlias.o
+  CXX      ethercat-CommandCrc.o
+  CXX      ethercat-CommandCStruct.o
+  CXX      ethercat-CommandConfig.o
+  CXX      ethercat-CommandData.o
+  CXX      ethercat-CommandDebug.o
+  CXX      ethercat-CommandDomains.o
+  CXX      ethercat-CommandDownload.o
+  CXX      ethercat-CommandFoeRead.o
+  CXX      ethercat-CommandFoeWrite.o
+  CXX      ethercat-CommandGraph.o
+  CXX      ethercat-CommandMaster.o
+  CXX      ethercat-CommandPdos.o
+  CXX      ethercat-CommandRegRead.o
+  CXX      ethercat-CommandRegWrite.o
+  CXX      ethercat-CommandRescan.o
+  CXX      ethercat-CommandSdos.o
+  CXX      ethercat-CommandSiiRead.o
+  CXX      ethercat-CommandSiiWrite.o
+  CXX      ethercat-CommandSlaves.o
+  CXX      ethercat-CommandSoeRead.o
+  CXX      ethercat-CommandSoeWrite.o
+  CXX      ethercat-CommandStates.o
+  CXX      ethercat-CommandUpload.o
+  CXX      ethercat-CommandVersion.o
+  CXX      ethercat-CommandXml.o
+  CXX      ethercat-DataTypeHandler.o
+  CXX      ethercat-FoeCommand.o
+  CXX      ethercat-MasterDevice.o
+  CXX      ethercat-NumberListParser.o
+  CXX      ethercat-SdoCommand.o
+  CXX      ethercat-SoeCommand.o
+  CXX      ethercat-main.o
+  CXX      ethercat-sii_crc.o
+  CXXLD    ethercat
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/tool'
+Making all in lib
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/lib'
+  CC       libethercat_la-common.lo
+  CC       libethercat_la-domain.lo
+  CC       libethercat_la-master.lo
+  CC       libethercat_la-reg_request.lo
+  CC       libethercat_la-sdo_request.lo
+  CC       libethercat_la-slave_config.lo
+  CC       libethercat_la-soe_request.lo
+  CC       libethercat_la-voe_handler.lo
+  CCLD     libethercat.la
+/usr/bin/sed -e 's,%libdir%,/opt/ethercat/lib,' -e 's,%includedir%,/opt/ethercat/include,' ethercat-config.cmake.in > ethercat-config.cmake
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/lib'
+Making all in examples
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples'
+Making all in dc_user
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples/dc_user'
+  CC       ec_dc_user_example-main.o
+  CCLD     ec_dc_user_example
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples/dc_user'
+Making all in user
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples/user'
+  CC       ec_user_example-main.o
+  CCLD     ec_user_example
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples/user'
+make[4]: Entering directory '/home/validator/ethercat-env/ethercat-src/examples'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src/examples'
+make[3]: Entering directory '/home/validator/ethercat-env/ethercat-src'
+make[3]: Leaving directory '/home/validator/ethercat-env/ethercat-src'
+make[2]: Leaving directory '/home/validator/ethercat-env/ethercat-src'
+make[1]: Leaving directory '/home/validator/ethercat-env/ethercat-src'
+make -C ethercat-src modules
+make[1]: Entering directory '/home/validator/ethercat-env/ethercat-src'
+make -C "/usr/src/linux-headers-6.12.90+deb13.1-cloud-amd64" M="/home/validator/ethercat-env/ethercat-src" INSTALL_MOD_DIR="ethercat" modules
+make[2]: Entering directory '/usr/src/linux-headers-6.12.90+deb13.1-cloud-amd64'
+  CC [M]  /home/validator/ethercat-env/ethercat-src/examples/mini/mini.o
+  LD [M]  /home/validator/ethercat-env/ethercat-src/examples/mini/ec_mini.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/cdev.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/coe_emerg_ring.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/datagram.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/datagram_pair.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/device.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/domain.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/flag.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/fmmu_config.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/foe_request.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/fsm_change.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/fsm_coe.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/fsm_foe.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/fsm_master.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/fsm_pdo.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/fsm_pdo_entry.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/fsm_sii.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/fsm_slave.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/fsm_slave_config.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/fsm_slave_scan.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/fsm_soe.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/ioctl.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/mailbox.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/master.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/module.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/pdo.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/pdo_entry.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/pdo_list.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/reg_request.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/sdo.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/sdo_entry.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/sdo_request.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/slave.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/slave_config.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/soe_errors.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/soe_request.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/sync.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/sync_config.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/voe_handler.o
+  LD [M]  /home/validator/ethercat-env/ethercat-src/master/ec_master.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/devices/generic.o
+  LD [M]  /home/validator/ethercat-env/ethercat-src/devices/ec_generic.o
+  MODPOST /home/validator/ethercat-env/ethercat-src/Module.symvers
+  CC [M]  /home/validator/ethercat-env/ethercat-src/examples/mini/ec_mini.mod.o
+  CC [M]  /home/validator/ethercat-env/ethercat-src/.module-common.o
+  LD [M]  /home/validator/ethercat-env/ethercat-src/examples/mini/ec_mini.ko
+  BTF [M] /home/validator/ethercat-env/ethercat-src/examples/mini/ec_mini.ko
+  CC [M]  /home/validator/ethercat-env/ethercat-src/master/ec_master.mod.o
+  LD [M]  /home/validator/ethercat-env/ethercat-src/master/ec_master.ko
+  BTF [M] /home/validator/ethercat-env/ethercat-src/master/ec_master.ko
+  CC [M]  /home/validator/ethercat-env/ethercat-src/devices/ec_generic.mod.o
+  LD [M]  /home/validator/ethercat-env/ethercat-src/devices/ec_generic.ko
+  BTF [M] /home/validator/ethercat-env/ethercat-src/devices/ec_generic.ko
+make[2]: Leaving directory '/usr/src/linux-headers-6.12.90+deb13.1-cloud-amd64'
+make[1]: Leaving directory '/home/validator/ethercat-env/ethercat-src'
+build.baseline: OK - verified revision configured, built, and modules built
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: find /home/validator/ethercat-env -name *.ko -type f ===
+/home/validator/ethercat-env/ethercat-src/devices/ec_generic.ko
+/home/validator/ethercat-env/ethercat-src/examples/mini/ec_mini.ko
+/home/validator/ethercat-env/ethercat-src/master/ec_master.ko
+
+=== RUN: make -C /home/validator/ethercat-env verify.all ===
+make: Entering directory '/home/validator/ethercat-env'
+verify.reproducibility: checking pinned revision via src.verify
+src.verify: OK - revision 1.6.9-4-g46cc20e6 matches SRC_HASH
+verify.reproducibility: OK - init would reach the pinned revision
+verify.dryrun: OK   - iface.prepare (doctor + require-root)
+verify.dryrun: OK   - iface.unprepare (doctor + require-root)
+verify.dryrun: OK   - install.modules (doctor + require-root)
+verify.dryrun: OK   - uninstall.modules (doctor + require-root)
+verify.dryrun: OK   - add.dkms (doctor + require-root)
+verify.dryrun: OK   - remove.dkms (doctor + require-root)
+verify.dryrun: OK   - install.dkms (doctor + require-root)
+verify.dryrun: OK   - uninstall.dkms (doctor + require-root)
+verify.dryrun: OK   - systemd.enable (doctor + require-root)
+verify.dryrun: OK   - systemd.start (doctor + require-root)
+verify.dryrun: OK   - systemd.stop (doctor + require-root)
+verify.dryrun: OK   - systemd.disable (doctor + require-root)
+verify.dryrun: OK   - sd_stop (doctor + require-root)
+verify.dryrun: OK   - sd_disable (doctor + require-root)
+verify.dryrun: OK   - rt.kernel.provision (doctor + require-root)
+verify.dryrun: OK   - rt.service.apply (doctor + require-root)
+verify.dryrun: OK   - rt.priority.apply (doctor + require-root)
+verify.dryrun: OK   - remove.stop (doctor + require-root)
+verify.dryrun: OK   - remove.disable (doctor + require-root)
+verify.dryrun: OK   - src_install (doctor + require-root)
+verify.dryrun: OK   - src_uninstall (doctor + require-root)
+verify.dryrun: OK   - systemd.install (doctor + require-root)
+verify.dryrun: OK   - systemd.remove (doctor + require-root)
+verify.dryrun: OK   - sd_clean (doctor + require-root)
+verify.dryrun: OK   - udev.install (doctor + require-root)
+verify.dryrun: OK   - udev.remove (doctor + require-root)
+verify.dryrun: OK   - command.install (doctor + require-root)
+verify.dryrun: OK   - loader.install (doctor + require-root)
+verify.dryrun: OK   - runtime.install (doctor + require-root)
+verify.dryrun: OK   - rt.limits.install (doctor + require-root)
+verify.dryrun: OK   - rt.grub.apply (doctor + require-root)
+verify.dryrun: OK   - rt.grub.rollback (doctor + require-root)
+verify.dryrun: OK   - remove.uninstall (doctor + require-root)
+verify.dryrun: OK   - remove.rt (doctor + require-root)
+verify.dryrun: OK   - remove.purge (doctor + require-root)
+verify.dryrun: OK   - src_install (guard-path)
+verify.dryrun: OK   - src_uninstall (guard-path)
+verify.dryrun: OK   - src_version (guard-path)
+verify.dryrun: OK   - src_version.clean (guard-path)
+verify.dryrun: OK   - systemd.install (guard-path)
+verify.dryrun: OK   - systemd.remove (guard-path)
+verify.dryrun: OK   - sd_clean (guard-path)
+verify.dryrun: OK   - udev.install (guard-path)
+verify.dryrun: OK   - udev.remove (guard-path)
+verify.dryrun: OK   - command.install (guard-path)
+verify.dryrun: OK   - loader.install (guard-path)
+verify.dryrun: OK   - runtime.install (guard-path)
+verify.dryrun: OK   - rt.limits.install (guard-path)
+verify.dryrun: OK   - rt.grub.apply (guard-path)
+verify.dryrun: OK   - rt.grub.rollback (guard-path)
+verify.dryrun: OK   - remove.uninstall (guard-path)
+verify.dryrun: OK   - remove.rt (guard-path)
+verify.dryrun: OK   - remove.purge (guard-path)
+verify.dryrun: OK   - pkg.orig (guard-path)
+verify.dryrun: OK   - pkg.series (guard-path)
+verify.dryrun: OK   - src_version (repo-local guard-path only)
+verify.dryrun: OK   - src_version.clean (repo-local guard-path only)
+verify.dryrun: OK   - pkg.orig (repo-local guard-path only)
+verify.dryrun: OK   - pkg.series (repo-local guard-path only)
+verify.dryrun: OK - all registered targets guarded
+verify.idempotence: OK   - add.dkms stable
+verify.idempotence: OK   - command.install stable
+verify.idempotence: OK   - iface.prepare stable
+verify.idempotence: OK   - iface.unprepare stable
+verify.idempotence: OK   - install.dkms stable
+verify.idempotence: OK   - install.modules stable
+verify.idempotence: OK   - loader.install stable
+verify.idempotence: OK   - pkg.orig stable
+verify.idempotence: OK   - pkg.series stable
+verify.idempotence: OK   - remove.disable stable
+verify.idempotence: OK   - remove.dkms stable
+verify.idempotence: OK   - remove.purge stable
+verify.idempotence: OK   - remove.rt stable
+verify.idempotence: OK   - remove.stop stable
+verify.idempotence: OK   - remove.uninstall stable
+verify.idempotence: OK   - rt.grub.apply stable
+verify.idempotence: OK   - rt.grub.rollback stable
+verify.idempotence: OK   - rt.kernel.provision stable
+verify.idempotence: OK   - rt.limits.install stable
+verify.idempotence: OK   - rt.priority.apply stable
+verify.idempotence: OK   - rt.service.apply stable
+verify.idempotence: OK   - runtime.install stable
+verify.idempotence: OK   - sd_clean stable
+verify.idempotence: OK   - sd_disable stable
+verify.idempotence: OK   - sd_stop stable
+verify.idempotence: OK   - src_install stable
+verify.idempotence: OK   - src_uninstall stable
+verify.idempotence: OK   - src_version stable
+verify.idempotence: OK   - src_version.clean stable
+verify.idempotence: OK   - systemd.disable stable
+verify.idempotence: OK   - systemd.enable stable
+verify.idempotence: OK   - systemd.install stable
+verify.idempotence: OK   - systemd.remove stable
+verify.idempotence: OK   - systemd.start stable
+verify.idempotence: OK   - systemd.stop stable
+verify.idempotence: OK   - udev.install stable
+verify.idempotence: OK   - udev.remove stable
+verify.idempotence: OK   - uninstall.dkms stable
+verify.idempotence: OK   - uninstall.modules stable
+verify.idempotence: OK - registered dry-runs stable
+verify.doctor-overrides: OK   - doctor.network rejects DOCTOR_TOOL_ip=/no/such/ip
+verify.doctor-overrides: OK   - doctor.grub rejects DOCTOR_TOOL_update_grub=/no/such/update-grub
+verify.doctor-overrides: OK   - doctor.package rejects DOCTOR_TOOL_pkg_manager=/no/such/pkg-manager
+verify.doctor-overrides: OK   - doctor.rtdiag rejects DOCTOR_TOOL_chrt=/no/such/chrt
+verify.doctor-overrides: OK - broken tool overrides fail closed
+verify.residue: OK - remove.audit reports no residue
+pkg.verify: SKIP - no orig artifact (pkg.orig not run on this host)
+pkg.verify: SKIP - no generated series (pkg.series not run on this host)
+pkg.verify: SKIP - packaging toolchain absent; build verification is VM-phase only
+pkg.verify: OK - F4 overrides agree between template and package conf
+verify.ansible-lint: SKIP - ansible-lint absent; lint runs in the VM phase
+verify.syntax-check: SKIP - ansible-playbook absent
+verify.lintian: SKIP - lintian absent; lintian runs in the VM phase
+verify.all: OK - repository-local verification harness passed
+make: Leaving directory '/home/validator/ethercat-env'
+
+phase 2 complete

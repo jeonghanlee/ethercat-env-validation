@@ -1,0 +1,180 @@
+
+=== RUN: make -C /home/validator/ethercat-env systemd.render ===
+make: Entering directory '/home/validator/ethercat-env'
+systemd.render: OK - staged /home/validator/ethercat-env/build/systemd/epics-ethercat.service
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env systemd.install ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+doctor[install]: present  install      (/usr/bin/install)
+doctor[install]: present  chown        (/usr/bin/chown)
+doctor[install]: present  rm           (/usr/bin/rm)
+doctor[install]: present  ln           (/usr/bin/ln)
+doctor[install]: present  groupadd     (/usr/sbin/groupadd)
+doctor[install]: present  groupdel     (/usr/sbin/groupdel)
+doctor[install]: present  getent       (/usr/bin/getent)
+doctor[install]: present  mktemp       (/usr/bin/mktemp)
+doctor[install]: OK - all required tools present
+systemd.render: OK - staged /home/validator/ethercat-env/build/systemd/epics-ethercat.service
+require-root: OK
+guard-path: OK - /etc/systemd/system/epics-ethercat.service
+install -m 0644 "/home/validator/ethercat-env/build/systemd/epics-ethercat.service" "/etc/systemd/system/epics-ethercat.service"
+systemctl daemon-reload
+systemd.install: OK - installed /etc/systemd/system/epics-ethercat.service
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env udev.render ===
+make: Entering directory '/home/validator/ethercat-env'
+udev.render: OK - staged /home/validator/ethercat-env/build/systemd/99-EtherCAT.rules
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env udev.install ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+doctor[install]: present  install      (/usr/bin/install)
+doctor[install]: present  chown        (/usr/bin/chown)
+doctor[install]: present  rm           (/usr/bin/rm)
+doctor[install]: present  ln           (/usr/bin/ln)
+doctor[install]: present  groupadd     (/usr/sbin/groupadd)
+doctor[install]: present  groupdel     (/usr/sbin/groupdel)
+doctor[install]: present  getent       (/usr/bin/getent)
+doctor[install]: present  mktemp       (/usr/bin/mktemp)
+doctor[install]: OK - all required tools present
+udev.render: OK - staged /home/validator/ethercat-env/build/systemd/99-EtherCAT.rules
+require-root: OK
+guard-path: OK - /etc/udev/rules.d/99-EtherCAT.rules
+udev.install: creating group ethercat
+install -m 0644 "/home/validator/ethercat-env/build/systemd/99-EtherCAT.rules" "/etc/udev/rules.d/99-EtherCAT.rules"
+udevadm control --reload-rules
+udev.install: OK - installed /etc/udev/rules.d/99-EtherCAT.rules
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: getent group ethercat ===
+ethercat:x:989:
+
+=== RUN: sudo make -C /home/validator/ethercat-env runtime.install ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[install]: present  install      (/usr/bin/install)
+doctor[install]: present  chown        (/usr/bin/chown)
+doctor[install]: present  rm           (/usr/bin/rm)
+doctor[install]: present  ln           (/usr/bin/ln)
+doctor[install]: present  groupadd     (/usr/sbin/groupadd)
+doctor[install]: present  groupdel     (/usr/sbin/groupdel)
+doctor[install]: present  getent       (/usr/bin/getent)
+doctor[install]: present  mktemp       (/usr/bin/mktemp)
+doctor[install]: OK - all required tools present
+runtime.generate: OK - wrote /home/validator/ethercat-env/build/ethercat.conf
+runtime.lint: OK - required keys present, master device=enp0s3
+require-root: OK
+guard-path: OK - /opt/ethercat/etc/ethercat.conf
+install -m 0644 "/home/validator/ethercat-env/build/ethercat.conf" "/opt/ethercat/etc/ethercat.conf"
+runtime.install: OK - installed /opt/ethercat/etc/ethercat.conf
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: cmp /opt/ethercat/etc/ethercat.conf /home/validator/ethercat-env/build/ethercat.conf ===
+
+=== RUN: sudo make -C /home/validator/ethercat-env iface.prepare ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[network]: present  ip           (/usr/sbin/ip)
+doctor[network]: OK - all required tools present
+require-root: OK
+iface.prepare: bringing interface enp0s3 up
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env systemd.enable ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+require-root: OK
+systemctl enable epics-ethercat.service
+Created symlink '/etc/systemd/system/multi-user.target.wants/epics-ethercat.service' → '/etc/systemd/system/epics-ethercat.service'.
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env systemd.start ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+require-root: OK
+systemctl start epics-ethercat.service
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: systemctl status --no-pager --full epics-ethercat ===
+● epics-ethercat.service - EtherCAT Master Kernel Modules (EPICS)
+     Loaded: loaded (/etc/systemd/system/epics-ethercat.service; enabled; preset: enabled)
+     Active: active (exited) since Sun 2026-06-14 06:39:24 UTC; 6ms ago
+ Invocation: ac0bb938cce0472586cfcd354a3f3b1b
+       Docs: man:ethercat
+             man:ethercatctl
+    Process: 21468 ExecStart=/opt/ethercat/sbin/ethercatctl start (code=exited, status=0/SUCCESS)
+   Main PID: 21468 (code=exited, status=0/SUCCESS)
+   Mem peak: 2.7M
+        CPU: 57ms
+
+=== RUN: ls -l /dev/EtherCAT0 ===
+crw-rw---- 1 root ethercat 244, 0 Jun 14 06:39 /dev/EtherCAT0
+
+=== RUN: sudo usermod -aG ethercat validator ===
+
+=== RUN: sg ethercat -c /usr/bin/ethercat master ===
+Master0
+  Phase: Idle
+  Active: no
+  Slaves: 0
+  Ethernet devices:
+    Main: 52:54:00:12:ec:02 (attached)
+      Link: UP
+      Tx frames:   8
+      Tx bytes:    480
+      Rx frames:   0
+      Rx bytes:    0
+      Tx errors:   0
+      Tx frame rate [1/s]:      0      0      0
+      Tx rate [KByte/s]:      0.0    0.0    0.0
+      Rx frame rate [1/s]:      0      0      0
+      Rx rate [KByte/s]:      0.0    0.0    0.0
+    Common:
+      Tx frames:   8
+      Tx bytes:    480
+      Rx frames:   0
+      Rx bytes:    0
+      Lost frames: 8
+      Tx frame rate [1/s]:      0      0      0
+      Tx rate [KByte/s]:      0.0    0.0    0.0
+      Rx frame rate [1/s]:      0      0      0
+      Rx rate [KByte/s]:      0.0    0.0    0.0
+      Loss rate [1/s]:          0      0      0
+      Frame loss [%]:         0.0    0.0    0.0
+  Distributed clocks:
+    Reference clock:   None
+    DC reference time: 0
+    Application time:  0
+                       2000-01-01 00:00:00.000000000
+
+=== RECORD (failure tolerated): sg ethercat -c /usr/bin/ethercat slaves ===
+=== exit code: 0 ===
+
+=== RUN: make -C /home/validator/ethercat-env runtime.status ===
+make: Entering directory '/home/validator/ethercat-env'
+runtime.status: ===== EtherCAT runtime state (read-only) =====
+runtime.status: userspace tool : present (/usr/bin/ethercat)
+runtime.status: command link   : symlink -> /opt/ethercat/bin/ethercat
+runtime.status: loader fragment: present (/etc/ld.so.conf.d/ethercat.conf)
+runtime.status: service        : active=active enabled=enabled
+runtime.status: udev rule      : present (/etc/udev/rules.d/99-EtherCAT.rules)
+runtime.status: master module  : loaded (ec_master)
+runtime.status: master devices : enp0s3
+runtime.status: device modules : generic
+make: Leaving directory '/home/validator/ethercat-env'
+
+phase 6 complete

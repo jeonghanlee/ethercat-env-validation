@@ -1,0 +1,245 @@
+
+=== RUN: sudo -E make -C /home/validator/ethercat-env rt.kernel.provision ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[package]: present  pkg_manager  (/usr/bin/apt-get)
+doctor[package]: present  dpkg         (/usr/bin/dpkg)
+doctor[package]: OK - all required tools present
+require-root: OK
+rt.kernel.provision: installing RT kernel + headers (no boot-default change, D2)
+apt-get install -y linux-image-rt-amd64 linux-headers-rt-amd64
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  linux-headers-6.12.90+deb13.1-common-rt
+  linux-headers-6.12.90+deb13.1-rt-amd64 linux-image-6.12.90+deb13.1-rt-amd64
+Suggested packages:
+  firmware-linux-free linux-doc-6.12 debian-kernel-handbook grub-pc
+  | grub-efi-amd64 | extlinux
+The following NEW packages will be installed:
+  linux-headers-6.12.90+deb13.1-common-rt
+  linux-headers-6.12.90+deb13.1-rt-amd64 linux-headers-rt-amd64
+  linux-image-6.12.90+deb13.1-rt-amd64 linux-image-rt-amd64
+0 upgraded, 5 newly installed, 0 to remove and 3 not upgraded.
+Need to get 120 MB of archives.
+After this operation, 172 MB of additional disk space will be used.
+Get:1 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]
+Get:2 https://deb.debian.org/debian-security trixie-security/main amd64 linux-image-6.12.90+deb13.1-rt-amd64 amd64 6.12.90-2 [108 MB]
+Get:3 https://deb.debian.org/debian-security trixie-security/main amd64 linux-headers-6.12.90+deb13.1-common-rt all 6.12.90-2 [9458 kB]
+Get:4 https://deb.debian.org/debian-security trixie-security/main amd64 linux-headers-6.12.90+deb13.1-rt-amd64 amd64 6.12.90-2 [3013 kB]
+Get:5 https://deb.debian.org/debian-security trixie-security/main amd64 linux-headers-rt-amd64 amd64 6.12.90-2 [1416 B]
+Get:6 https://deb.debian.org/debian-security trixie-security/main amd64 linux-image-rt-amd64 amd64 6.12.90-2 [1488 B]
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "en_US.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MESSAGES = (unset),
+	LC_MONETARY = (unset),
+	LC_ADDRESS = (unset),
+	LC_IDENTIFICATION = (unset),
+	LC_MEASUREMENT = (unset),
+	LC_PAPER = (unset),
+	LC_TELEPHONE = (unset),
+	LC_NAME = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("C.UTF-8").
+Fetched 120 MB in 3s (40.3 MB/s)
+Selecting previously unselected package linux-image-6.12.90+deb13.1-rt-amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 46265 files and directories currently installed.)
+Preparing to unpack .../linux-image-6.12.90+deb13.1-rt-amd64_6.12.90-2_amd64.deb ...
+Unpacking linux-image-6.12.90+deb13.1-rt-amd64 (6.12.90-2) ...
+Selecting previously unselected package linux-headers-6.12.90+deb13.1-common-rt.
+Preparing to unpack .../linux-headers-6.12.90+deb13.1-common-rt_6.12.90-2_all.deb ...
+Unpacking linux-headers-6.12.90+deb13.1-common-rt (6.12.90-2) ...
+Selecting previously unselected package linux-headers-6.12.90+deb13.1-rt-amd64.
+Preparing to unpack .../linux-headers-6.12.90+deb13.1-rt-amd64_6.12.90-2_amd64.deb ...
+Unpacking linux-headers-6.12.90+deb13.1-rt-amd64 (6.12.90-2) ...
+Selecting previously unselected package linux-headers-rt-amd64.
+Preparing to unpack .../linux-headers-rt-amd64_6.12.90-2_amd64.deb ...
+Unpacking linux-headers-rt-amd64 (6.12.90-2) ...
+Selecting previously unselected package linux-image-rt-amd64.
+Preparing to unpack .../linux-image-rt-amd64_6.12.90-2_amd64.deb ...
+Unpacking linux-image-rt-amd64 (6.12.90-2) ...
+Setting up linux-image-6.12.90+deb13.1-rt-amd64 (6.12.90-2) ...
+/etc/kernel/postinst.d/dkms:
+Sign command: /lib/modules/6.12.90+deb13.1-rt-amd64/build/scripts/sign-file
+Signing key: /var/lib/dkms/mok.key
+Public certificate (MOK): /var/lib/dkms/mok.pub
+
+Autoinstall of module ethercat/1.6.9 for kernel 6.12.90+deb13.1-rt-amd64 (x86_64)
+Building module(s)...... done.
+Signing module /var/lib/dkms/ethercat/1.6.9/build/master/ec_master.ko
+Signing module /var/lib/dkms/ethercat/1.6.9/build/devices/ec_generic.ko
+Installing /lib/modules/6.12.90+deb13.1-rt-amd64/updates/dkms/ec_master.ko.xz
+Installing /lib/modules/6.12.90+deb13.1-rt-amd64/updates/dkms/ec_generic.ko.xz
+Running depmod... done.
+
+Autoinstall on 6.12.90+deb13.1-rt-amd64 succeeded for module(s) ethercat.
+/etc/kernel/postinst.d/initramfs-tools:
+update-initramfs: Generating /boot/initrd.img-6.12.90+deb13.1-rt-amd64
+/etc/kernel/postinst.d/zz-update-grub:
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.12.90+deb13.1-rt-amd64
+Found initrd image: /boot/initrd.img-6.12.90+deb13.1-rt-amd64
+Found linux image: /boot/vmlinuz-6.12.90+deb13.1-cloud-amd64
+Found initrd image: /boot/initrd.img-6.12.90+deb13.1-cloud-amd64
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Setting up linux-image-rt-amd64 (6.12.90-2) ...
+Setting up linux-headers-6.12.90+deb13.1-common-rt (6.12.90-2) ...
+Setting up linux-headers-6.12.90+deb13.1-rt-amd64 (6.12.90-2) ...
+Setting up linux-headers-rt-amd64 (6.12.90-2) ...
+rt.kernel.provision: OK - linux-image-rt-amd64 linux-headers-rt-amd64 installed; boot default left to the operator (M16)
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env rt.kernel.select ===
+make: Entering directory '/home/validator/ethercat-env'
+rt.kernel.select: RT flavor       = rt-amd64
+rt.kernel.select: running kernel   = 6.12.90+deb13.1-cloud-amd64
+rt.kernel.select: installed RT     = /boot/vmlinuz-6.12.90+deb13.1-rt-amd64
+rt.kernel.select: NOTE - boot default is NOT changed here (D2); select at the boot menu, confirm post-reboot (M16)
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env rt.limits.install ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[install]: present  install      (/usr/bin/install)
+doctor[install]: present  chown        (/usr/bin/chown)
+doctor[install]: present  rm           (/usr/bin/rm)
+doctor[install]: present  ln           (/usr/bin/ln)
+doctor[install]: present  groupadd     (/usr/sbin/groupadd)
+doctor[install]: present  groupdel     (/usr/sbin/groupdel)
+doctor[install]: present  getent       (/usr/bin/getent)
+doctor[install]: present  mktemp       (/usr/bin/mktemp)
+doctor[install]: OK - all required tools present
+require-root: OK
+guard-path: OK - /etc/security/limits.d/99-realtime.conf
+rt.limits.install: creating group realtime
+rt.limits.install: OK - wrote /etc/security/limits.d/99-realtime.conf
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env rt.limits.audit ===
+make: Entering directory '/home/validator/ethercat-env'
+rt.limits.audit: group realtime present (members: )
+rt.limits.audit: policy present /etc/security/limits.d/99-realtime.conf
+rt.limits.audit:   # Installed by ethercat-env rt.limits.install (M11). Do not edit by hand.
+rt.limits.audit:   @realtime   -   rtprio   99
+rt.limits.audit:   @realtime   -   memlock  unlimited
+rt.limits.audit:   @realtime   -   nice     -20
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env rt.grub.apply ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[grub]: present  update_grub  (/usr/sbin/update-grub)
+doctor[grub]: present  grep         (/usr/bin/grep)
+doctor[grub]: present  sed          (/usr/bin/sed)
+doctor[grub]: present  cp           (/usr/bin/cp)
+doctor[grub]: present  rm           (/usr/bin/rm)
+doctor[grub]: OK - all required tools present
+require-root: OK
+guard-path: OK - /etc/default/grub
+guard-path: OK - /etc/default/grub.ethercat-rt.bak
+rt.grub.apply: backing up /etc/default/grub -> /etc/default/grub.ethercat-rt.bak
+rt.grub.apply: appending parameter: intel_pstate=disable
+update-grub
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.12.90+deb13.1-rt-amd64
+Found initrd image: /boot/initrd.img-6.12.90+deb13.1-rt-amd64
+Found linux image: /boot/vmlinuz-6.12.90+deb13.1-cloud-amd64
+Found initrd image: /boot/initrd.img-6.12.90+deb13.1-cloud-amd64
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+rt.grub.apply: OK - applied RT parameters and ran update-grub (reboot persistence is an M16 gate)
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env rt.grub.audit ===
+make: Entering directory '/home/validator/ethercat-env'
+rt.grub.audit: /etc/default/grub present
+rt.grub.audit: GRUB_CMDLINE_LINUX_DEFAULT line: GRUB_CMDLINE_LINUX_DEFAULT=" intel_pstate=disable"
+rt.grub.audit: applied     intel_pstate=disable
+rt.grub.audit: backup present /etc/default/grub.ethercat-rt.bak
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: sudo make -C /home/validator/ethercat-env rt.service.apply ===
+make: Entering directory '/home/validator/ethercat-env'
+doctor[systemd]: present  systemctl    (/usr/bin/systemctl)
+doctor[systemd]: present  udevadm      (/usr/bin/udevadm)
+doctor[systemd]: present  ldconfig     (/usr/sbin/ldconfig)
+doctor[systemd]: OK - all required tools present
+require-root: OK
+rt.service.apply: irqbalance.service -> mask (allowlisted)
+Unit irqbalance.service does not exist, proceeding anyway.
+Created symlink '/etc/systemd/system/irqbalance.service' → '/dev/null'.
+rt.service.apply: OK - applied mask to allowlist only
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env rt.service.audit ===
+make: Entering directory '/home/validator/ethercat-env'
+rt.service.audit: irqbalance.service   active=inactive enabled=masked
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env rt.clock.status ===
+make: Entering directory '/home/validator/ethercat-env'
+rt.clock.status: expected  = tsc
+rt.clock.status: current   = kvm-clock
+rt.clock.status: available = kvm-clock tsc hpet acpi_pm 
+rt.clock.status: MISMATCH - current (kvm-clock) != expected (tsc)
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env rt.tuned.status ===
+make: Entering directory '/home/validator/ethercat-env'
+rt.tuned.status: site profile = realtime
+rt.tuned.status: tuned-adm    = absent (tuned not installed; never auto-engaged)
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env rt.priority.show ===
+make: Entering directory '/home/validator/ethercat-env'
+rt.priority.show: no TARGET given - candidate IRQ threads:
+     58 FF      50 irq/9-acpi
+  21487 TS       - EtherCAT-IDLE
+rt.priority.show: name one explicitly: make rt.priority.apply TARGET=<name> RT_PRIO=<n>
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env rt.latency.classify ===
+make: Entering directory '/home/validator/ethercat-env'
+rt.latency.classify: ===== latency tool classification (D3) =====
+rt.latency.classify: cyclictest   : archive  - example only; never an active input, never gates a target (D3)
+rt.latency.classify: hwlatdetect  : archive  - example only; never an active input, never gates a target (D3)
+rt.latency.classify: rt.status    : active   - the only RT readiness signal the repository consumes
+rt.latency.classify: evidence path (metadata) = /home/validator/ethercat-env/examples/rt-latency
+rt.latency.classify: minimum result set (metadata) = min avg max samples
+rt.latency.classify: NOTE - this is recorded metadata; the repository neither produces nor gates on latency evidence (D3)
+make: Leaving directory '/home/validator/ethercat-env'
+
+=== RUN: make -C /home/validator/ethercat-env rt.status ===
+make: Entering directory '/home/validator/ethercat-env'
+rt.status: ===== Debian 13 RT host state (read-only) =====
+rt.kernel.select: RT flavor       = rt-amd64
+rt.kernel.select: running kernel   = 6.12.90+deb13.1-cloud-amd64
+rt.kernel.select: installed RT     = /boot/vmlinuz-6.12.90+deb13.1-rt-amd64
+rt.kernel.select: NOTE - boot default is NOT changed here (D2); select at the boot menu, confirm post-reboot (M16)
+rt.grub.audit: /etc/default/grub present
+rt.grub.audit: GRUB_CMDLINE_LINUX_DEFAULT line: GRUB_CMDLINE_LINUX_DEFAULT=" intel_pstate=disable"
+rt.grub.audit: applied     intel_pstate=disable
+rt.grub.audit: backup present /etc/default/grub.ethercat-rt.bak
+rt.clock.status: expected  = tsc
+rt.clock.status: current   = kvm-clock
+rt.clock.status: available = kvm-clock tsc hpet acpi_pm 
+rt.clock.status: MISMATCH - current (kvm-clock) != expected (tsc)
+rt.limits.audit: group realtime present (members: )
+rt.limits.audit: policy present /etc/security/limits.d/99-realtime.conf
+rt.limits.audit:   # Installed by ethercat-env rt.limits.install (M11). Do not edit by hand.
+rt.limits.audit:   @realtime   -   rtprio   99
+rt.limits.audit:   @realtime   -   memlock  unlimited
+rt.limits.audit:   @realtime   -   nice     -20
+rt.service.audit: irqbalance.service   active=inactive enabled=masked
+rt.tuned.status: site profile = realtime
+rt.tuned.status: tuned-adm    = absent (tuned not installed; never auto-engaged)
+rt.status: NOTE - running-kernel and boot-persistence confirmation is an external gate (M16, D2)
+make: Leaving directory '/home/validator/ethercat-env'
+
+phase 7 complete

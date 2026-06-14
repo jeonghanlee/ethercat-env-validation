@@ -1,0 +1,138 @@
+
+=== RUN: sudo -E apt-get install -y ansible linux-headers-6.12.90+deb13.1-cloud-amd64 dkms dpkg-dev ===
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ansible is already the newest version (12.0.0+dfsg-0+deb13u1).
+linux-headers-6.12.90+deb13.1-cloud-amd64 is already the newest version (6.12.90-2).
+dkms is already the newest version (3.2.2-1~deb13u1).
+dpkg-dev is already the newest version (1.22.22).
+The following package was automatically installed and is no longer required:
+  ethercat-tools
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+
+=== RUN: sudo -E apt-get update ===
+Ign:1 file:/home/validator/pkgbuild ./ InRelease
+Get:2 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:3 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]
+Ign:8 file:/home/validator/pkgbuild ./ Release
+Get:9 file:/home/validator/pkgbuild ./ Packages
+Hit:9 file:/home/validator/pkgbuild ./ Packages
+Err:10 file:/home/validator/pkgbuild ./ Translation-en
+  File not found - /home/validator/pkgbuild/./en.xz (2: No such file or directory)
+Err:10 file:/home/validator/pkgbuild ./ Translation-en
+  File not found - /home/validator/pkgbuild/./en.bz2 (2: No such file or directory)
+Err:10 file:/home/validator/pkgbuild ./ Translation-en
+  File not found - /home/validator/pkgbuild/./en.lzma (2: No such file or directory)
+Err:10 file:/home/validator/pkgbuild ./ Translation-en
+  File not found - /home/validator/pkgbuild/./en.gz (2: No such file or directory)
+Err:10 file:/home/validator/pkgbuild ./ Translation-en
+  File not found - /home/validator/pkgbuild/./en.lz4 (2: No such file or directory)
+Ign:9 file:/home/validator/pkgbuild ./ Packages
+Ign:10 file:/home/validator/pkgbuild ./ Translation-en
+Get:9 file:/home/validator/pkgbuild ./ Packages
+Hit:9 file:/home/validator/pkgbuild ./ Packages
+Ign:9 file:/home/validator/pkgbuild ./ Packages
+Ign:10 file:/home/validator/pkgbuild ./ Translation-en
+Get:9 file:/home/validator/pkgbuild ./ Packages
+Hit:9 file:/home/validator/pkgbuild ./ Packages
+Err:9 file:/home/validator/pkgbuild ./ Packages
+  Could not open file /home/validator/pkgbuild/./Packages - open (13: Permission denied)
+Get:9 file:/home/validator/pkgbuild ./ Packages
+Hit:9 file:/home/validator/pkgbuild ./ Packages
+Err:9 file:/home/validator/pkgbuild ./ Packages
+  Could not open file /home/validator/pkgbuild/./Packages - open (13: Permission denied)
+Get:9 file:/home/validator/pkgbuild ./ Packages
+Hit:9 file:/home/validator/pkgbuild ./ Packages
+Err:9 file:/home/validator/pkgbuild ./ Packages
+  Could not open file /home/validator/pkgbuild/./Packages - open (13: Permission denied)
+Get:9 file:/home/validator/pkgbuild ./ Packages
+Hit:9 file:/home/validator/pkgbuild ./ Packages
+Err:9 file:/home/validator/pkgbuild ./ Packages
+  Could not open file /home/validator/pkgbuild/./Packages - open (13: Permission denied)
+Get:9 file:/home/validator/pkgbuild ./ Packages [5791 B]
+Hit:4 https://deb.debian.org/debian trixie InRelease
+Hit:5 https://deb.debian.org/debian trixie-updates InRelease
+Hit:6 https://deb.debian.org/debian trixie-backports InRelease
+Hit:7 https://deb.debian.org/debian-security trixie-security InRelease
+Reading package lists...
+isolated NIC: enp0s3
+
+=== RUN: ansible-playbook playbooks/site.yml -e ethercat_master_device=enp0s3 ===
+
+PLAY [Provision the real-time EtherCAT master host] ****************************
+
+TASK [Gathering Facts] *********************************************************
+[WARNING]: Host 'localhost' is using the discovered Python interpreter at '/usr/bin/python3.13', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.19/reference_appendices/interpreter_discovery.html for more information.
+ok: [localhost]
+
+TASK [rt_host : Install the RT kernel and headers] *****************************
+ok: [localhost]
+
+TASK [rt_host : Ensure the realtime group exists] ******************************
+ok: [localhost]
+
+TASK [rt_host : Install the realtime limits policy] ****************************
+ok: [localhost]
+
+TASK [rt_host : Back up the GRUB defaults once] ********************************
+ok: [localhost]
+
+TASK [rt_host : Append RT GRUB parameters when absent] *************************
+ok: [localhost] => (item=intel_pstate=disable)
+
+TASK [rt_host : Read the current clock source] *********************************
+ok: [localhost]
+
+TASK [rt_host : Report the clock source against the expected value] ************
+ok: [localhost] => {
+    "msg": "clocksource current=kvm-clock expected=tsc (differs - review on target hardware)"
+}
+
+TASK [rt_host : Mask the allowlisted RT services] ******************************
+ok: [localhost] => (item=irqbalance.service)
+
+TASK [rt_host : Query the tuned active profile] ********************************
+ok: [localhost]
+
+TASK [rt_host : Report the tuned state against the expected profile] ***********
+ok: [localhost] => {
+    "msg": "tuned:  (expected profile realtime, apply=False)"
+}
+
+TASK [rt_host : Apply the tuned realtime profile (opt-in)] *********************
+skipping: [localhost]
+
+TASK [ethercat_master : Assert a master device is set (fail closed, F3)] *******
+ok: [localhost] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [ethercat_master : Install the EtherCAT host packages] ********************
+changed: [localhost]
+
+TASK [ethercat_master : Render the EtherCAT master configuration] **************
+changed: [localhost]
+
+TASK [ethercat_master : Enable and start the EtherCAT master service] **********
+changed: [localhost]
+
+RUNNING HANDLER [ethercat_master : Restart ethercat master] ********************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=16   changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+OK: MASTER0_DEVICE bound to enp0s3 (F3)
+OK: UPDOWN_INTERFACES rendered (EC-8)
+OK: ethercat.service active
+OK: ec_generic device module loaded (RV1-F1 class)
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=15   changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+OK: site.yml idempotent (rt_host + ethercat_master, M7.T3)
+OK: empty device fails closed (F3 negative)
+
+phase 15 complete
